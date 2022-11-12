@@ -13,7 +13,7 @@ const app = express();
 app.use(morgan(`dev`));
 app.use(cors());
 app.use(express.json());
-
+// rotas
 app.use(userRouter);
 app.use(personRouter);
 app.use(bomberoRouter);
