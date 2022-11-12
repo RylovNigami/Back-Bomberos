@@ -12,8 +12,8 @@ router.post("/bombero", createBombero);
 
 router.get("/bombero", getBombero);
 
-router.put("/bomberos/:id", updateBombero);
+router.put("/bombero/:id", updateBombero);
 
-router.delete("/bomberos/:id", deleteBombero);
+router.delete("/bombero/:id", deleteBombero);
 
 export default router;

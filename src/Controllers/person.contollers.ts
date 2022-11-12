@@ -14,8 +14,6 @@ export const createPerson = async (req: Request, res: Response) => {
 
     await person.save();
 
-    console.log(person);
-
     return res.json(person);
   } catch (error) {
     if (error instanceof Error) {

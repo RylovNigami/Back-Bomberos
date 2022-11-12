@@ -7,7 +7,7 @@ router.post("/person",createPerson);
 
 router.get("/person",getPerson);
 
-router.put("/persons/:id",updatePerson);
+router.put("/person/:id",updatePerson);
 
-router.delete("/persons/:id",deletePerson);
+router.delete("/person/:id",deletePerson);
 export default router;
