@@ -1,15 +1,33 @@
 import { Response, Request } from "express";
 import { Bombero } from "../entities/bombero";
+import { Person } from "../entities/person";
+import { Rango } from "../entities/rango";
 
 export const createBombero = async (req: Request, res: Response) => {
   try {
-    const { rango, ordenGeneral, status } = req.body;
+    const {nombre_rango , ordenGeneral, status, person, rango } = req.body;
 
     const bombero = new Bombero();
 
-    bombero.rango = rango;
+    bombero.nombre_rango = nombre_rango;
     bombero.ordenGeneral = ordenGeneral;
     bombero.status = status;
+    bombero.person=person;
+    bombero.rango=rango;
+
+
+    const validar_person = await Person.findOne({where:{id:person}});
+
+    const validar_rango = await Rango.findOne({where:{id:rango}});
+
+    if(!validar_person){
+      return res.status(500).json({ message: "no se encontro esta persona"});
+    }
+
+    if(!validar_rango){
+      return res.status(500).json({ message: "no se encontro el rango"});
+    }
+
 
     await bombero.save();
 
@@ -25,9 +43,9 @@ export const createBombero = async (req: Request, res: Response) => {
 
 export const getBombero = async (req: Request, res: Response) => {
   try {
-    const bombero = await Bombero.find();
+    const bombero = await Bombero.find({relations:{person:true}});
 
-    return res.json(getBombero);
+    return res.json(bombero);
   } catch (error) {
     if (error instanceof Error) {
       return res.status(500).json({ message: error.message });

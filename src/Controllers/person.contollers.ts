@@ -3,11 +3,11 @@ import { Person } from "../entities/person";
 
 export const createPerson = async (req: Request, res: Response) => {
   try {
-    const { firstname, lastname, cedula, correo, telefono } = req.body;
+    const { firstName, lastName, cedula, correo, telefono } = req.body;
 
     const person = new Person();
-    person.firstName = firstname;
-    person.lastName = lastname;
+    person.firstName = firstName;
+    person.lastName = lastName;
     person.cedula = cedula;
     person.correo = correo;
     person.telefono = telefono;
@@ -37,7 +37,7 @@ export const getPerson = async (req: Request, res: Response) => {
 export const updatePerson = async (req: Request, res: Response) => {
   const { id } = req.params;
 
-  const person = await Person.findOneBy({ id: parseInt(req.params.id) });
+  const person = await Person.findOneBy({ id: parseInt(id) });
   console.log(person);
 
   if (!person)

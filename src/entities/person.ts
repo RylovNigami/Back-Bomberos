@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Bombero } from "./bombero";
 
 @Entity("people")
 export class Person extends BaseEntity {
@@ -19,4 +20,7 @@ export class Person extends BaseEntity {
 
   @Column({ type: "varchar" })
   correo: string;
+
+  @OneToMany(() => Bombero, (bombero) =>  bombero.person)
+  bombero:Bombero[];
 }
