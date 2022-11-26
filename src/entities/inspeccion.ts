@@ -1,4 +1,6 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Cargo_bombero } from "./cargo_bombero";
+import { Local } from "./local";
 
 @Entity("Inspeccion")
 export class Inspeccion extends BaseEntity {
@@ -13,4 +15,11 @@ export class Inspeccion extends BaseEntity {
 
   @Column({ type: "varchar" })
   fecha: string;
+
+  @ManyToOne(() => Cargo_bombero, (cargo_bombero) => cargo_bombero.inspeccion)
+  cargo_bombero:Cargo_bombero;
+
+  @ManyToOne(() => Local, (local) => local.inspeccion)
+  local:Local;
+
 }

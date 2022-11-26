@@ -1,6 +1,7 @@
 import { BaseEntity, Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Person } from "./person";
 import { Rango } from "./rango";
+import { Cargo_bombero } from "./cargo_bombero";
 
 @Entity("Bombero")
 export class Bombero extends BaseEntity {
@@ -8,7 +9,7 @@ export class Bombero extends BaseEntity {
   id: number;
 
   @Column({ type: "varchar" })
-  nombre_rango: string;
+  nombre_rango_bombero: string;
 
   @Column({ type: "varchar" })
   ordenGeneral: number;
@@ -25,6 +26,7 @@ export class Bombero extends BaseEntity {
   @ManyToOne(() => Rango, (rango) =>  rango.bombero)
   rango:Rango;
 
-
+  @OneToMany(() => Cargo_bombero, (cargo_bombero) =>  cargo_bombero.bombero)
+  cargo_bombero:Cargo_bombero[];
 
 }

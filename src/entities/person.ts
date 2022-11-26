@@ -16,7 +16,7 @@ export class Person extends BaseEntity {
   cedula: number;
 
   @Column({ type: "varchar" })
-  telefono: number;
+  telefono: string;
 
   @Column({ type: "varchar" })
   correo: string;

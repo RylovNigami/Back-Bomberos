@@ -11,6 +11,7 @@ import estadoRouter from "./router/estado.router";
 import municipioRouter from "./router/municipio.router";
 import parroquiaRouter from "./router/parroquia.router";
 import cargoRouter from "./router/cargo.router";
+import router from "./router/prueba.router";
 
 const app = express();
 
@@ -28,5 +29,6 @@ app.use(localRouter);
 app.use(estadoRouter);
 app.use(municipioRouter);
 app.use(parroquiaRouter);
+app.use(router)
 
 export default app;

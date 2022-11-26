@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity,OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Inspeccion } from "./inspeccion";
 
 @Entity("Local")
 export class Local extends BaseEntity {
@@ -13,4 +14,8 @@ export class Local extends BaseEntity {
 
   @Column({ type: "varchar" })
   firma_mercantil: string;
+
+  
+  @OneToMany(() => Inspeccion, (inspeccion) => inspeccion.local)
+  inspeccion:Inspeccion[];
 }
