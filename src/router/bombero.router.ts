@@ -6,14 +6,12 @@ import {
   deleteBombero,
 } from "../Controllers/bombero.controllers";
 
-const router = Router();
+export const router = Router();
 
-router.post("/bombero", createBombero);
+router.post("/", createBombero);
 
-router.get("/bombero", getBombero);
+router.get("/", getBombero);
 
-router.put("/bombero/:id", updateBombero);
+router.put("/:id", updateBombero);
 
-router.delete("/bombero/:id", deleteBombero);
-
-export default router;
+router.delete("/:id", deleteBombero);

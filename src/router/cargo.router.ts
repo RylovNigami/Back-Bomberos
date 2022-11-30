@@ -1,14 +1,12 @@
 import { Router } from "express";
- import {createCargo,getCargo,updateCargo,deleteCargo} from "../Controllers/cargo.controllers";
+import {createCargo,getCargo,updateCargo,deleteCargo} from "../Controllers/cargo.controllers";
 
-const router = Router();
+export const router = Router();
 
-router.post("/cargo",createCargo);
+router.post("/", createCargo);
 
- router.get("/cargo",getCargo);
+router.get("/", getCargo);
 
- router.put("/cargo/:id",updateCargo);
+router.put("/:id", updateCargo);
 
-router.delete("/cargo/:id",deleteCargo);
-
-export default router;
+router.delete("/:id", deleteCargo);

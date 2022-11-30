@@ -1,13 +1,12 @@
 import { Router } from "express";
 import {createPerson, getPerson,updatePerson,deletePerson} from "../Controllers/person.contollers";
 
-const router = Router()
+export const router = Router()
 
-router.post("/person",createPerson);
+router.post("/", createPerson);
 
-router.get("/person",getPerson);
+router.get("/", getPerson);
 
-router.put("/person/:id",updatePerson);
+router.put("/:id", updatePerson);
 
-router.delete("/person/:id",deletePerson);
-export default router;
+router.delete("/:id", deletePerson);

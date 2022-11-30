@@ -1,14 +1,12 @@
 import { Router } from "express";
 import {createParroquia,getParroquia,updateParroquia,deleteParroquia} from "../Controllers/parroquia.controller";
 
-const router = Router()
+export const router = Router()
 
-router.post("/parroquia",createParroquia);
+router.post("/", createParroquia);
 
- router.get("/parroquia",getParroquia);
+router.get("/", getParroquia);
 
- router.put("/parroquia/:id",updateParroquia);
+router.put("/:id", updateParroquia);
 
- router.delete("/parroquia/:id",deleteParroquia);
-
-export default router;
+router.delete("/:id", deleteParroquia);

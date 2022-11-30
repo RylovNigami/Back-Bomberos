@@ -1,14 +1,12 @@
 import { Router } from "express";
 // import {createLocal,getLocal,updateLocal,deleteLocal} from "../Controllers/local.controllers";
 
-const router = Router()
+export const router = Router()
 
-// router.post("/local",createLocal);
+// router.post("/", createLocal);
 
-// router.get("/local",getLocal);
+// router.get("/", getLocal);
 
-// router.put("/local/:id",updateLocal);
+// router.put("/:id", updateLocal);
 
-// router.delete("/local/:id",deleteLocal);
-
-export default router;
+// router.delete("/:id", deleteLocal);

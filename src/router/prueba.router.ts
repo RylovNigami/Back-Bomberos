@@ -1,14 +1,12 @@
 import { Router } from "express";
 import { create } from "../Controllers/prueba.controllers";
   
-  const router = Router();
+export const router = Router();
   
-  router.post("/prueba", create );
+router.post("/", create);
   
-  router.get("/", );
+router.get("/");
   
-  router.put("//:id", );
+router.put("/:id");
   
-  router.delete("//:id", );
-  
-  export default router;
+router.delete("/:id");

@@ -1,14 +1,12 @@
 import { Router } from "express";
 import {createMunicipio,getMunicipio,updateMunicipio,deleteMunicipio} from "../Controllers/municipio.controllers";
 
-const router = Router()
+export const router = Router()
 
-router.post("/municipio",createMunicipio);
+router.post("/", createMunicipio);
 
- router.get("/municipio",getMunicipio);
+router.get("/", getMunicipio);
 
- router.put("/municipio/:id",updateMunicipio);
+router.put("/:id", updateMunicipio);
 
- router.delete("/municipio/:id",deleteMunicipio);
-
-export default router;
+router.delete("/:id", deleteMunicipio);
