@@ -3,15 +3,14 @@ import { User } from "../entities/user";
 
 export const createUser = async (req: Request, res: Response) => {
   try {
-    const { firstname, lastname } = req.body;
+    const { email, password, personId } = req.body;
 
     const user = new User();
-    user.firstname = firstname;
-    user.lastname = lastname;
+    user.email = email;
+    user.password = password;
+    user.person = personId;
 
-    await user.save();
-
-    console.log(user);
+    await user.save();  
 
     return res.json(user);
   } catch (error) {
@@ -27,7 +26,7 @@ export const getUsers = async (req: Request, res: Response) => {
     if (user.length === 0) {
       throw Error();
     }
-    return res.json(getUsers);
+    return res.json(user);
   } catch (error) {
     if (error instanceof Error) {
       return res.status(500).json({ message: error.message });
