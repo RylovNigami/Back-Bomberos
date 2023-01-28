@@ -1,5 +1,6 @@
-import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Bombero } from "./bombero";
+import { User } from "./user";
 
 @Entity("people")
 export class Person extends BaseEntity {
@@ -20,6 +21,9 @@ export class Person extends BaseEntity {
 
   @Column({ type: "varchar" })
   correo: string;
+
+  @OneToOne(() => User, (user) => user.person)
+  user: User;
 
   @OneToMany(() => Bombero, (bombero) =>  bombero.person)
   bombero:Bombero[];
