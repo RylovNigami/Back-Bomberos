@@ -1,9 +1,10 @@
-import { BaseEntity, Column, Entity,OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity,OneToMany,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Pisos } from "./pisos";
 import { Plafones } from "./plafones";
 import { Puertas } from "./puertas";
 import { Techos } from "./techos";
 import { Ventanas } from "./ventanas";
+import { Local } from "./local";
 
 @Entity("Caracteristica_local")
 export class Caracteristica_local extends BaseEntity {
@@ -31,5 +32,7 @@ export class Caracteristica_local extends BaseEntity {
   @OneToMany(() => Plafones, (plafones) => plafones.carasteristica_local)
   plafones:Plafones[];
 
+  @ManyToOne(() => Local, (local) => local.caracteristica_local)
+  local: Local;
   
 }
