@@ -11,4 +11,6 @@ export class Cargo extends BaseEntity {
 
   @OneToMany(() => Cargo_bombero, (cargo_bombero) =>  cargo_bombero.cargo)
   cargo_bombero:Cargo_bombero[];
+
+  
 }

@@ -30,5 +30,7 @@ export class Local extends BaseEntity {
 
   @OneToMany(() => Alm_seguro, (alm_seguro) => alm_seguro.local)
   alm_seguro:Alm_seguro[];
+  
+  
 }
 

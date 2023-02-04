@@ -24,9 +24,9 @@ export const createCaracteristica_local = async (req: Request, res: Response) =>
   
   export const getCaracteristica_local = async (req: Request, res: Response) => {
     try {
-      const cargo = await Caracteristica_local.find();
+      const caracterisca_local = await Caracteristica_local.find();
   
-      return res.json(cargo);
+      return res.json(caracterisca_local);
     } catch (error) {
       if (error instanceof Error) {
         return res.status(500).json({ message: error.message });

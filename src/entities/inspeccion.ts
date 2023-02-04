@@ -14,7 +14,7 @@ export class Inspeccion extends BaseEntity {
   hora : string;
 
   @Column({ type: "varchar" })
-  fecha: string;
+  fecha: Date;
 
   @ManyToOne(() => Cargo_bombero, (cargo_bombero) => cargo_bombero.inspeccion)
   cargo_bombero:Cargo_bombero;

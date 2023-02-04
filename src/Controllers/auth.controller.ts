@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { User } from "../entities/user";
 import { sign } from 'jsonwebtoken';
 
-export const login = async (req: Request, res: Response) => {
+export const loginCtrl = async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
   const user = await User.createQueryBuilder("i")
@@ -30,4 +30,11 @@ export const login = async (req: Request, res: Response) => {
     Object.assign(payload, { jwt })
 
     return res.status(200).json(payload);
-};
+
+}
+
+ 
+      
+
+
+
