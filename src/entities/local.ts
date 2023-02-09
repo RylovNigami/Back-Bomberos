@@ -1,8 +1,11 @@
 import { BaseEntity, Column, Entity,OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Alm_riesgoso } from "./alm_riesgoso";
 import { Alm_seguro } from "./alm_seguro";
 import { Caracteristica_local } from "./caracteristica_local";
+import { Electricidad } from "./electricidad";
 import { Inspeccion } from "./inspeccion";
 import { Instalacion_gas } from "./instalacion_gas";
+import { Medios_escape } from "./medios_escape";
 
 @Entity("Local")
 export class Local extends BaseEntity {
@@ -30,6 +33,16 @@ export class Local extends BaseEntity {
 
   @OneToMany(() => Alm_seguro, (alm_seguro) => alm_seguro.local)
   alm_seguro:Alm_seguro[];
+
+  
+  @OneToMany(() => Electricidad, (electricidad) => electricidad.local)
+  electricidad:Electricidad[];
+
+  @OneToMany(() => Medios_escape, (medios_escape) => medios_escape.local)
+  medios_escape:Medios_escape[];
+
+  @OneToMany(() => Alm_riesgoso, (alm_riesgoso) => alm_riesgoso.local)
+  alm_riesgoso:Alm_seguro[];
   
   
 }

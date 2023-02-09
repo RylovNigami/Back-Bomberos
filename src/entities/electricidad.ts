@@ -1,5 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-
+import { BaseEntity, Column, Entity,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Local } from "./local";
 @Entity("Electricidad")
 export class Electricidad extends BaseEntity {
   @PrimaryGeneratedColumn()
@@ -22,4 +22,7 @@ export class Electricidad extends BaseEntity {
 
   @Column({ type: "varchar" })
   tipo_interruptor: string;
+
+  @ManyToOne(() => Local, (local) => local.electricidad)
+  local:Local;
 }

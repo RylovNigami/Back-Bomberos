@@ -1,6 +1,7 @@
 import { BaseEntity, Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Bombero } from "./bombero";
 import { User } from "./user";
+import { Inspeccion } from "./inspeccion";
 
 @Entity("people")
 export class Person extends BaseEntity {
@@ -27,4 +28,7 @@ export class Person extends BaseEntity {
 
   @OneToMany(() => Bombero, (bombero) =>  bombero.person)
   bombero:Bombero[];
+
+  @OneToMany(() => Inspeccion, (inspeccion) => inspeccion.person)
+  inspeccion:Inspeccion[];
 }

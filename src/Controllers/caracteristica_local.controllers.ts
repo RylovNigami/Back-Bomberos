@@ -9,6 +9,8 @@ export const createCaracteristica_local = async (req: Request, res: Response) =>
        caracterisca_local.nro_niveles= nro_niveles;
        caracterisca_local.nivel_inmueble= nivel_inmueble;
        caracterisca_local.area=area;
+
+       
    
   
   

@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Local } from "./local";
 
 @Entity("Medios_escape")
 export class Medios_escape extends BaseEntity {
@@ -72,5 +73,6 @@ export class Medios_escape extends BaseEntity {
   @Column({ type: "varchar" })
   angulo_rampa: string;
 
-  
+  @ManyToOne(() => Local, (local) => local.medios_escape)
+  local:Local;
 }
