@@ -19,7 +19,7 @@ export class Bombero extends BaseEntity {
   status: boolean;
 
   
-  @ManyToOne(() => Person, (person) =>  person.bombero)
+  @ManyToOne(() => Person, (person) =>  person.bombero,{eager:true})
   person:Person;
 
   
