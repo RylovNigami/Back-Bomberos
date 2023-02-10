@@ -14,13 +14,13 @@ export const loginCtrl = async (req: Request, res: Response) => {
     .getOne();
 
     if (!user) {
-        res.status(404).json({ msg: 'user not found '});
+        return res.status(404).json({ msg: 'user not found '});
     }
 
     const validate = await user?.validatePassword(password);
 
     if (!validate) {
-        res.status(401).json({ msg: 'incorrect password' });
+        return res.status(401).json({ msg: 'incorrect password' });
     }
 
     const payload = {
@@ -33,7 +33,7 @@ export const loginCtrl = async (req: Request, res: Response) => {
 
     Object.assign(payload, { jwt })
 
-    return res.status(200).json(payload);
+    return res.status(200).json( { data:payload } );
 }
 
 
@@ -43,12 +43,12 @@ export const meCtrl = async (req: any, res: Response) => {
     .where("LOWER(i.email) = LOWER(:email)", { email: req.user.email })
     .getOne();
 
-    return res.status(200).json( user );
+    return res.status(200).json( { data:user } );
 }
 
 
 export const logoutCtrl = async (req: Request, res: Response) => {
-    return res.status(200).json( {fino:true} );
+    return res.status(200).json( {logout:true} );
 }
 
  
