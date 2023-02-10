@@ -1,11 +1,11 @@
 import { Router } from "express";
 import {
-    loginCtrl, registerCtrl
+    loginCtrl, register
    
-  } from "../Controllers/auth.controller";
+} from "../Controllers/auth.controller";
 
 export const router = Router();
 
 router.post("/login",loginCtrl);
 
-router.post("/register",registerCtrl);
+router.post("/register",register);

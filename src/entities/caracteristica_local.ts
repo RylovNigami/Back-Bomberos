@@ -25,37 +25,37 @@ export class Caracteristica_local extends BaseEntity {
   @Column({ type: "varchar" })
   area: string;
 
-  @ManyToOne(() => Puertas, (puertas) => puertas.carasteristica_local)
+  @ManyToOne(() => Puertas, (puertas) => puertas.carasteristica_local,{eager:true})
   puertas:Puertas;
 
-  @ManyToOne(() => Ventanas, (ventanas) => ventanas.carasteristica_local)
+  @ManyToOne(() => Ventanas, (ventanas) => ventanas.carasteristica_local,{eager:true})
   ventanas:Ventanas;
 
-  @ManyToOne(() => Techos, (techos) => techos.carasteristica_local)
+  @ManyToOne(() => Techos, (techos) => techos.carasteristica_local,{eager:true})
   techos:Techos;
 
-  @ManyToOne(() => Plafones, (plafones) => plafones.carasteristica_local)
+  @ManyToOne(() => Plafones, (plafones) => plafones.carasteristica_local,{eager:true})
   plafones:Plafones;
 
   
-  @ManyToOne(() => Huella, (huella) => huella.carasteristica_local)
+  @ManyToOne(() => Huella, (huella) => huella.carasteristica_local,{eager:true})
   huella:Huella;
 
   
-  @ManyToOne(() => Contrahuella, (contrahuella) => contrahuella.carasteristica_local)
+  @ManyToOne(() => Contrahuella, (contrahuella) => contrahuella.carasteristica_local,{eager:true})
   contrahuella:Contrahuella;
 
-  @ManyToOne(() => Escaleras, (escaleras) => escaleras.carasteristica_local)
+  @ManyToOne(() => Escaleras, (escaleras) => escaleras.carasteristica_local,{eager:true})
   escaleras:Escaleras;
 
   
-  @ManyToOne(() => Paredes, (paredes) => paredes.carasteristica_local)
+  @ManyToOne(() => Paredes, (paredes) => paredes.carasteristica_local,{eager:true})
   paredes:Paredes;
   
-  @ManyToOne(() => Pasamanos, (pasamanos) => pasamanos.carasteristica_local)
+  @ManyToOne(() => Pasamanos, (pasamanos) => pasamanos.carasteristica_local,{eager:true})
   pasamanos:Pasamanos;
   
-  @ManyToOne(() => Pisos, (pisos) => pisos.carasteristica_local)
+  @ManyToOne(() => Pisos, (pisos) => pisos.carasteristica_local,{eager:true})
   pisos:Pisos;
   
   @ManyToOne(() => Local, (local) => local.caracteristica_local)

@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, ManyToOne,OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Local } from "./local";
 import { Municipio } from "./municipio";
 
 
@@ -15,4 +16,6 @@ export class Parroquia extends BaseEntity {
   @ManyToOne(() => Municipio, (municipio) =>  municipio.parroquia)
   municipio:Municipio;
 
+  @OneToMany(() => Local, (local) => local.parroquia)
+  local:Local[];
 }

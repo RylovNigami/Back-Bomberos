@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { User } from "../entities/user";
 import { sign } from 'jsonwebtoken';
 
+
 export const loginCtrl = async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
@@ -30,18 +31,38 @@ export const loginCtrl = async (req: Request, res: Response) => {
     Object.assign(payload, { jwt })
 
     return res.status(200).json(payload);
+}
+
+    export const register = async (req: Request, res: Response) => {
+    
+        try {
+          const { password, email } = req.body;
+      
+          const user = new User(); ({
+            email: email.toLowerCase(),
+            password,
+          });
+          user.save();
+      
+          res.status(201).json({
+            status: 'success',
+            data: {
+              user,
+            },
+          });
+        } catch (err: any) {
+          if (err.code === '23505') {
+            return res.status(409).json({
+              status: 'fail',
+              message: 'User ',
+            });
+          }
+        }
+      };
+      
 
     
 
-
-
-
-   
-
-}
-
- 
-      
 
 
 
