@@ -1,9 +1,15 @@
-import { BaseEntity, Column, Entity,OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity,OneToMany,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Pisos } from "./pisos";
 import { Plafones } from "./plafones";
 import { Puertas } from "./puertas";
 import { Techos } from "./techos";
 import { Ventanas } from "./ventanas";
+import { Local } from "./local";
+import { Huella } from "./huella";
+import { Contrahuella } from "./contrahuella";
+import { Escaleras } from "./escaleras";
+import { Paredes } from "./paredes";
+import { Pasamanos } from "./pasamanos";
 
 @Entity("Caracteristica_local")
 export class Caracteristica_local extends BaseEntity {
@@ -19,17 +25,41 @@ export class Caracteristica_local extends BaseEntity {
   @Column({ type: "varchar" })
   area: string;
 
-  @OneToMany(() => Puertas, (puertas) => puertas.carasteristica_local)
-  puertas:Puertas[];
+  @ManyToOne(() => Puertas, (puertas) => puertas.carasteristica_local)
+  puertas:Puertas;
 
-  @OneToMany(() => Ventanas, (ventanas) => ventanas.carasteristica_local)
-  ventanas:Ventanas[];
+  @ManyToOne(() => Ventanas, (ventanas) => ventanas.carasteristica_local)
+  ventanas:Ventanas;
 
-  @OneToMany(() => Techos, (techos) => techos.carasteristica_local)
-  techos:Techos[];
+  @ManyToOne(() => Techos, (techos) => techos.carasteristica_local)
+  techos:Techos;
 
-  @OneToMany(() => Plafones, (plafones) => plafones.carasteristica_local)
-  plafones:Plafones[];
+  @ManyToOne(() => Plafones, (plafones) => plafones.carasteristica_local)
+  plafones:Plafones;
+
+  
+  @ManyToOne(() => Huella, (huella) => huella.carasteristica_local)
+  huella:Huella;
+
+  
+  @ManyToOne(() => Contrahuella, (contrahuella) => contrahuella.carasteristica_local)
+  contrahuella:Contrahuella;
+
+  @ManyToOne(() => Escaleras, (escaleras) => escaleras.carasteristica_local)
+  escaleras:Escaleras;
+
+  
+  @ManyToOne(() => Paredes, (paredes) => paredes.carasteristica_local)
+  paredes:Paredes;
+  
+  @ManyToOne(() => Pasamanos, (pasamanos) => pasamanos.carasteristica_local)
+  pasamanos:Pasamanos;
+  
+  @ManyToOne(() => Pisos, (pisos) => pisos.carasteristica_local)
+  pisos:Pisos;
+  
+  @ManyToOne(() => Local, (local) => local.caracteristica_local)
+  local: Local;
 
   
 }

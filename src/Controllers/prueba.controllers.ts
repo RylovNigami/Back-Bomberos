@@ -34,7 +34,7 @@ export const create = async (req: Request, res: Response) => {
     try {
         await queryRunner.manager.save(person);
 
-        throw new Error("eokfzdmomsz");
+        //throw new Error("eokfzdmomsz");
         await queryRunner.manager.save(rango);
         await queryRunner.manager.save(bombero);
 

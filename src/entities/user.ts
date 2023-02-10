@@ -1,4 +1,4 @@
-import { compareSync, genSalt, hash } from 'bcrypt';
+import { compareSync, genSalt, hash } from "bcrypt";
 import {
   Entity,
   Column,

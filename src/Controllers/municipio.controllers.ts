@@ -15,8 +15,6 @@ export const createMunicipio = async (req: Request, res: Response) => {
     if(!validar_estado){
       return res.status(500).json({ message: "no se encontro"});
     }
- 
-
 
     await municipio.save();
 

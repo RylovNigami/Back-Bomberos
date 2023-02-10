@@ -15,16 +15,15 @@ export class Cargo_bombero extends BaseEntity {
   @Column({ type: "varchar" })
   temporabilidad: string;
 
-  @ManyToOne(() => Bombero, (bombero) =>  bombero.cargo_bombero)
+  @ManyToOne(() => Bombero, (bombero) =>  bombero.cargo_bombero,{ eager:true})
   bombero:Bombero;
 
-  @ManyToOne(() => Cargo, (cargo) =>  cargo.cargo_bombero)
-  cargo:Cargo;
-
-  @ManyToOne(() => Departamento, (departamento) => departamento.cargo_bombero)
+  @ManyToOne(() => Cargo, (cargo) =>  cargo.cargo_bombero,{ eager:true} )
+  cargo:Cargo; 
+    
+  @ManyToOne(() => Departamento, (departamento) => departamento.cargo_bombero,{ eager:true})
   departamento:Departamento;
 
   @OneToMany(() => Inspeccion, (inspeccion) => inspeccion.cargo_bombero)
   inspeccion:Inspeccion[];
-
 }
