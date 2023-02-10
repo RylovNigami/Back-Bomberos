@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { User } from "../entities/user";
 import { sign } from 'jsonwebtoken';
 
-
 export const loginCtrl = async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
@@ -11,13 +10,13 @@ export const loginCtrl = async (req: Request, res: Response) => {
     .getOne();
 
     if (!user) {
-        res.status(404).json({ msg: 'user not found '});
+        return res.status(404).json({ msg: 'user not found '});
     }
 
     const validate = await user?.validatePassword(password);
 
     if (!validate) {
-        res.status(401).json({ msg: 'incorrect password' });
+        return res.status(401).json({ msg: 'incorrect password' });
     }
 
     const payload = {
@@ -26,43 +25,23 @@ export const loginCtrl = async (req: Request, res: Response) => {
         created: user?.createdAt
     }
 
-    const jwt = sign(payload, `${process.env.JWT_SESSION_SECRET}`, { expiresIn: `${process.env.JWT_EXPIRED}` });
+    const jwt = sign(payload, `${"jwt-t0k3n-s3cr3t"}`, { expiresIn: `${'24h'}` });
 
     Object.assign(payload, { jwt })
 
     return res.status(200).json(payload);
+
+    
+
+
+
+
+   
+
 }
 
-    export const register = async (req: Request, res: Response) => {
-    
-        try {
-          const { password, email } = req.body;
+ 
       
-          const user = new User(); ({
-            email: email.toLowerCase(),
-            password,
-          });
-          user.save();
-      
-          res.status(201).json({
-            status: 'success',
-            data: {
-              user,
-            },
-          });
-        } catch (err: any) {
-          if (err.code === '23505') {
-            return res.status(409).json({
-              status: 'fail',
-              message: 'User ',
-            });
-          }
-        }
-      };
-      
-
-    
-
 
 
 
