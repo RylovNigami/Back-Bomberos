@@ -23,6 +23,6 @@ export class Electricidad extends BaseEntity {
   @Column({ type: "varchar" })
   tipo_interruptor: string;
 
-  @ManyToOne(() => Local, (local) => local.electricidad)
+  @ManyToOne(() => Local, (local) => local.electricidad,{eager:true})
   local:Local;
 }

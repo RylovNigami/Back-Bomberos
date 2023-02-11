@@ -1,6 +1,6 @@
 import { Router } from "express";
 import {
-    loginCtrl, registerCtrl
+    loginCtrl, registerCtrl,logoutCtrl,authentication,meCtrl
    
   } from "../Controllers/auth.controller";
 

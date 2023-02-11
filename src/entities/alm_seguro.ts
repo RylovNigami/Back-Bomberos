@@ -21,6 +21,6 @@ export class Alm_seguro extends BaseEntity {
   @Column({ type: "varchar" })
   tipo_proteccion: string;
 
-  @ManyToOne(() => Local, (local) => local.alm_seguro)
+  @ManyToOne(() => Local, (local) => local.alm_seguro,{eager:true})
   local:Local;
 }

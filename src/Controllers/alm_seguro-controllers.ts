@@ -5,7 +5,7 @@ import { Alm_seguro } from "../entities/alm_seguro";
 
 export const createAlm_seguro = async (req: Request, res: Response) => {
     try {
-      const {  tipo,norma_alm,orden_limpieza,proteccion,tipo_proteccion,} = req.body;
+      const {  tipo,norma_alm,orden_limpieza,proteccion,tipo_proteccion,local} = req.body;
   
       const alm_seguro = new Alm_seguro();
       alm_seguro.tipo=tipo;
@@ -13,6 +13,7 @@ export const createAlm_seguro = async (req: Request, res: Response) => {
       alm_seguro.orden_limpieza=orden_limpieza;
       alm_seguro.proteccion=proteccion;
       alm_seguro.tipo_proteccion=tipo_proteccion;
+      alm_seguro.local=local;
    
   
   

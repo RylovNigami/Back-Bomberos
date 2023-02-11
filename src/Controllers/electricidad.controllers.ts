@@ -5,7 +5,7 @@ import { Electricidad } from "../entities/electricidad";
 
 export const createElectricidad = async (req: Request, res: Response) => {
   try {
-    const {  tension,material_tablero,señalizacion,ventilacion,tipo_ven,tipo_interruptor} = req.body;
+    const {  tension,material_tablero,señalizacion,ventilacion,tipo_ven,tipo_interruptor,local} = req.body;
 
     const electricidad = new Electricidad();
    electricidad.tension=tension,
@@ -14,6 +14,7 @@ export const createElectricidad = async (req: Request, res: Response) => {
    electricidad.ventilacion=ventilacion,
    electricidad.tipo_ven=tipo_ven,
    electricidad.tipo_interruptor=tipo_interruptor,
+   electricidad.local=local;
  
 
 
