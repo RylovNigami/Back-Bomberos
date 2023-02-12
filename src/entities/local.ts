@@ -4,6 +4,8 @@ import { Alm_riesgoso } from "./alm_riesgoso";
 import { Alm_seguro } from "./alm_seguro";
 import { Caracteristica_local } from "./caracteristica_local";
 import { Electricidad } from "./electricidad";
+import { Extincion_f } from "./extincion_f";
+import { Extintor_p } from "./extintor_p";
 import { Inspeccion } from "./inspeccion";
 import { Instalacion_gas } from "./instalacion_gas";
 import { Medios_escape } from "./medios_escape";
@@ -50,5 +52,11 @@ export class Local extends BaseEntity {
   
   @OneToMany(() => Alarmas, (alarmas) => alarmas.local)
   alarmas:Alarmas[];
+
+  @OneToMany(() => Extintor_p, (extintor_p) => extintor_p.local)
+  extintor_p:Extintor_p[];
+
+  @OneToMany(() => Extincion_f, (extincion_f) => extincion_f.local)
+  extincion_f:Extincion_f[];
 }
 

@@ -8,8 +8,6 @@ export class Bombero extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
-  nombre_rango_bombero: string;
 
   @Column({ type: "varchar" })
   ordenGeneral: number;
@@ -23,7 +21,7 @@ export class Bombero extends BaseEntity {
   person:Person;
 
   
-  @ManyToOne(() => Rango, (rango) =>  rango.bombero)
+  @ManyToOne(() => Rango, (rango) =>  rango.bombero,{eager:true})
   rango:Rango;
 
   @OneToMany(() => Cargo_bombero, (cargo_bombero) =>  cargo_bombero.bombero)

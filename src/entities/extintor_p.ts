@@ -16,7 +16,7 @@ export class Extintor_p extends BaseEntity {
   tipo_extintor: string;
 
   @Column({ type: "varchar" })
-  capacidad_extrintor: boolean;
+  capacidad_extintor: boolean;
 
   @Column({ type: "varchar" })
   empresa: string;
