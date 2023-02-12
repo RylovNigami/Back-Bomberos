@@ -5,6 +5,7 @@ import { Caracteristica_local } from "../entities/caracteristica_local";
 import { Contrahuella } from "../entities/contrahuella";
 import { Escaleras } from "../entities/escaleras";
 import { Huella } from "../entities/huella";
+import { Local } from "../entities/local";
 import { Paredes } from "../entities/paredes";
 import { Pasamanos } from "../entities/pasamanos";
 import { Person } from "../entities/person";
@@ -19,7 +20,7 @@ import { Ventanas } from "../entities/ventanas";
 export const create = async (req: Request, res: Response) => {
   try {
     const { area,nro_niveles,nivel_inmueble,nombre_escaleras,nombre_contrahuella,nombre_huella, nombre_paredes, 
-        nombre_pasamanos, nombre_pisos, nombre_plafones, nombre_puertas, nombre_techos, nombre_ventanas } = req.body;
+        nombre_pasamanos, nombre_pisos, nombre_plafones, nombre_puertas, nombre_techos, nombre_ventanas,rif,firma_mercantil,ubicacion} = req.body;
 
     const queryRunner = AppDataSource.createQueryRunner();
     queryRunner.connect();
@@ -61,6 +62,11 @@ export const create = async (req: Request, res: Response) => {
     const ventanas = new Ventanas ();
     ventanas.nombre_ventanas=nombre_ventanas;
 
+    const local = new Local ();
+     local.rif=rif,
+     local.firma_mercantil=firma_mercantil,
+     local.ubicacion=ubicacion,
+
 
     try {
         await queryRunner.manager.save(caracterisca_local);
@@ -76,6 +82,7 @@ export const create = async (req: Request, res: Response) => {
         await queryRunner.manager.save(puertas);
         await queryRunner.manager.save(techos);
         await queryRunner.manager.save(ventanas);
+        await queryRunner.manager.save(local);
 
         await queryRunner.commitTransaction();
     } catch (error) {
@@ -88,7 +95,7 @@ export const create = async (req: Request, res: Response) => {
     // await rango.save();
     // await bombero.save();
 
-    return res.json([caracterisca_local,escaleras,huella,contrahuella,paredes,pasamanos,pisos,plafones,puertas,techos,ventanas]);
+    return res.json([caracterisca_local,escaleras,huella,contrahuella,paredes,pasamanos,pisos,plafones,puertas,techos,ventanas,local]);
   } catch (error) {
     if (error instanceof Error) {
       return res.status(500).json({ message: error.message });

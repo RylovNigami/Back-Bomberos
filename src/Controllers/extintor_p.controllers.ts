@@ -4,7 +4,7 @@ import { Extintor_p } from "../entities/extintor_p";
 
 export const createExtintor_p = async (req: Request, res: Response) => {
     try {
-      const { posee,operativo_extintor,tipo_extintor,capacidad_extintor,empresa,reubicacion,requiere,tipo_requiere } = req.body;
+      const { posee,operativo_extintor,tipo_extintor,capacidad_extintor,empresa,reubicacion,requiere,tipo_requiere,local } = req.body;
   
       const extintor_p = new Extintor_p();
       extintor_p.posee=posee,
@@ -14,7 +14,8 @@ export const createExtintor_p = async (req: Request, res: Response) => {
       extintor_p.empresa=empresa,
       extintor_p.reubicacion=reubicacion,
       extintor_p.requiere=requiere,
-      extintor_p.tipo_requiere=tipo_requiere;
+      extintor_p.tipo_requiere=tipo_requiere,
+      extintor_p.local=local;
         
   
   

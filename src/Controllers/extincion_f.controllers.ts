@@ -5,7 +5,7 @@ import { Extintor_p } from "../entities/extintor_p";
 
 export const createExtincion_f = async (req: Request, res: Response) => {
     try {
-      const { operativo_f,cap_tanque,ubic_tanque,cajetines_m,cantidad_c,mangueras,condicion_m,longitud,diametro,area_protegerf} = req.body;
+      const { operativo_f,cap_tanque,ubic_tanque,cajetines_m,cantidad_c,mangueras,condicion_m,longitud,diametro,area_protegerf,local} = req.body;
   
       const extincion_f = new Extincion_f();
       extincion_f.operativo_f=operativo_f,
@@ -15,8 +15,10 @@ export const createExtincion_f = async (req: Request, res: Response) => {
       extincion_f.cantidad_c=cantidad_c,
       extincion_f.mangueras=mangueras,
       extincion_f.condicion_m=condicion_m,
-      longitud.diametro=diametro,
-      longitud.area_protegerf=area_protegerf;
+      extincion_f.longitud=longitud,
+      extincion_f.diametro=diametro,
+      extincion_f.area_protegerf=area_protegerf,
+      extincion_f.local=local;
     
         
   

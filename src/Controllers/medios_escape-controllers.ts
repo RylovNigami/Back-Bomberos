@@ -7,7 +7,8 @@ import { Medios_escape } from "../entities/medios_escape";
 export const createMedios_escape = async (req: Request, res: Response) => {
   try {
     const {  vias_escape,escalera_vias,ancho_escalera,altura_pasamano,ancho_huella,altura_contrahuella,tipo_puerta,sentido_salida,observacion,
-        ventilacion,cinta_anti,sitio_cinta,iluminacion,tipo_lampara,cantidad_lampara,señalizacion,tipo_señal,pasillo,nro_pasillo,ancho_pasillo,rampa,angulo_rampa} = req.body;
+        ventilacion,cinta_anti,sitio_cinta,iluminacion,tipo_lampara,cantidad_lampara,señalizacion,tipo_señal,pasillo,nro_pasillo,ancho_pasillo,
+        rampa,angulo_rampa,local} = req.body;
 
     const medios_escape= new Medios_escape();
     medios_escape.vias_escape=vias_escape,
@@ -32,6 +33,7 @@ export const createMedios_escape = async (req: Request, res: Response) => {
     medios_escape.ancho_pasillo=ancho_pasillo,
     medios_escape.rampa=rampa,
     medios_escape.angulo_rampa=angulo_rampa,
+    medios_escape.local=local;
 
 
 

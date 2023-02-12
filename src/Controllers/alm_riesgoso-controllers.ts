@@ -7,7 +7,7 @@ export const createAlm_riesgoso = async (req: Request, res: Response) => {
     try {
       const { ident_material, material_p, tipo_contenedor, cant_contenedor, cap_contenedor,ubic_contenedor,ventilacion,tipo_ven, 
         condicion_ven, dique,condicion_dique,drenaje, condicion_drenaje,ident_riesgo, seguridad_material,kit_control,
-        condiciones_kit, proteccion_personal, condicion_proteccion,racda,nro_racda,resquimic,nro_resquimic,daex,nro_daex,mppmp,nro_mppmp,ducha, condicion_ducha } = req.body;
+        condiciones_kit, proteccion_personal, condicion_proteccion,racda,nro_racda,resquimic,nro_resquimic,daex,nro_daex,mppmp,nro_mppmp,ducha, condicion_ducha,local } = req.body;
   
       const alm_riesgoso = new Alm_riesgoso();
         alm_riesgoso.ident_material=ident_material,
@@ -39,7 +39,8 @@ export const createAlm_riesgoso = async (req: Request, res: Response) => {
         alm_riesgoso.mppmp=mppmp,
         alm_riesgoso.nro_mppmp=nro_mppmp,
         alm_riesgoso.ducha=ducha,
-        alm_riesgoso.condicion_ducha=condicion_ducha;
+        alm_riesgoso.condicion_ducha=condicion_ducha,
+        alm_riesgoso.local=local;
 
 
   

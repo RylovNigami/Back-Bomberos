@@ -94,6 +94,6 @@ export class Alm_riesgoso extends BaseEntity {
   condicion_ducha: boolean;
 
 
-  @ManyToOne(() => Local, (local) => local.alm_riesgoso)
+  @ManyToOne(() => Local, (local) => local.alm_riesgoso,{eager:true})
   local:Local;
 }

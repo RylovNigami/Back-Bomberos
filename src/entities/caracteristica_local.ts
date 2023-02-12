@@ -58,7 +58,7 @@ export class Caracteristica_local extends BaseEntity {
   @ManyToOne(() => Pisos, (pisos) => pisos.carasteristica_local,{eager:true})
   pisos:Pisos;
   
-  @ManyToOne(() => Local, (local) => local.caracteristica_local)
+  @ManyToOne(() => Local, (local) => local.caracteristica_local,{eager:true})
   local: Local;
 
   

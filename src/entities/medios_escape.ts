@@ -73,6 +73,6 @@ export class Medios_escape extends BaseEntity {
   @Column({ type: "varchar" })
   angulo_rampa: string;
 
-  @ManyToOne(() => Local, (local) => local.medios_escape)
+  @ManyToOne(() => Local, (local) => local.medios_escape,{eager:true})
   local:Local;
 }

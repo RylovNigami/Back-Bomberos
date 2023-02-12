@@ -36,7 +36,7 @@ export class Instalacion_gas extends BaseEntity {
   @Column({ type: "varchar" })
   ubic_valvula: string;
 
-  @ManyToOne(() => Local, (local) => local.instalacion_gas)
+  @ManyToOne(() => Local, (local) => local.instalacion_gas,{eager:true})
   local:Local;
 
 }
