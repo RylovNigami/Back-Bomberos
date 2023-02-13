@@ -14,9 +14,6 @@ export const createCargo_bombero = async (req: Request, res: Response) => {
       cargo_bombero.cargo=cargo,
       cargo_bombero.departamento=departamento,
       cargo_bombero.bombero=bombero;
-      
-       
-   
 
       const validar_cargo = await Cargo.findOne({where:{id:cargo}});
 
