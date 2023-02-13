@@ -12,8 +12,8 @@ export class Bombero extends BaseEntity {
   @Column({ type: "varchar" })
   ordenGeneral: number;
 
-  @Column({ type: "boolean" })
-  genero: boolean;
+  @Column({ type: "varchar" })
+  genero: string;
 
   @Column({ type: "boolean" })
   status: boolean;

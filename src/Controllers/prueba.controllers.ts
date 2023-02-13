@@ -25,7 +25,7 @@ export const create = async (req: Request, res: Response) => {
     rango.nombre_rango=nombre_rango;
 
     const bombero = new Bombero ();
-    bombero.nombre_rango_bombero= nombre_rango_bombero;
+    //bombero.nombre_rango_bombero= nombre_rango_bombero;
     bombero.ordenGeneral=ordenGeneral;
     bombero.status=status;
     bombero.person=person;
