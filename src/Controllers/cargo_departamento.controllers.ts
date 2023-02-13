@@ -12,7 +12,7 @@ import { Rango } from "../entities/rango";
 
 export const create = async (req: Request, res: Response) => {
   try {
-    const { status,temporabilidad,nombre_cargo,nombre_dep,orden_General,nombre_rango_bombero } = req.body;
+    const { status,temporabilidad,nombre_cargo,nombre_dep,ordenGeneral,genero } = req.body;
 
     const queryRunner = AppDataSource.createQueryRunner();
     queryRunner.connect();
@@ -35,9 +35,9 @@ export const create = async (req: Request, res: Response) => {
 
     const bombero= new Bombero ();
 
-    bombero.ordenGeneral=orden_General,
-    bombero.status=status,
-    bombero.nombre_rango_bombero=nombre_rango_bombero;
+    bombero.ordenGeneral=ordenGeneral,
+    bombero.genero=genero,
+    bombero.status=status;
 
 
 
