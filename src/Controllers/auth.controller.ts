@@ -29,7 +29,7 @@ export const loginCtrl = async (req: Request, res: Response) => {
         created: user?.createdAt
     }
 
-    const jwt = sign(payload, ${"jwt-t0k3n-s3cr3t"}, { expiresIn: ${'24h'} });
+    const jwt = sign(payload, `${"jwt-t0k3n-s3cr3t"}`, { expiresIn: `${'24h'}` });
 
     Object.assign(payload, { jwt })
 
