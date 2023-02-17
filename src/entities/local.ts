@@ -16,13 +16,13 @@ export class Local extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "numeric", unique:true })
   rif: number;
 
   @Column({ type: "varchar" })
   ubicacion: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar", unique:true })
   firma_mercantil: string;
 
   @ManyToOne(() => Parroquia, (parroquia) =>  parroquia.local)

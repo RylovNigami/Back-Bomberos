@@ -14,11 +14,11 @@ export class Person extends BaseEntity {
   @Column({ type: "varchar" })
   lastName: string;
 
-  @Column({ type: "varchar", unique: true })
+  @Column({ type: "numeric", unique: true })
   cedula: number;
 
-  @Column({ type: "varchar" })
-  telefono: string;
+  @Column({ type: "numeric" })
+  telefono: number;
 
   @Column({ type: "varchar" })
   correo: string;

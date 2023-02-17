@@ -9,6 +9,7 @@ export class Bombero extends BaseEntity {
   id: number;
 
 
+
   @Column({ type: "varchar" })
   ordenGeneral: number;
 

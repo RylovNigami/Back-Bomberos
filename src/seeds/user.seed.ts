@@ -12,7 +12,7 @@ export default class CreateUserSeeder implements Seeder{
         .into(User)
         .values({
             email:"admin@gmail.com",
-            password:await hash ("123456pass",10),
+            password:await hash ("12345678pass",10),
             active:true,
         })
         .execute();
