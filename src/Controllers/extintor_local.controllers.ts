@@ -1,12 +1,20 @@
 import { Response, Request } from "express";
 import { Caracteristica_local } from "../entities/caracteristica_local";
+import { Extintor_local } from "../entities/extintor_local";
 import { Extintor_p } from "../entities/extintor_p";
 
 export const createExtintor_local = async (req: Request, res: Response) => {
     try {
-      const {  } = req.body;
+      const { cant_portatil,operativo_extintor,tipo_extintor,capacidad_extintor,empresa,reubicacion,local,extintor_p } = req.body;
   
       const extintor_local = new Extintor_local();
+      extintor_local.cant_portatil=cant_portatil,
+      extintor_local.operativo_extintor=operativo_extintor,
+      extintor_local.tipo_extintor=tipo_extintor,
+      extintor_local.capacidad_extintor=capacidad_extintor,
+      extintor_local.empresa=empresa,
+      extintor_local.reubicacion=reubicacion;
+    
       
    
         
@@ -22,11 +30,11 @@ export const createExtintor_local = async (req: Request, res: Response) => {
     }
   };
   
-  export const getExtintor_p = async (req: Request, res: Response) => {
+  export const getExtintor_local = async (req: Request, res: Response) => {
     try {
-      const extintor_p = await Extintor_p.find();
+      const extintor_local = await Extintor_local.find();
   
-      return res.json(extintor_p);
+      return res.json(extintor_local);
     } catch (error) {
       if (error instanceof Error) {
         return res.status(500).json({ message: error.message });
@@ -34,28 +42,28 @@ export const createExtintor_local = async (req: Request, res: Response) => {
     }
   };
   
-  export const updateExtintor_p = async (req: Request, res: Response) => {
+  export const updateExtintor_local = async (req: Request, res: Response) => {
     const { id } = req.params;
   
-    const extintor_p = await Extintor_p.findOneBy({ id: parseInt(id) });
-    console.log(extintor_p);
+    const extintor_local = await Extintor_p.findOneBy({ id: parseInt(id) });
+    console.log(extintor_local);
   
-    if (!extintor_p)
+    if (!extintor_local)
       return res.status(404).json({ message: " does not exists" });
   
-   const update =  await Extintor_p.update({ id: parseInt(id) }, req.body);
+   const update =  await Extintor_local.update({ id: parseInt(id) }, req.body);
   
     return res.json(update);
   };
   
-  export const deleteExtintor_p = async (req: Request, res: Response) => {
+  export const deleteExtintor_local = async (req: Request, res: Response) => {
     try {
       const { id } = req.params;
   
-      const result = await Extintor_p.delete({ id: parseInt(id) });
+      const result = await Extintor_local.delete({ id: parseInt(id) });
   
       if (result.affected === 0) {
-        return res.status(404).json({ message: "cargo not found" });
+        return res.status(404).json({ message: "not found" });
       }
   
       return res.status(201).json({ message: "Se ha borrado exitosamente" });

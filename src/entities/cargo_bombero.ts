@@ -1,4 +1,4 @@
-import { BaseEntity, Column,ManyToOne,OneToMany, Entity, PrimaryGeneratedColumn } from "typeorm";
+/*import { BaseEntity, Column,ManyToOne,OneToMany, Entity, PrimaryGeneratedColumn } from "typeorm";
 import { Bombero } from "./bombero";
 import { Cargo } from "./cargo";
 import { Departamento } from "./departamento";
@@ -27,3 +27,4 @@ export class Cargo_bombero extends BaseEntity {
   @OneToMany(() => Inspeccion, (inspeccion) => inspeccion.cargo_bombero)
   inspeccion:Inspeccion[];
 }
+*/

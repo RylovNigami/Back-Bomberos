@@ -1,4 +1,5 @@
 import { BaseEntity, Column, Entity, ManyToOne,PrimaryGeneratedColumn } from "typeorm";
+import { Extintor_local } from "./extintor_local";
 import { Local } from "./local";
 
 
@@ -21,6 +22,6 @@ export class Extintor_p extends BaseEntity {
   tipo_requiere: string;
 
 
-  @ManyToOne(() => Local, (local) => local.extintor_p,{eager:true})
-  local:Local;
+  @ManyToOne(() => Extintor_local, (extintor_local) => extintor_local.extintor_p,{eager:true})
+  extintor_local:Extintor_local;
 }

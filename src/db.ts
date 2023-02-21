@@ -7,7 +7,7 @@ import { Alm_riesgoso } from "./entities/alm_riesgoso";
 import { Alm_seguro } from "./entities/alm_seguro";
 import { Bombero } from "./entities/bombero";
 import { Caracteristica_local } from "./entities/caracteristica_local";
-import { Cargo_bombero } from "./entities/cargo_bombero";
+/*import { Cargo_bombero } from "./entities/cargo_bombero";*/
 import { Cargo } from "./entities/cargo";
 import { Contrahuella } from "./entities/contrahuella";
 import { Departamento } from "./entities/departamento";
@@ -31,6 +31,7 @@ import { Puertas } from "./entities/puertas";
 import { Rango } from "./entities/rango";
 import { Techos } from "./entities/techos";
 import { Ventanas } from "./entities/ventanas";
+import { Extintor_local } from "./entities/extintor_local";
 
 
 export const AppDataSource = new DataSource({
@@ -40,8 +41,8 @@ export const AppDataSource = new DataSource({
   password: process.env.DB_PASSWORD,
   port: Number(process.env.DB_PORT),
   database: process.env.DB_NAME,
-  entities: [User,Person,Alarmas,Alm_riesgoso,Alm_seguro,Bombero,Caracteristica_local,Cargo_bombero,Cargo,Contrahuella,
-  Departamento,Electricidad,Escaleras,Estado,Extincion_f,Extintor_p,Huella,Inspeccion,Instalacion_gas,Local,Medios_escape,
+  entities: [User,Person,Alarmas,Alm_riesgoso,Alm_seguro,Bombero,Caracteristica_local/*,Cargo_bombero*/,Cargo,Contrahuella,
+  Departamento,Electricidad,Escaleras,Estado,Extincion_f,Extintor_p,Extintor_local,Huella,Inspeccion,Instalacion_gas,Local,Medios_escape,
 Municipio,Paredes,Parroquia,Pasamanos,Pisos,Plafones,Puertas,Rango,Techos,Ventanas],
   synchronize: true,
 });

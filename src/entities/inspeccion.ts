@@ -1,5 +1,6 @@
 import { BaseEntity, Column, Entity,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Cargo_bombero } from "./cargo_bombero";
+import { Bombero } from "./bombero";
+
 import { Local } from "./local";
 import { Person } from "./person";
 
@@ -18,8 +19,8 @@ export class Inspeccion extends BaseEntity {
   @Column({ type: "date" })
   fecha: Date;
 
-  @ManyToOne(() => Cargo_bombero, (cargo_bombero) => cargo_bombero.inspeccion,{ eager:true})
-  cargo_bombero:Cargo_bombero;
+  @ManyToOne(() => Bombero, (bombero) => bombero.inspeccion,{ eager:true})
+  bombero:Bombero;
 
   @ManyToOne(() => Local, (local) => local.inspeccion,{ eager:true})
   local:Local;

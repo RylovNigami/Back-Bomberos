@@ -1,7 +1,7 @@
 import { Response, Request } from "express";
 import { AppDataSource } from "../db";
-import { Bombero } from "../entities/bombero";
-import { Cargo_bombero } from "../entities/cargo_bombero";
+import { Bombero} from "../entities/bombero";
+
 import { Inspeccion } from "../entities/inspeccion";
 import { Local } from "../entities/local";
 import { Person } from "../entities/person";
@@ -35,9 +35,8 @@ export const create = async (req: Request, res: Response) => {
     inspeccion.fecha=fecha,
     inspeccion.hora=hora;
 
-    const cargo_bombero = new Cargo_bombero ();
-    cargo_bombero.status=status,
-    cargo_bombero.temporabilidad=temporabilidad;
+    const bombero = new  Bombero();
+
 
     
 

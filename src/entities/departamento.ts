@@ -1,5 +1,6 @@
 import { BaseEntity, Column, Entity,OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Cargo_bombero } from "./cargo_bombero";
+import { Bombero } from "./bombero";
+
 
 @Entity("Departamento")
 export class Departamento extends BaseEntity {
@@ -9,6 +10,6 @@ export class Departamento extends BaseEntity {
   @Column({ type: "varchar" })
   nombre_dep: string;
 
-  @OneToMany(() => Cargo_bombero, (cargo_bombero) => cargo_bombero.departamento)
-  cargo_bombero:Cargo_bombero[];
+  @OneToMany(() => Bombero, (bombero) => bombero.departamento)
+  bombero:Bombero[];
 }
