@@ -1,3 +1,3 @@
 {
-  "nombre_puertas": ["madera", "metal", "hierro", "aluminio", "otro"]
+  "puertas": ["madera", "metal", "hierro", "aluminio", "otro"]
 }
