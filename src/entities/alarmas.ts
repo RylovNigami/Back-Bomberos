@@ -6,43 +6,43 @@ export class Alarmas extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
-  sistema_alarma: string;
+  @Column({ type: "boolean" })
+  sistema_alarma: boolean;
 
-  @Column({ type: "varchar" })
-  norma_alarma: boolean;
-
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   sistema_deteccion: boolean;
 
   @Column({ type: "varchar" })
-  condiciones: boolean;
+  marca_alarma: boolean;
 
   @Column({ type: "varchar" })
-  tipo: boolean;
+  condiciones: string;
 
   @Column({ type: "varchar" })
+  tipo: string;
+
+  @Column({ type: "numeric" })
   numero_zona: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   area_proteger: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "numeric" })
   calor: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "numeric" })
   humo_f: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "numeric" })
   humo_i: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "numeric" })
   combinado: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   detectores_a: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   estacion: boolean;
 
   @Column({ type: "varchar" })

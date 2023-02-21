@@ -20,7 +20,7 @@ import { Ventanas } from "../entities/ventanas";
 export const create = async (req: Request, res: Response) => {
   try {
     const { area,nro_niveles,nivel_inmueble,nombre_escaleras,nombre_contrahuella,nombre_huella, nombre_paredes, 
-        nombre_pasamanos, nombre_pisos, nombre_plafones, nombre_puertas, nombre_techos, nombre_ventanas,rif,firma_mercantil,ubicacion} = req.body;
+        nombre_pasamanos, nombre_pisos, nombre_plafones, nombre_puertas,resistencia, nombre_techos, nombre_ventanas,rif,firma_mercantil,ubicacion} = req.body;
 
     const queryRunner = AppDataSource.createQueryRunner();
     queryRunner.connect();
@@ -51,10 +51,11 @@ export const create = async (req: Request, res: Response) => {
     pisos.nombre_pisos=nombre_pisos;
 
     const plafones = new Plafones ();
-    plafones.nombre_plafones=nombre_pisos;
+    plafones.nombre_plafones=nombre_plafones;
 
     const puertas = new Puertas ();
-    puertas.nombre_puertas=nombre_puertas;
+    puertas.nombre_puertas=nombre_puertas,
+    puertas.resistencia=resistencia;
 
     const techos = new Techos ();
     techos.nombre_techos=nombre_techos;
@@ -65,7 +66,7 @@ export const create = async (req: Request, res: Response) => {
     const local = new Local ();
      local.rif=rif,
      local.firma_mercantil=firma_mercantil,
-     local.ubicacion=ubicacion,
+     local.ubicacion=ubicacion;
 
 
     try {

@@ -12,9 +12,9 @@ export class Bombero extends BaseEntity {
   @Column({ type: "varchar" })
   ordenGeneral: number;
 
-  @Column({ type: "varchar" })
-  genero: string;
-
+  @Column({  type:"varchar"})
+  genero:string;
+  
   @Column({ type: "boolean" })
   status: boolean;
 

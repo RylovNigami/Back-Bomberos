@@ -8,12 +8,12 @@ import { Paredes } from "../entities/paredes";
 
 export const createAlarmas = async (req: Request, res: Response) => {
   try {
-    const { sistema_alarma, norma_alarma,sistema_deteccion,condiciones,tipo,numero_zona,area_proteger,calor,humo_i,humo_f,
+    const { sistema_alarma, marca_alarma,sistema_deteccion,condiciones,tipo,numero_zona,area_proteger,calor,humo_i,humo_f,
     combinado,detectores_a,estacion,estacion_c,estacion_clase,difusores_c,difusores_s,cubren_a,local} = req.body;
 
     const alarmas = new Alarmas();
    alarmas.sistema_alarma=sistema_alarma,
-   alarmas.norma_alarma=norma_alarma,
+   alarmas.marca_alarma=marca_alarma,
    alarmas.sistema_deteccion=sistema_deteccion,
    alarmas.condiciones=condiciones,
    alarmas.tipo=tipo,

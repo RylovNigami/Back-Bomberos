@@ -32,6 +32,7 @@ import { Rango } from "./entities/rango";
 import { Techos } from "./entities/techos";
 import { Ventanas } from "./entities/ventanas";
 
+
 export const AppDataSource = new DataSource({
   type: `postgres`,
   host: process.env.DB_HOST,

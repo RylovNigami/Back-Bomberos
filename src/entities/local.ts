@@ -16,13 +16,13 @@ export class Local extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "numeric",unique:true })
   rif: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar" ,nullable:true})
   ubicacion: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",unique:true })
   firma_mercantil: string;
 
   @ManyToOne(() => Parroquia, (parroquia) =>  parroquia.local)
@@ -53,7 +53,7 @@ export class Local extends BaseEntity {
   @OneToMany(() => Alarmas, (alarmas) => alarmas.local)
   alarmas:Alarmas[];
 
-  @OneToMany(() => Extintor_p, (extintor_p) => extintor_p.local)
+  @OneToMany(() => Extintor_p, (Extintor_p) => Extintor_p.local)
   extintor_p:Extintor_p[];
 
   @OneToMany(() => Extincion_f, (extincion_f) => extincion_f.local)

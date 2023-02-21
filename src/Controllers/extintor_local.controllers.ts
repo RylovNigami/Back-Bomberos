@@ -2,20 +2,17 @@ import { Response, Request } from "express";
 import { Caracteristica_local } from "../entities/caracteristica_local";
 import { Extintor_p } from "../entities/extintor_p";
 
-export const createExtintor_p = async (req: Request, res: Response) => {
+export const createExtintor_local = async (req: Request, res: Response) => {
     try {
-      const { posee,nro_requiere,requiere,tipo_requiere } = req.body;
+      const {  } = req.body;
   
-      const extintor_p = new Extintor_p();
-      extintor_p.posee=posee,
-      extintor_p.nro_requiere=nro_requiere,
-      extintor_p.requiere=requiere,
-      extintor_p.tipo_requiere=tipo_requiere;
-     
+      const extintor_local = new Extintor_local();
+      
+   
         
   
   
-      await extintor_p.save();
+      await extintor_local.save();
   
       return res.json(Extintor_p);
     } catch (error) {

@@ -16,14 +16,14 @@ export class Caracteristica_local extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
-  nro_niveles: string;
+  @Column({ type: "numeric" })
+  nro_niveles: number;
 
-  @Column({ type: "varchar" })
-  nivel_inmueble: string;
+  @Column({ type: "numeric" })
+  nivel_inmueble: number;
 
-  @Column({ type: "varchar" })
-  area: string;
+  @Column({ type: "numeric" })
+  area: number;
 
   @ManyToOne(() => Puertas, (puertas) => puertas.carasteristica_local,{eager:true})
   puertas:Puertas;

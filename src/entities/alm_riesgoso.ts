@@ -6,7 +6,7 @@ export class Alm_riesgoso extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   ident_material: boolean;
 
   @Column({ type: "varchar" })
@@ -15,8 +15,8 @@ export class Alm_riesgoso extends BaseEntity {
   @Column({ type: "varchar" })
   tipo_contenedor: string;
 
-  @Column({ type: "varchar" })
-  cant_contenedor: string;
+  @Column({ type: "numeric" })
+  cant_contenedor: number;
 
   @Column({ type: "varchar" })
   cap_contenedor: string;
@@ -24,73 +24,73 @@ export class Alm_riesgoso extends BaseEntity {
   @Column({ type: "varchar" })
   ubic_contenedor: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   ventilacion: boolean;
 
   @Column({ type: "varchar" })
   tipo_ven: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   condicion_ven: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   dique: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   condicion_dique: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   drenaje: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   condicion_drenaje: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   ident_riesgo: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   seguridad_material: boolean;
 
   @Column({ type: "varchar" })
   kit_control: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   condiciones_kit: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   proteccion_personal: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   condicion_proteccion: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   racda: boolean;
 
-  @Column({ type: "varchar" })
-  nro_racda: string;
+  @Column({ type: "numeric" })
+  nro_racda: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   resquimic: boolean;
 
-  @Column({ type: "varchar" })
-  nro_resquimic: string;
+  @Column({ type: "numeric" })
+  nro_resquimic: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   daex: boolean;
 
-  @Column({ type: "varchar" })
-  nro_daex: string;
+  @Column({ type: "numeric" })
+  nro_daex: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   mppmp: boolean;
 
-  @Column({ type: "varchar" })
-  nro_mppmp: string;
+  @Column({ type: "numeric" })
+  nro_mppmp: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   ducha: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   condicion_ducha: boolean;
 
 

@@ -9,13 +9,13 @@ export class Alm_seguro extends BaseEntity {
   @Column({ type: "varchar" })
   tipo: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   norma_alm: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   orden_limpieza: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   proteccion: boolean;
 
   @Column({ type: "varchar" })

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { User } from "../entities/user";
-import { JwtPayload, sign } from 'jsonwebtoken';
+import { JwtPayload, sign } from "jsonwebtoken";
 
 interface RequestExt extends Request {
     user?: string | JwtPayload;

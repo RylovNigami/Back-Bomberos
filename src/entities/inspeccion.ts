@@ -12,10 +12,10 @@ export class Inspeccion extends BaseEntity {
   @Column({ type: "varchar",unique:true })
   nro_inspeccion: number;
 
-  @Column({ type: "varchar" })
-  hora : string;
+  @Column({ type: "date" })
+  hora : Date;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "date" })
   fecha: Date;
 
   @ManyToOne(() => Cargo_bombero, (cargo_bombero) => cargo_bombero.inspeccion,{ eager:true})

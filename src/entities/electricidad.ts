@@ -5,20 +5,26 @@ export class Electricidad extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
-  tension: string;
+  @Column({ type: "numeric" })
+  tension: number;
 
   @Column({ type: "varchar" })
   material_tablero: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
+  canalizados: boolean;
+
+  @Column({ type: "boolean" })
   señalizacion: boolean;
 
   @Column({ type: "varchar" })
+  ubic_tablero: string;
+
+  @Column({ type: "boolean" })
   ventilacion: boolean;
 
   @Column({ type: "varchar" })
-  tipo_ven: boolean;
+  tipo_ven: string;
 
   @Column({ type: "varchar" })
   tipo_interruptor: string;
