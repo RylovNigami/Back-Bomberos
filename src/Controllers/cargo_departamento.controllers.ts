@@ -1,4 +1,4 @@
-import { Response, Request } from "express";
+/*import { Response, Request } from "express";
 import { AppDataSource } from "../db";
 import { Bombero } from "../entities/bombero";
 import { Cargo } from "../entities/cargo";
@@ -67,5 +67,5 @@ export const create = async (req: Request, res: Response) => {
       return res.status(500).json({ message: error.message });
     }
   }
-};
+};*/
 

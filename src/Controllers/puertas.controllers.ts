@@ -10,11 +10,11 @@ import { Puertas } from "../entities/puertas";
 
 export const createPuertas = async (req: Request, res: Response) => {
   try {
-    const { nombre_puertas } = req.body;
+    const { nombre_puertas, resistencia } = req.body;
 
     const puertas = new Puertas();
     puertas.nombre_puertas=nombre_puertas;        
- 
+    puertas.resistencia=resistencia;
 
 
     await puertas.save();

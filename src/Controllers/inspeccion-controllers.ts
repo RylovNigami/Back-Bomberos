@@ -1,8 +1,8 @@
 import { Response, Request } from "express";
-import { Cargo_bombero } from "../entities/cargo_bombero";
+//import { Cargo_bombero } from "../entities/cargo_bombero";
 import { Inspeccion } from "../entities/inspeccion";
 import { Local } from "../entities/local";
-import { Person } from "../entities/person"; 
+import { Person } from "../entities/person";  
 
 
 export const createInspeccion = async (req: Request, res: Response) => {
@@ -15,7 +15,7 @@ export const createInspeccion = async (req: Request, res: Response) => {
     inspeccion.fecha=fecha;
     inspeccion.local=local;
     inspeccion.person=person;
-    inspeccion.cargo_bombero=cargo_bombero;
+    //inspeccion.cargo_bombero=cargo_bombero;
 
     const validar_person = await Person.findOne({where:{id:person}});
 

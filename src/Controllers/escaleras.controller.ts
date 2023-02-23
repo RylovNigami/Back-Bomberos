@@ -6,13 +6,11 @@ import { Escaleras } from "../entities/escaleras";
 
 export const createEscaleras = async (req: Request, res: Response) => {
   try {
-    const {  nombre_escaleras} = req.body;
+    const { nombre_escaleras} = req.body;
 
     const escaleras = new Escaleras();
-
+    escaleras.nombre_escaleras = nombre_escaleras;
  
-
-
     await escaleras.save();
 
     return res.json(escaleras);

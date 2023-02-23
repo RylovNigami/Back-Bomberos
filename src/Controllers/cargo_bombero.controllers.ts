@@ -1,4 +1,4 @@
-import { Response, Request } from "express";
+/*import { Response, Request } from "express";
 import { Cargo } from "../entities/cargo";
 import { Cargo_bombero } from "../entities/cargo_bombero";
 import { Departamento } from "../entities/departamento";
@@ -92,5 +92,5 @@ export const createCargo_bombero = async (req: Request, res: Response) => {
         return res.status(500).json({ message: "Se ha eliminado con exito" });
       }
     }
-  };
+  };*/
   
