@@ -1,4 +1,5 @@
 import { BaseEntity, Column, Entity,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { tipovenEnum } from "../enum/tipoven";
 import { Local } from "./local";
 @Entity("Electricidad")
 export class Electricidad extends BaseEntity {
@@ -24,7 +25,7 @@ export class Electricidad extends BaseEntity {
   ventilacion: boolean;
 
   @Column({ type: "varchar" })
-  tipo_ven: string;
+  tipo_ven: tipovenEnum;
 
   @Column({ type: "varchar" })
   tipo_interruptor: string;

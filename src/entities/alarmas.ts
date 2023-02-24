@@ -1,4 +1,7 @@
 import { BaseEntity, Column, Entity, ManyToOne,PrimaryGeneratedColumn } from "typeorm";
+import { condicionalarmaEnum } from "../enum/condicionalarma";
+import { tipoalarmaEnum } from "../enum/tipoalarma";
+import { tipodeteccionEnum } from "../enum/tipodeteccion";
 import { Local } from "./local";
 
 @Entity("Alarmas")
@@ -10,16 +13,16 @@ export class Alarmas extends BaseEntity {
   sistema_alarma: boolean;
 
   @Column({ type: "boolean" })
-  sistema_deteccion: boolean;
+  sistema_deteccion: tipodeteccionEnum;
 
   @Column({ type: "varchar" })
-  marca_alarma: boolean;
+  marca_alarma: string;
 
-  @Column({ type: "varchar" })
-  condiciones: string;
+  @Column({ type: "boolean" })
+  condiciones: condicionalarmaEnum;
 
-  @Column({ type: "varchar" })
-  tipo: string;
+  @Column({ type: "boolean" })
+  tipo: tipoalarmaEnum;
 
   @Column({ type: "numeric" })
   numero_zona: number;

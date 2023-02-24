@@ -1,5 +1,5 @@
 import { Response, Request } from "express";
-import { Cargo_bombero } from "../entities/cargo_bombero";
+import { Bombero } from "../entities/bombero";
 import { Inspeccion } from "../entities/inspeccion";
 import { Local } from "../entities/local";
 import { Person } from "../entities/person"; 
@@ -7,7 +7,7 @@ import { Person } from "../entities/person";
 
 export const createInspeccion = async (req: Request, res: Response) => {
   try {
-    const { nro_inspeccion,hora,fecha, local, person,cargo_bombero } = req.body;
+    const { nro_inspeccion,hora,fecha, local, person,bombero } = req.body;
 
     const inspeccion = new Inspeccion();
     inspeccion.nro_inspeccion=nro_inspeccion,
@@ -15,7 +15,7 @@ export const createInspeccion = async (req: Request, res: Response) => {
     inspeccion.fecha=fecha;
     inspeccion.local=local;
     inspeccion.person=person;
-    inspeccion.cargo_bombero=cargo_bombero;
+    inspeccion.bombero=bombero;
 
     const validar_person = await Person.findOne({where:{id:person}});
 
@@ -29,10 +29,10 @@ export const createInspeccion = async (req: Request, res: Response) => {
       return res.status(500).json({ message: "no se encontro el local"});
     }
 
-    const validar_cargo_bombero = await Person.findOne({where:{id:cargo_bombero}});
+    const validar_bombero = await Bombero.findOne({where:{id:bombero}});
 
-    if(!validar_cargo_bombero){
-      return res.status(500).json({ message: "no se encontro esta persona"});
+    if(!validar_bombero){
+      return res.status(500).json({ message: "no se encontro este bombero"});
     }
 
 

@@ -1,58 +1,42 @@
-import { BaseEntity, Column, Entity,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity,ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { condicionvenEnum } from "../enum/condicionVen";
+import { tipovenEnum } from "../enum/tipoven";
 import { Local } from "./local";
+import { Medios_local } from "./medios_local";
 
 @Entity("Medios_escape")
 export class Medios_escape extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   vias_escape: boolean;
 
-  
-  @Column({ type: "varchar" })
-  escalera_vias: boolean;
-
-  @Column({ type: "varchar" })
-  ancho_escalera: string;
-
-  @Column({ type: "varchar" })
-  altura_pasamano: string;
-
-  @Column({ type: "varchar" })
-  ancho_huella: string;
-
-  @Column({ type: "varchar" })
-  altura_contrahuella: string;
-
-  @Column({ type: "varchar" })
-  tipo_puerta: string;
-
-  @Column({ type: "varchar" })
-  sentido_salida: boolean;
-
-  @Column({ type: "varchar" })
-  observacion: string;
-
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   ventilacion: boolean;
 
   @Column({ type: "varchar" })
+  condicion_ven: condicionvenEnum;
+
+  @Column({ type: "varchar" })
+  tipo_ven: tipovenEnum;
+
+  @Column({ type: "boolean" })
   cinta_anti: boolean;
 
   @Column({ type: "varchar" })
   sitio_cinta: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   iluminacion: boolean;
 
   @Column({ type: "varchar" })
   tipo_lampara: string;
 
-  @Column({ type: "varchar" })
-  cantidad_lampara: string;
+  @Column({ type: "numeric" })
+  cantidad_lampara: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   señalizacion: boolean;
 
   @Column({ type: "varchar" })
@@ -61,18 +45,18 @@ export class Medios_escape extends BaseEntity {
   @Column({ type: "varchar" })
   pasillo: boolean;
 
-  @Column({ type: "varchar" })
-  nro_pasillo: string;
+  @Column({ type: "numeric" })
+  nro_pasillo: number;
 
   @Column({ type: "varchar" })
   ancho_pasillo: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean" })
   rampa: boolean;
 
-  @Column({ type: "varchar" })
-  angulo_rampa: string;
+  @Column({ type: "numeric" })
+  angulo_rampa: number;
 
-  @ManyToOne(() => Local, (local) => local.medios_escape,{eager:true})
-  local:Local;
+  @OneToMany(() => Medios_local, (medios_local) => medios_local.medios_escape)
+  medios_local:Medios_escape[];
 }

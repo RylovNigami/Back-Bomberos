@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { create } from "../Controllers/prueba.controllers";
+import { create } from "../Controllers/extintores.controllers";
   
 export const router = Router();
   

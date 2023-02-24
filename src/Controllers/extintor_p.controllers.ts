@@ -1,5 +1,4 @@
 import { Response, Request } from "express";
-import { Caracteristica_local } from "../entities/caracteristica_local";
 import { Extintor_p } from "../entities/extintor_p";
 
 export const createExtintor_p = async (req: Request, res: Response) => {

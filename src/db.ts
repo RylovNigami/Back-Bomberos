@@ -32,6 +32,8 @@ import { Rango } from "./entities/rango";
 import { Techos } from "./entities/techos";
 import { Ventanas } from "./entities/ventanas";
 import { Extintor_local } from "./entities/extintor_local";
+import { Medios_local } from "./entities/medios_local";
+import { Extincion_local } from "./entities/extincion_local";
 
 
 export const AppDataSource = new DataSource({
@@ -41,8 +43,8 @@ export const AppDataSource = new DataSource({
   password: process.env.DB_PASSWORD,
   port: Number(process.env.DB_PORT),
   database: process.env.DB_NAME,
-  entities: [User,Person,Alarmas,Alm_riesgoso,Alm_seguro,Bombero,Caracteristica_local/*,Cargo_bombero*/,Cargo,Contrahuella,
-  Departamento,Electricidad,Escaleras,Estado,Extincion_f,Extintor_p,Extintor_local,Huella,Inspeccion,Instalacion_gas,Local,Medios_escape,
-Municipio,Paredes,Parroquia,Pasamanos,Pisos,Plafones,Puertas,Rango,Techos,Ventanas],
+  entities: [User,Person,Alarmas,Alm_riesgoso,Alm_seguro,Bombero,Caracteristica_local,Cargo,Contrahuella,
+  Departamento,Electricidad,Escaleras,Estado,Extincion_f,Extincion_local,Extintor_p,Extintor_local,Huella,Inspeccion,Instalacion_gas,Local,Medios_escape,
+  Medios_local,Municipio,Paredes,Parroquia,Pasamanos,Pisos,Plafones,Puertas,Rango,Techos,Ventanas],
   synchronize: true,
 });

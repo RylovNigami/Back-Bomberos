@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { create } from "../Controllers/cargo_departamento.controllers";
+import { create,get } from "../Controllers/medios_local.controllers";
   
 export const router = Router();
   
 router.post("/", create);
   
-router.get("/");
+router.get("/",get);
   
 router.put("/:id");
   

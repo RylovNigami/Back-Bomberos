@@ -23,7 +23,7 @@ import { Extintor_p } from "./extintor_p";
     tipo_extintor: string;
   
     @Column({ type: "varchar" })
-    capacidad_extintor: boolean;
+    capacidad_extintor: string;
   
     @Column({ type: "varchar" })
     empresa: string;
@@ -31,9 +31,9 @@ import { Extintor_p } from "./extintor_p";
     @Column({ type: "varchar" })
     reubicacion: boolean;
 
-    @ManyToOne(() => Local, (local) => local.extintor_local)
+    @ManyToOne(() => Local, (local) => local.extintor_local,{eager:true})
     local:Local;
 
-    @ManyToOne(() => Extintor_p, (extintor_p) => extintor_p.extintor_local)
+    @ManyToOne(() => Extintor_p, (extintor_p) => extintor_p.extintor_local,{eager:true})
     extintor_p:Extintor_p;
   }

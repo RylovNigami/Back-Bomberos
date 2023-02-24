@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, ManyToOne,PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, ManyToOne,OneToMany,PrimaryGeneratedColumn } from "typeorm";
 import { Extintor_local } from "./extintor_local";
 import { Local } from "./local";
 
@@ -22,6 +22,6 @@ export class Extintor_p extends BaseEntity {
   tipo_requiere: string;
 
 
-  @ManyToOne(() => Extintor_local, (extintor_local) => extintor_local.extintor_p,{eager:true})
-  extintor_local:Extintor_local;
+  @OneToMany(() => Extintor_local, (extintor_local) => extintor_local.extintor_p)
+  extintor_local:Extintor_local[];
 }
