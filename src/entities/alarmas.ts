@@ -1,7 +1,9 @@
-import { BaseEntity, Column, Entity, ManyToOne,PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, ManyToOne,OneToMany,PrimaryGeneratedColumn } from "typeorm";
 import { condicionalarmaEnum } from "../enum/condicionalarma";
+import { condicionvenEnum } from "../enum/condicionVen";
 import { tipoalarmaEnum } from "../enum/tipoalarma";
 import { tipodeteccionEnum } from "../enum/tipodeteccion";
+import { Alarmas_local } from "./alarmas_local";
 import { Local } from "./local";
 
 @Entity("Alarmas")
@@ -12,16 +14,16 @@ export class Alarmas extends BaseEntity {
   @Column({ type: "boolean" })
   sistema_alarma: boolean;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "varchar" })
   sistema_deteccion: tipodeteccionEnum;
 
   @Column({ type: "varchar" })
   marca_alarma: string;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "varchar" })
   condiciones: condicionalarmaEnum;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "varchar" })
   tipo: tipoalarmaEnum;
 
   @Column({ type: "numeric" })
@@ -45,25 +47,6 @@ export class Alarmas extends BaseEntity {
   @Column({ type: "boolean" })
   detectores_a: boolean;
 
-  @Column({ type: "boolean" })
-  estacion: boolean;
-
-  @Column({ type: "varchar" })
-  estacion_clase: string;
-
-  @Column({ type: "varchar" })
-  estacion_c: boolean;
-
-  @Column({ type: "varchar" })
-  difusores_s: boolean;
-
-  @Column({ type: "varchar" })
-  difusores_c: boolean;
-
-  @Column({ type: "varchar" })
-  cubren_a: boolean;
-
-
-  @ManyToOne(() => Local, (local) => local.alarmas,{eager:true})
-  local:Local;
+  @OneToMany(() => Alarmas_local, (alarmas_local) => alarmas_local.alarmas)
+  alarmas_local:Alarmas_local[];
 }

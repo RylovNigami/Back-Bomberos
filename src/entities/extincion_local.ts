@@ -17,7 +17,7 @@ export class Extincion_local extends BaseEntity {
   @Column({ type: "boolean" })
   mangueras: boolean;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "varchar" })
   condicion_m: condicionvenEnum;
 
   @Column({ type: "numeric" })

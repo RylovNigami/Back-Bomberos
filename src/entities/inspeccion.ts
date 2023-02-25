@@ -1,4 +1,5 @@
 import { BaseEntity, Column, Entity,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { StatusEnum } from "../enum/status";
 import { Bombero } from "./bombero";
 
 import { Local } from "./local";
@@ -13,11 +14,12 @@ export class Inspeccion extends BaseEntity {
   @Column({ type: "varchar",unique:true })
   nro_inspeccion: number;
 
-  @Column({ type: "date" })
+  @Column({ type: "time" })
   hora : Date;
 
   @Column({ type: "date" })
   fecha: Date;
+
 
   @ManyToOne(() => Bombero, (bombero) => bombero.inspeccion,{ eager:true})
   bombero:Bombero;

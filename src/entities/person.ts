@@ -17,10 +17,10 @@ export class Person extends BaseEntity {
   @Column({ type: "numeric", unique: true })
   cedula: number;
 
-  @Column({ type: "numeric" })
+  @Column({ type: "numeric",nullable:true })
   telefono: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   correo: string;
 
   @OneToOne(() => User, (user) => user.person)

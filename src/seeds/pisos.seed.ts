@@ -14,7 +14,7 @@ export default class CreatePisos implements Seeder {
       .createQueryBuilder()
       .insert()
       .into(Pisos)
-      .values({nombre_pisos:"madera"})
+      .values(pisosValues)
       .execute();
   }
 }

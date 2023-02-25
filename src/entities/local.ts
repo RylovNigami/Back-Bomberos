@@ -1,5 +1,6 @@
 import { BaseEntity, Column, Entity,OneToMany,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Alarmas } from "./alarmas";
+import { Alarmas_local } from "./alarmas_local";
 import { Alm_riesgoso } from "./alm_riesgoso";
 import { Alm_seguro } from "./alm_seguro";
 import { Caracteristica_local } from "./caracteristica_local";
@@ -53,8 +54,8 @@ export class Local extends BaseEntity {
   @OneToMany(() => Alm_riesgoso, (alm_riesgoso) => alm_riesgoso.local)
   alm_riesgoso:Alm_seguro[];
   
-  @OneToMany(() => Alarmas, (alarmas) => alarmas.local)
-  alarmas:Alarmas[];
+  @OneToMany(() => Alarmas_local, (alarmas_local) => alarmas_local.local)
+  alarmas_local:Alarmas_local[];
 
   @OneToMany(() => Extintor_local, (Extintor_local) => Extintor_local.local)
   extintor_local:Extintor_local[];
