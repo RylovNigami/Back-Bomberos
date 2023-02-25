@@ -13,7 +13,7 @@ export const create = async (req: Request, res: Response) => {
 
     const queryRunner = AppDataSource.createQueryRunner();
     queryRunner.connect();
-    queryRunner.startTransaction()
+    await  queryRunner.startTransaction()
 
     const person = new Person ();
 

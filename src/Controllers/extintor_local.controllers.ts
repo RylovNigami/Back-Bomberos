@@ -13,16 +13,14 @@ export const createExtintor_local = async (req: Request, res: Response) => {
       extintor_local.tipo_extintor=tipo_extintor,
       extintor_local.capacidad_extintor=capacidad_extintor,
       extintor_local.empresa=empresa,
-      extintor_local.reubicacion=reubicacion;
+      extintor_local.reubicacion=reubicacion,
+      extintor_local.local=local,
+      extintor_local.extintor_p=extintor_p;
     
-      
-   
-        
-  
   
       await extintor_local.save();
   
-      return res.json(Extintor_p);
+      return res.json(Extintor_local);
     } catch (error) {
       if (error instanceof Error) {
         return res.status(500).json({ message: error.message });
@@ -45,7 +43,7 @@ export const createExtintor_local = async (req: Request, res: Response) => {
   export const updateExtintor_local = async (req: Request, res: Response) => {
     const { id } = req.params;
   
-    const extintor_local = await Extintor_p.findOneBy({ id: parseInt(id) });
+    const extintor_local = await Extintor_local.findOneBy({ id: parseInt(id) });
     console.log(extintor_local);
   
     if (!extintor_local)

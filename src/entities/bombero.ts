@@ -4,6 +4,7 @@ import { Rango } from "./rango";
 import { Cargo } from "./cargo";
 import { Departamento } from "./departamento";
 import { Inspeccion } from "./inspeccion";
+import { GeneroEnum } from "../enum/genero";
 
 @Entity("Bombero")
 export class Bombero extends BaseEntity {
@@ -15,7 +16,7 @@ export class Bombero extends BaseEntity {
   ordenGeneral: number;
 
   @Column({  type:"varchar",nullable:true})
-  genero:string;
+  genero:GeneroEnum;
   
   @Column({ type: "boolean" })
   status: boolean;

@@ -1,4 +1,6 @@
 import { BaseEntity, Column, Entity, ManyToOne,PrimaryGeneratedColumn } from "typeorm";
+import { condicionvenEnum } from "../enum/condicionVen";
+import { tipovenEnum } from "../enum/tipoven";
 import { Local } from "./local";
 
 @Entity("Alm_riesgoso")
@@ -28,22 +30,22 @@ export class Alm_riesgoso extends BaseEntity {
   ventilacion: boolean;
 
   @Column({ type: "varchar" })
-  tipo_ven: string;
+  tipo_ven: tipovenEnum;
 
   @Column({ type: "boolean" })
-  condicion_ven: boolean;
+  condicion_ven: condicionvenEnum;
 
   @Column({ type: "boolean" })
   dique: boolean;
 
   @Column({ type: "boolean" })
-  condicion_dique: boolean;
+  condicion_dique: condicionvenEnum;
 
   @Column({ type: "boolean" })
   drenaje: boolean;
 
   @Column({ type: "boolean" })
-  condicion_drenaje: boolean;
+  condicion_drenaje: condicionvenEnum;
 
   @Column({ type: "boolean" })
   ident_riesgo: boolean;
@@ -55,13 +57,13 @@ export class Alm_riesgoso extends BaseEntity {
   kit_control: boolean;
 
   @Column({ type: "boolean" })
-  condiciones_kit: boolean;
+  condiciones_kit: condicionvenEnum;
 
   @Column({ type: "boolean" })
   proteccion_personal: boolean;
 
   @Column({ type: "boolean" })
-  condicion_proteccion: boolean;
+  condicion_proteccion: condicionvenEnum;
 
   @Column({ type: "boolean" })
   racda: boolean;
@@ -91,7 +93,7 @@ export class Alm_riesgoso extends BaseEntity {
   ducha: boolean;
 
   @Column({ type: "boolean" })
-  condicion_ducha: boolean;
+  condicion_ducha: condicionvenEnum;
 
 
   @ManyToOne(() => Local, (local) => local.alm_riesgoso,{eager:true})

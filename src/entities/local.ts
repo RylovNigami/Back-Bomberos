@@ -1,10 +1,12 @@
 import { BaseEntity, Column, Entity,OneToMany,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Alarmas } from "./alarmas";
+import { Alarmas_local } from "./alarmas_local";
 import { Alm_riesgoso } from "./alm_riesgoso";
 import { Alm_seguro } from "./alm_seguro";
 import { Caracteristica_local } from "./caracteristica_local";
 import { Electricidad } from "./electricidad";
 import { Extincion_f } from "./extincion_f";
+import { Extincion_local } from "./extincion_local";
 import { Extintor_local } from "./extintor_local";
 import { Extintor_p } from "./extintor_p";
 import { Inspeccion } from "./inspeccion";
@@ -12,6 +14,7 @@ import { Instalacion_gas } from "./instalacion_gas";
 import { Interviewer } from "./interviewer";
 import { LocalOwner } from "./localOwner";
 import { Medios_escape } from "./medios_escape";
+import { Medios_local } from "./medios_local";
 import { Parroquia } from "./parroquia";
 import { Solitude } from "./solitude";
 
@@ -49,18 +52,19 @@ export class Local extends BaseEntity {
   @OneToMany(() => Electricidad, (electricidad) => electricidad.local)
   electricidad:Electricidad[];
 
-  @OneToMany(() => Medios_escape, (medios_escape) => medios_escape.local)
-  medios_escape:Medios_escape[];
+  @OneToMany(() => Medios_local, (medios_local) => medios_local.local)
+  medios_local:Medios_local[];
 
   @OneToMany(() => Alm_riesgoso, (alm_riesgoso) => alm_riesgoso.local)
   alm_riesgoso:Alm_seguro[];
   
-  @OneToMany(() => Alarmas, (alarmas) => alarmas.local)
-  alarmas:Alarmas[];
+  @OneToMany(() => Alarmas_local, (alarmas_local) => alarmas_local.local)
+  alarmas_local:Alarmas_local[];
 
   @OneToMany(() => Extintor_local, (Extintor_local) => Extintor_local.local)
   extintor_local:Extintor_local[];
 
+<<<<<<< HEAD
   @OneToMany(() => Extincion_f, (extincion_f) => extincion_f.local)
   extincion_f:Extincion_f[];
 
@@ -76,5 +80,9 @@ export class Local extends BaseEntity {
 
   @ManyToOne(() => Solitude, (solitude) =>  solitude.local,{eager:true})
   solitude:Solitude;
+=======
+  @OneToMany(() => Extincion_local, (extincion_local) => extincion_local.local)
+  extincion_local:Extincion_local[];
+>>>>>>> feat-fix/RylovNigami
 }
 

@@ -6,21 +6,14 @@ import { Medios_escape } from "../entities/medios_escape";
 
 export const createMedios_escape = async (req: Request, res: Response) => {
   try {
-    const {  vias_escape,escalera_vias,ancho_escalera,altura_pasamano,ancho_huella,altura_contrahuella,tipo_puerta,sentido_salida,observacion,
-        ventilacion,cinta_anti,sitio_cinta,iluminacion,tipo_lampara,cantidad_lampara,señalizacion,tipo_señal,pasillo,nro_pasillo,ancho_pasillo,
-        rampa,angulo_rampa,local} = req.body;
+    const {  vias_escape,ventilacion,condicion_ven,tipo_ven,cinta_anti,sitio_cinta,iluminacion,tipo_lampara,cantidad_lampara,señalizacion,tipo_señal,pasillo,nro_pasillo,ancho_pasillo,
+        rampa,angulo_rampa} = req.body;
 
     const medios_escape= new Medios_escape();
     medios_escape.vias_escape=vias_escape,
-    medios_escape.escalera_vias=escalera_vias,
-    medios_escape.ancho_escalera=ancho_escalera,
-    medios_escape.altura_pasamano=altura_pasamano,
-    medios_escape.ancho_huella=ancho_huella,
-    medios_escape.altura_contrahuella=altura_contrahuella,
-    medios_escape.tipo_puerta=tipo_puerta,
-    medios_escape.sentido_salida=sentido_salida,
-    medios_escape.observacion=observacion,
     medios_escape.ventilacion=ventilacion,
+    medios_escape.condicion_ven=condicion_ven,
+    medios_escape.tipo_ven=tipo_ven,
     medios_escape.cinta_anti=cinta_anti,
     medios_escape.sitio_cinta=sitio_cinta,
     medios_escape.iluminacion=iluminacion,
@@ -33,7 +26,7 @@ export const createMedios_escape = async (req: Request, res: Response) => {
     medios_escape.ancho_pasillo=ancho_pasillo,
     medios_escape.rampa=rampa,
     medios_escape.angulo_rampa=angulo_rampa,
-    medios_escape.local=local;
+    
 
 
 
