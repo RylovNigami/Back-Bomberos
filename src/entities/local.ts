@@ -63,11 +63,6 @@ export class Local extends BaseEntity {
 
   @OneToMany(() => Extintor_local, (Extintor_local) => Extintor_local.local)
   extintor_local:Extintor_local[];
-
-<<<<<<< HEAD
-  @OneToMany(() => Extincion_f, (extincion_f) => extincion_f.local)
-  extincion_f:Extincion_f[];
-
   
   @ManyToOne(() => Parroquia, (parroquia) =>  parroquia.local)
   parroquia:Parroquia;
@@ -80,9 +75,7 @@ export class Local extends BaseEntity {
 
   @ManyToOne(() => Solitude, (solitude) =>  solitude.local,{eager:true})
   solitude:Solitude;
-=======
   @OneToMany(() => Extincion_local, (extincion_local) => extincion_local.local)
   extincion_local:Extincion_local[];
->>>>>>> feat-fix/RylovNigami
 }
 

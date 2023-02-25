@@ -14,13 +14,8 @@ export class Inspeccion extends BaseEntity {
   @Column({ type: "varchar",unique:true })
   nro_inspeccion: number;
 
-<<<<<<< HEAD
   @Column({ type: 'time'})
   hora: string;
-=======
-  @Column({ type: "time" })
-  hora : Date;
->>>>>>> feat-fix/RylovNigami
 
   @Column({ type: 'date' })
   fecha: string;
