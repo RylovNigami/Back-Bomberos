@@ -2,31 +2,26 @@ import { BaseEntity, Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn
 import { Bombero } from "./bombero";
 import { User } from "./user";
 import { Inspeccion } from "./inspeccion";
+import { Local } from "./local";
 
-@Entity("people")
-export class Person extends BaseEntity {
+@Entity("LocalOwner")
+export class LocalOwner extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ type: "varchar" })
-  firstName: string;
+  localOwnerFirstName: string;
 
   @Column({ type: "varchar" })
-  lastName: string;
+  localOwnerLastName: string;
 
   @Column({ type: "numeric", unique: true })
-  cedula: number;
-
-  @Column({ type: "numeric", nullable: true })
-  telefono: number;
+  localOwnerDni: number;
 
   @Column({ type: "varchar", nullable: true })
-  correo: string;
-
-  @OneToOne(() => User, (user) => user.person)
-  user: User;
-
-  @OneToMany(() => Bombero, (bombero) =>  bombero.person)
-  bombero:Bombero[];
-
+  localOwnerMail: string;
+  
+    
+  @OneToMany(() => Local, (local) => local.localOwner)
+  local:Local[];
 }

@@ -32,6 +32,9 @@ import { Rango } from "./entities/rango";
 import { Techos } from "./entities/techos";
 import { Ventanas } from "./entities/ventanas";
 import { Extintor_local } from "./entities/extintor_local";
+import { Interviewer } from "./entities/interviewer";
+import { LocalOwner } from "./entities/localOwner";
+import { Solitude } from "./entities/solitude";
 
 
 export const AppDataSource = new DataSource({
@@ -41,7 +44,7 @@ export const AppDataSource = new DataSource({
   password: process.env.DB_PASSWORD,
   port: Number(process.env.DB_PORT),
   database: process.env.DB_NAME,
-  entities: [User,Person,Alarmas,Alm_riesgoso,Alm_seguro,Bombero,Caracteristica_local/*,Cargo_bombero*/,Cargo,Contrahuella,
+  entities: [User,Person,Alarmas,Alm_riesgoso,Alm_seguro,Bombero,Caracteristica_local,Interviewer,LocalOwner,Solitude,Cargo,Contrahuella,
   Departamento,Electricidad,Escaleras,Estado,Extincion_f,Extintor_p,Extintor_local,Huella,Inspeccion,Instalacion_gas,Local,Medios_escape,
 Municipio,Paredes,Parroquia,Pasamanos,Pisos,Plafones,Puertas,Rango,Techos,Ventanas],
   synchronize: true,

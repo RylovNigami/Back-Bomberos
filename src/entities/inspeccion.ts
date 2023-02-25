@@ -13,20 +13,16 @@ export class Inspeccion extends BaseEntity {
   @Column({ type: "varchar",unique:true })
   nro_inspeccion: number;
 
-  @Column({ type: "date" })
-  hora : Date;
+  @Column({ type: 'time'})
+  hora: string;
 
-  @Column({ type: "date" })
-  fecha: Date;
+  @Column({ type: 'date' })
+  fecha: string;
 
   @ManyToOne(() => Bombero, (bombero) => bombero.inspeccion,{ eager:true})
   bombero:Bombero;
 
   @ManyToOne(() => Local, (local) => local.inspeccion,{ eager:true})
   local:Local;
-
-   
-  @ManyToOne(() => Person, (person) =>  person.inspeccion,{ eager:true})
-  person:Person;
 
 }

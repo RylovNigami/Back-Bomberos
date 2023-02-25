@@ -10,7 +10,7 @@ import { Rango } from "../entities/rango";
 
 export const create = async (req: Request, res: Response) => {
   try {
-    const { nro_inspeccion,fecha,hora,rif,firma_mercantil,ubicacion,firstName,lastName,cedula,correo,telefono, status, temporabilidad } = req.body;
+    const { nro_inspeccion,fecha,hora,rif,firma_mercantil,ocupacion,ubicacion,firstName,lastName,cedula,correo,telefono, status, temporabilidad } = req.body;
 
     const queryRunner = AppDataSource.createQueryRunner();
     queryRunner.connect();
@@ -20,7 +20,8 @@ export const create = async (req: Request, res: Response) => {
 
     local.rif=rif,
     local.firma_mercantil=firma_mercantil,
-    local.ubicacion=ubicacion
+    local.ubicacion=ubicacion,
+    local.ocupacion=ocupacion;
 
     const person = new Person();
     person.firstName = firstName;

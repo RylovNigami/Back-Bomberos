@@ -9,8 +9,11 @@ import { Extintor_local } from "./extintor_local";
 import { Extintor_p } from "./extintor_p";
 import { Inspeccion } from "./inspeccion";
 import { Instalacion_gas } from "./instalacion_gas";
+import { Interviewer } from "./interviewer";
+import { LocalOwner } from "./localOwner";
 import { Medios_escape } from "./medios_escape";
 import { Parroquia } from "./parroquia";
+import { Solitude } from "./solitude";
 
 @Entity("Local")
 export class Local extends BaseEntity {
@@ -20,14 +23,15 @@ export class Local extends BaseEntity {
   @Column({ type: "numeric",unique:true })
   rif: number;
 
-  @Column({ type: "varchar" ,nullable:true})
+  @Column({ type: "varchar" })
   ubicacion: string;
 
-  @Column({ type: "varchar",unique:true })
+  @Column({ type: "varchar" })
+  ocupacion: string;
+
+  @Column({ type: "varchar",unique:true})
   firma_mercantil: string;
 
-  @ManyToOne(() => Parroquia, (parroquia) =>  parroquia.local)
-  parroquia:Parroquia;
 
   @OneToMany(() => Inspeccion, (inspeccion) => inspeccion.local)
   inspeccion:Inspeccion[];
@@ -59,5 +63,18 @@ export class Local extends BaseEntity {
 
   @OneToMany(() => Extincion_f, (extincion_f) => extincion_f.local)
   extincion_f:Extincion_f[];
+
+  
+  @ManyToOne(() => Parroquia, (parroquia) =>  parroquia.local)
+  parroquia:Parroquia;
+
+  @ManyToOne(() => Interviewer, (interviewer) =>  interviewer.local,{eager:true})
+  interviewer:Interviewer;
+
+  @ManyToOne(() => LocalOwner, (localOwner) =>  localOwner.local,{eager:true})
+  localOwner:LocalOwner;
+
+  @ManyToOne(() => Solitude, (solitude) =>  solitude.local,{eager:true})
+  solitude:Solitude;
 }
 
