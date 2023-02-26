@@ -9,10 +9,13 @@ export class Alm_riesgoso extends BaseEntity {
   id: number;
 
   @Column({ type: "boolean" })
+  mapel: boolean;
+
+  @Column({ type: "boolean" })
   ident_material: boolean;
 
   @Column({ type: "varchar" })
-  material_p: string;
+  material_predominante: string;
 
   @Column({ type: "varchar" })
   tipo_contenedor: string;
@@ -27,13 +30,13 @@ export class Alm_riesgoso extends BaseEntity {
   ubic_contenedor: string;
 
   @Column({ type: "boolean" })
-  ventilacion: boolean;
+  ventilacion_almRiesgosa: boolean;
 
   @Column({ type: "varchar" })
-  tipo_ven: tipovenEnum;
+  tipo_venRiesgosa: tipovenEnum;
 
   @Column({ type: "boolean" })
-  condicion_ven: condicionvenEnum;
+  condicion_venRiegosa: condicionvenEnum;
 
   @Column({ type: "boolean" })
   dique: boolean;

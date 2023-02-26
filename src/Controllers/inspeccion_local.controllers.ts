@@ -10,7 +10,9 @@ import { Rango } from "../entities/rango";
 
 export const create = async (req: Request, res: Response) => {
   try {
-    const { nro_inspeccion,fecha,hora,rif,firma_mercantil,ocupacion,ubicacion,firstName,lastName,cedula,correo,telefono, status, temporabilidad } = req.body;
+    const { nro_inspeccion,fecha,hora,rif,firma_mercantil,ocupacion,existe_guia,cumple_ordenamiento,
+      observaciones_inspeccion,ubicacion,firstName,lastName,cedula,correo,telefono,ordenGeneral, status,genero,
+       rango, cargo,departamento  } = req.body;
 
     const queryRunner = AppDataSource.createQueryRunner();
     queryRunner.connect();
@@ -30,14 +32,21 @@ export const create = async (req: Request, res: Response) => {
     person.correo = correo;
     person.telefono = telefono;
 
+    const bombero = new  Bombero();
+    bombero.ordenGeneral=ordenGeneral,
+    bombero.status=status,
+    bombero.genero=genero,
+    bombero.rango=rango,
+    bombero.cargo=cargo,
+    bombero.departamento=departamento;
 
     const inspeccion = new Inspeccion ();
+    inspeccion.existe_guia=existe_guia,
     inspeccion.nro_inspeccion=nro_inspeccion,
     inspeccion.fecha=fecha,
-    inspeccion.hora=hora;
-
-    const bombero = new  Bombero();
-
+    inspeccion.hora=hora,
+    inspeccion.cumple_ordenamiento=cumple_ordenamiento,
+    inspeccion.observaciones_inspeccion=observaciones_inspeccion;
 
     
 
@@ -45,10 +54,11 @@ export const create = async (req: Request, res: Response) => {
 
     try {
         await queryRunner.manager.save(person);
-
+        await queryRunner.manager.save(local);
+        await queryRunner.manager.save(bombero);
         //throw new Error("eokfzdmomsz");
         await queryRunner.manager.save(inspeccion);
-        await queryRunner.manager.save(local);
+    
 
         await queryRunner.commitTransaction();
     } catch (error) {
@@ -61,7 +71,7 @@ export const create = async (req: Request, res: Response) => {
     // await rango.save();
     // await bombero.save();
 
-    return res.json([local,inspeccion,person]);
+    return res.json([local,person,bombero,inspeccion]);
   } catch (error) {
     if (error instanceof Error) {
       return res.status(500).json({ message: error.message });

@@ -9,15 +9,15 @@ import { Paredes } from "../entities/paredes";
 
 export const createAlarmas_local = async (req: Request, res: Response) => {
   try {
-    const { estacion,estacion_c,estacion_clase,difusores_c,difusores_s,cubren_a,local,alarmas} = req.body;
+    const { estacion_manual,estacion_condicion,estacion_clase,difusores_condicion,difusores_sonido,cubren_areaDifusor,local,alarmas} = req.body;
 
     const alarmas_local = new Alarmas_local();
-   alarmas_local.estacion=estacion,
-   alarmas_local.estacion_c=estacion_c,
+   alarmas_local.estacion_manual=estacion_manual,
+   alarmas_local.estacion_condicion=estacion_condicion,
    alarmas_local.estacion_clase=estacion_clase,
-   alarmas_local.difusores_c=difusores_c,
-   alarmas_local.difusores_s=difusores_s,
-   alarmas_local.cubren_a=cubren_a,
+   alarmas_local.difusores_condicion=difusores_condicion,
+   alarmas_local.difusores_sonido=difusores_sonido,
+   alarmas_local.cubren_areaDifusor=cubren_areaDifusor,
    alarmas_local.alarmas=alarmas,
    alarmas_local.local=local;
 

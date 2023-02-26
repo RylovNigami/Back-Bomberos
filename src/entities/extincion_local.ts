@@ -18,22 +18,22 @@ export class Extincion_local extends BaseEntity {
   mangueras: boolean;
 
   @Column({ type: "varchar" })
-  condicion_m: condicionvenEnum;
+  condicion_manguera: condicionvenEnum;
 
   @Column({ type: "numeric" })
-  longitud: number;
+  longitud_manguera: number;
 
   @Column({ type: "numeric" })
-  diametro: number;
+  diametro_manguera: number;
 
   @Column({ type: "boolean" })
-  area_protegerf: boolean;
+  area_protegerMangueras: boolean;
 
   @Column({ type: "boolean" })
   rociadores: boolean;
 
   @Column({ type: "boolean" })
-  cubre_area: boolean;
+  cubre_areaRociadores: boolean;
 
   @ManyToOne(() => Local, (local) => local.extincion_local,{eager:true})
   local:Local;

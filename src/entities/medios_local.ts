@@ -31,13 +31,13 @@ import { Medios_escape } from "./medios_escape";
   altura_contrahuella: number;
 
   @Column({ type: "varchar" })
-  tipo_puerta: string;
+  tipo_puertaviasEscape: string;
 
   @Column({ type: "boolean" })
   sentido_salida: boolean;
 
   @Column({ type: "varchar" })
-  observacion: string;
+  observacion_viasEscape: string;
 
     @ManyToOne(() => Local, (local) => local.medios_local,{eager:true})
     local:Local;

@@ -3,12 +3,12 @@ import { Caracteristica_local } from "../entities/caracteristica_local";
 
 export const createCaracteristica_local = async (req: Request, res: Response) => {
     try {
-      const {  nro_niveles,nivel_inmueble,area,escaleras,contrahuella,huella,paredes,pasamanos,pisos,plafones,puertas,techos,ventanas,local} = req.body;
+      const {  nro_niveles,nivel_inmueble,area_util,escaleras,contrahuella,huella,paredes,pasamanos,pisos,plafones,puertas,techos,ventanas,local} = req.body;
   
       const caracterisca_local = new Caracteristica_local();
        caracterisca_local.nro_niveles= nro_niveles;
        caracterisca_local.nivel_inmueble= nivel_inmueble;
-       caracterisca_local.area=area;
+       caracterisca_local.area_util=area_util;
        caracterisca_local.escaleras=escaleras,
        caracterisca_local.contrahuella=contrahuella,
        caracterisca_local.huella=huella,

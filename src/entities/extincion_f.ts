@@ -9,19 +9,22 @@ export class Extincion_f extends BaseEntity {
   id: number;
 
   @Column({ type: "boolean" })
-  operativo_f: boolean;
-
-  @Column({ type: "numeric" })
-  cap_tanque: number;
-
-  @Column({ type: "varchar" })
-  ubic_tanque: string;
+  extincion_fija: boolean;
 
   @Column({ type: "boolean" })
-  cajetines_m: boolean;
+  operativo_extincionFija: boolean;
 
   @Column({ type: "numeric" })
-  cantidad_c: number;
+  capacidad_tanqueExtincion: number;
+
+  @Column({ type: "varchar" })
+  ubic_tanqueExtincion: string;
+
+  @Column({ type: "boolean" })
+  cajetines_mangueras: boolean;
+
+  @Column({ type: "numeric" })
+  cantidad_cajetinesManguera: number;
 
   
   @OneToMany(() => Extincion_local, (extincion_local) => extincion_local.extincion_f)

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {createEscaleras,getEscaleras,updateEscaleras,deleteEscaleras} from "../Controllers/escaleras.controller";
+import {createEscaleras,getEscaleras,updateEscaleras,deleteEscaleras} from "../Controllers/escaleras.controllers";
 
 export const router = Router();
 

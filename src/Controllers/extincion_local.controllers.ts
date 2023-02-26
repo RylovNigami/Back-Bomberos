@@ -6,16 +6,16 @@ import { Extintor_p } from "../entities/extintor_p";
 
 export const createExtincion_local = async (req: Request, res: Response) => {
     try {
-      const { mangueras,condicion_m,longitud,diametro,area_protegerf,rociadores,cubre_area,local,extincion_f} = req.body;
+      const { mangueras,condicion_manguera,longitud_manguera,diametro_manguera,area_protegerMangueras,rociadores,cubre_areaRociadores,local,extincion_f} = req.body;
   
       const extincion_local = new Extincion_local();
       extincion_local.mangueras=mangueras,
-      extincion_local.condicion_m=condicion_m,
-      extincion_local.longitud=longitud,
-      extincion_local.diametro=diametro,
-      extincion_local.area_protegerf=area_protegerf,
+      extincion_local.condicion_manguera=condicion_manguera,
+      extincion_local.longitud_manguera=longitud_manguera,
+      extincion_local.diametro_manguera=diametro_manguera,
+      extincion_local.area_protegerMangueras=area_protegerMangueras,
       extincion_local.rociadores=rociadores,
-      extincion_local.cubre_area=cubre_area,
+      extincion_local.cubre_areaRociadores=cubre_areaRociadores,
       extincion_local.local=local,
       extincion_local.extincion_f=extincion_f;
     

@@ -1,5 +1,5 @@
 import { Router } from "express";
- import {createVentanas,getVentanas,updateVentanas,deleteVentanas} from "../Controllers/ventanas.controller";
+ import {createVentanas,getVentanas,updateVentanas,deleteVentanas} from "../Controllers/ventanas.controllers";
 
 export const router = Router()
 

@@ -5,6 +5,8 @@ import {
     ManyToOne,
     PrimaryGeneratedColumn,
   } from "typeorm";
+import { Agente_extinguidor } from "./agente_extinguidor";
+import { Company } from "./company";
 import { Extintor_p } from "./extintor_p";
   import { Local } from "./local";
   
@@ -13,27 +15,24 @@ import { Extintor_p } from "./extintor_p";
     @PrimaryGeneratedColumn()
     id: number;
   
-    @Column({ type: "numeric" })
-    cant_portatil: number;
+    @Column({ type: "varchar" })
+    operativo_extintorPortatil: boolean;
   
     @Column({ type: "varchar" })
-    operativo_extintor: boolean;
-  
+    capacidad_extintorPortatil: string;
+
     @Column({ type: "varchar" })
-    tipo_extintor: string;
-  
-    @Column({ type: "varchar" })
-    capacidad_extintor: string;
-  
-    @Column({ type: "varchar" })
-    empresa: string;
-  
-    @Column({ type: "varchar" })
-    reubicacion: boolean;
+    reubicacion_extintorPortatil: boolean;
 
     @ManyToOne(() => Local, (local) => local.extintor_local,{eager:true})
     local:Local;
 
     @ManyToOne(() => Extintor_p, (extintor_p) => extintor_p.extintor_local,{eager:true})
     extintor_p:Extintor_p;
+
+    @ManyToOne(() => Company, (company) => company.extintor_local,{eager:true})
+    company:Company;
+
+    @ManyToOne(() => Agente_extinguidor, (agente_extinguidor) => agente_extinguidor.extintor_local,{eager:true})
+    agente_extinguidor:Agente_extinguidor;
   }

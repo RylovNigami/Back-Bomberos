@@ -3,13 +3,13 @@ import { Extintor_p } from "../entities/extintor_p";
 
 export const createExtintor_p = async (req: Request, res: Response) => {
     try {
-      const { posee,nro_requiere,requiere,tipo_requiere } = req.body;
+      const { posee_extintoresPortatil,nro_requiereExtintor,requiere_extintorPortatil,tipo_agenteExtintor } = req.body;
   
       const extintor_p = new Extintor_p();
-      extintor_p.posee=posee,
-      extintor_p.nro_requiere=nro_requiere,
-      extintor_p.requiere=requiere,
-      extintor_p.tipo_requiere=tipo_requiere;
+      extintor_p.posee_extintoresPortatil=posee_extintoresPortatil,
+      extintor_p.nro_requiereExtintor=nro_requiereExtintor,
+      extintor_p.requiere_extintorPortatil=requiere_extintorPortatil,
+      extintor_p.tipo_agenteExtintor=tipo_agenteExtintor;
      
         
   
@@ -57,7 +57,7 @@ export const createExtintor_p = async (req: Request, res: Response) => {
       const result = await Extintor_p.delete({ id: parseInt(id) });
   
       if (result.affected === 0) {
-        return res.status(404).json({ message: "cargo not found" });
+        return res.status(404).json({ message: " not found" });
       }
   
       return res.status(201).json({ message: "Se ha borrado exitosamente" });

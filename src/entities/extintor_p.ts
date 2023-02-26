@@ -9,17 +9,16 @@ export class Extintor_p extends BaseEntity {
   id: number;
 
   @Column({ type: "varchar" })
-  posee: boolean;
-
+  posee_extintoresPortatil: boolean;
   
   @Column({ type: "boolean" })
-  requiere: boolean;
+  requiere_extintorPortatil: boolean;
 
   @Column({ type: "numeric" })
-  nro_requiere: number;  
+  nro_requiereExtintor: number;  
 
   @Column({ type: "varchar" })
-  tipo_requiere: string;
+  tipo_agenteExtintor: string;
 
 
   @OneToMany(() => Extintor_local, (extintor_local) => extintor_local.extintor_p)

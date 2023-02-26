@@ -5,6 +5,7 @@ import { Cargo } from "./cargo";
 import { Departamento } from "./departamento";
 import { Inspeccion } from "./inspeccion";
 import { GeneroEnum } from "../enum/genero";
+import { StatusEnum } from "../enum/status";
 
 @Entity("Bombero")
 export class Bombero extends BaseEntity {
@@ -18,8 +19,8 @@ export class Bombero extends BaseEntity {
   @Column({  type:"varchar",nullable:true})
   genero:GeneroEnum;
   
-  @Column({ type: "boolean" })
-  status: boolean;
+  @Column({ type: "varchar" })
+  status: StatusEnum;
 
   
   @ManyToOne(() => Person, (person) =>  person.bombero,{eager:true})

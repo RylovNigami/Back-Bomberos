@@ -12,22 +12,22 @@ export class Alarmas_local extends BaseEntity {
   id: number;
 
   @Column({ type: "boolean" })
-  estacion: boolean;
+  estacion_manual: boolean;
 
   @Column({ type: "varchar" })
   estacion_clase: string;
 
   @Column({ type: "varchar" })
-  estacion_c: condicionvenEnum;
+  estacion_condicion: condicionvenEnum;
 
   @Column({ type: "boolean" })
-  difusores_s: boolean;
+  difusores_sonido: boolean;
 
   @Column({ type: "varchar" })
-  difusores_c: condicionvenEnum;
+  difusores_condicion: condicionvenEnum;
 
   @Column({ type: "boolean" })
-  cubren_a: boolean;
+  cubren_areaDifusor: boolean;
 
 
   @ManyToOne(() => Local, (local) => local.alarmas_local,{eager:true})

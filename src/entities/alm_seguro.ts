@@ -6,20 +6,23 @@ export class Alm_seguro extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column({ type: "boolean" })
+  poseeAlamacenamiento: boolean;
+
   @Column({ type: "varchar" })
-  tipo: string;
+  tipo_mercanciaAlmacenada: string;
 
   @Column({ type: "boolean" })
-  norma_alm: boolean;
+  norma_almacenamiento: boolean;
 
   @Column({ type: "boolean" })
   orden_limpieza: boolean;
 
   @Column({ type: "boolean" })
-  proteccion: boolean;
+  proteccion_contraIncendios: boolean;
 
   @Column({ type: "varchar" })
-  tipo_proteccion: string;
+  tipo_proteccionIncendio: string;
 
   @ManyToOne(() => Local, (local) => local.alm_seguro,{eager:true})
   local:Local;

@@ -7,28 +7,28 @@ export class Electricidad extends BaseEntity {
   id: number;
 
   @Column({ type: "numeric" })
-  tension: number;
+  tension_tablero: number;
 
   @Column({ type: "varchar" })
   material_tablero: string;
 
   @Column({ type: "boolean" })
-  canalizados: boolean;
+  canalizados_tablero: boolean;
 
   @Column({ type: "boolean" })
-  señalizacion: boolean;
+  señalizacion_tablero: boolean;
 
   @Column({ type: "varchar" })
   ubic_tablero: string;
 
   @Column({ type: "boolean" })
-  ventilacion: boolean;
+  ventilacion_tablero: boolean;
 
   @Column({ type: "varchar" })
-  tipo_ven: tipovenEnum;
+  tipo_venTablero: tipovenEnum;
 
   @Column({ type: "varchar" })
-  tipo_interruptor: string;
+  tipo_interruptorTablero: string;
 
   @ManyToOne(() => Local, (local) => local.electricidad,{eager:true})
   local:Local;

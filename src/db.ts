@@ -38,6 +38,9 @@ import { Solitude } from "./entities/solitude";
 import { Medios_local } from "./entities/medios_local";
 import { Extincion_local } from "./entities/extincion_local";
 import { Alarmas_local } from "./entities/alarmas_local";
+import { Brand } from "./entities/brand";
+import { Company } from "./entities/company";
+import { Agente_extinguidor } from "./entities/agente_extinguidor";
 
 
 export const AppDataSource = new DataSource({
@@ -47,7 +50,7 @@ export const AppDataSource = new DataSource({
   password: process.env.DB_PASSWORD,
   port: Number(process.env.DB_PORT),
   database: process.env.DB_NAME,
-  entities: [User,Person,Alarmas,Alarmas_local,Alm_riesgoso,Alm_seguro,Bombero,Caracteristica_local,Cargo,Contrahuella,Interviewer,LocalOwner,Solitude,
+  entities: [User,Person,Agente_extinguidor,Alarmas,Alarmas_local,Alm_riesgoso,Alm_seguro,Bombero,Caracteristica_local,Cargo,Company,Brand,Contrahuella,Interviewer,LocalOwner,Solitude,
   Departamento,Electricidad,Escaleras,Estado,Extincion_f,Extincion_local,Extintor_p,Extintor_local,Huella,Inspeccion,Instalacion_gas,Local,Medios_escape,
   Medios_local,Municipio,Paredes,Parroquia,Pasamanos,Pisos,Plafones,Puertas,Rango,Techos,Ventanas],
   synchronize: true,

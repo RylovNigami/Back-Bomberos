@@ -5,17 +5,16 @@ import { Extintor_p } from "../entities/extintor_p";
 
 export const createExtintor_local = async (req: Request, res: Response) => {
     try {
-      const { cant_portatil,operativo_extintor,tipo_extintor,capacidad_extintor,empresa,reubicacion,local,extintor_p } = req.body;
+      const { operativo_extintorPortatil,capacidad_extintorPortatil,reubicacion_extintorPortatil,local,extintor_p,company,agente_extinguidor } = req.body;
   
       const extintor_local = new Extintor_local();
-      extintor_local.cant_portatil=cant_portatil,
-      extintor_local.operativo_extintor=operativo_extintor,
-      extintor_local.tipo_extintor=tipo_extintor,
-      extintor_local.capacidad_extintor=capacidad_extintor,
-      extintor_local.empresa=empresa,
-      extintor_local.reubicacion=reubicacion,
+      extintor_local.operativo_extintorPortatil=operativo_extintorPortatil,
+      extintor_local.capacidad_extintorPortatil=capacidad_extintorPortatil,
+      extintor_local.reubicacion_extintorPortatil=reubicacion_extintorPortatil,
       extintor_local.local=local,
-      extintor_local.extintor_p=extintor_p;
+      extintor_local.extintor_p=extintor_p,
+      extintor_local.company=company,
+      extintor_local.agente_extinguidor=agente_extinguidor;
     
   
       await extintor_local.save();

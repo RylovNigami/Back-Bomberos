@@ -1,5 +1,5 @@
 import { Router } from "express";
- import {createParedes,getParedes,updateParedes,deleteParedes} from "../Controllers/paredes.controller";
+ import {createParedes,getParedes,updateParedes,deleteParedes} from "../Controllers/paredes.controllers";
 
 export const router = Router()
 

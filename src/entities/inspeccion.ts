@@ -11,6 +11,9 @@ export class Inspeccion extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column({ type: "boolean" })
+  existe_guia: boolean;
+
   @Column({ type: "varchar",unique:true })
   nro_inspeccion: number;
 
@@ -20,6 +23,13 @@ export class Inspeccion extends BaseEntity {
   @Column({ type: 'date' })
   fecha: string;
 
+  @Column({ type: "varchar",nullable:true})
+  cumple_ordenamiento: string;
+
+  @Column({ type: "varchar",nullable:true})
+  observaciones_inspeccion: string;
+
+  
 
   @ManyToOne(() => Bombero, (bombero) => bombero.inspeccion,{ eager:true})
   bombero:Bombero;

@@ -5,17 +5,18 @@ import { Electricidad } from "../entities/electricidad";
 
 export const createElectricidad = async (req: Request, res: Response) => {
   try {
-    const {  tension,material_tablero,canalizados,señalizacion,ubic_tablero,ventilacion,tipo_ven,tipo_interruptor,local} = req.body;
+    const {  tension_tablero,material_tablero,canalizados_tablero,señalizacion_tablero,ubic_tablero,ventilacion_tablero,
+      tipo_venTablero,tipo_interruptorTablero,local} = req.body;
 
     const electricidad = new Electricidad();
-   electricidad.tension=tension,
+   electricidad.tension_tablero=tension_tablero,
    electricidad.material_tablero=material_tablero,
-   electricidad.señalizacion=señalizacion,
-   electricidad.canalizados=canalizados,
+   electricidad.señalizacion_tablero=señalizacion_tablero,
+   electricidad.canalizados_tablero=canalizados_tablero,
    electricidad.ubic_tablero=ubic_tablero,
-   electricidad.ventilacion=ventilacion,
-   electricidad.tipo_ven=tipo_ven,
-   electricidad.tipo_interruptor=tipo_interruptor,
+   electricidad.ventilacion_tablero=ventilacion_tablero,
+   electricidad.tipo_venTablero=tipo_venTablero,
+   electricidad.tipo_interruptorTablero=tipo_interruptorTablero,
    electricidad.local=local;
  
 

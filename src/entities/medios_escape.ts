@@ -13,49 +13,49 @@ export class Medios_escape extends BaseEntity {
   vias_escape: boolean;
 
   @Column({ type: "boolean" })
-  ventilacion: boolean;
+  ventilacion_viasEscape: boolean;
 
   @Column({ type: "varchar" })
-  condicion_ven: condicionvenEnum;
+  condicion_venviasEscape: condicionvenEnum;
 
   @Column({ type: "varchar" })
-  tipo_ven: tipovenEnum;
+  tipo_venviasEscape: tipovenEnum;
 
   @Column({ type: "boolean" })
-  cinta_anti: boolean;
+  cinta_antirresbalante: boolean;
 
   @Column({ type: "varchar" })
-  sitio_cinta: string;
+  sitio_cintaAntirresbalante: string;
 
   @Column({ type: "boolean" })
-  iluminacion: boolean;
+  iluminacion_emergencia: boolean;
 
   @Column({ type: "varchar" })
-  tipo_lampara: string;
+  tipo_lamparaEmergencia: string;
 
   @Column({ type: "numeric" })
-  cantidad_lampara: number;
+  cantidad_lamparaEmergencia: number;
 
   @Column({ type: "boolean" })
-  señalizacion: boolean;
+  señalizacion_viasEscape: boolean;
 
   @Column({ type: "varchar" })
-  tipo_señal: string;
+  tipo_señalviasEscape: string;
 
   @Column({ type: "varchar" })
-  pasillo: boolean;
+  pasillo_viasEscape: boolean;
 
   @Column({ type: "numeric" })
-  nro_pasillo: number;
+  nro_pasilloviasEscape: number;
 
   @Column({ type: "varchar" })
-  ancho_pasillo: string;
+  ancho_pasilloviasEscape: string;
 
   @Column({ type: "boolean" })
-  rampa: boolean;
+  rampa_viasEscape: boolean;
 
   @Column({ type: "numeric" })
-  angulo_rampa: number;
+  angulo_rampaEscape: number;
 
   @OneToMany(() => Medios_local, (medios_local) => medios_local.medios_escape)
   medios_local:Medios_escape[];

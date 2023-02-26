@@ -19,7 +19,7 @@ import { Ventanas } from "../entities/ventanas";
 
 export const create = async (req: Request, res: Response) => {
   try {
-    const { area,nro_niveles,nivel_inmueble,nombre_escaleras,nombre_contrahuella,nombre_huella, nombre_paredes, 
+    const { area_util,nro_niveles,nivel_inmueble,nombre_escaleras,nombre_contrahuella,nombre_huella, nombre_paredes, 
         nombre_pasamanos, nombre_pisos, nombre_plafones, nombre_puertas,resistencia, nombre_techos, nombre_ventanas,rif,firma_mercantil,ubicacion} = req.body;
 
     const queryRunner = AppDataSource.createQueryRunner();
@@ -28,7 +28,7 @@ export const create = async (req: Request, res: Response) => {
 
     const caracterisca_local = new Caracteristica_local ();
 
-    caracterisca_local.area=area,
+    caracterisca_local.area_util=area_util,
     caracterisca_local.nro_niveles=nro_niveles,
     caracterisca_local.nivel_inmueble=nivel_inmueble;
 

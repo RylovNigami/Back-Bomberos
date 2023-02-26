@@ -4,6 +4,7 @@ import { condicionvenEnum } from "../enum/condicionVen";
 import { tipoalarmaEnum } from "../enum/tipoalarma";
 import { tipodeteccionEnum } from "../enum/tipodeteccion";
 import { Alarmas_local } from "./alarmas_local";
+import { Brand } from "./brand";
 import { Local } from "./local";
 
 @Entity("Alarmas")
@@ -18,19 +19,16 @@ export class Alarmas extends BaseEntity {
   sistema_deteccion: tipodeteccionEnum;
 
   @Column({ type: "varchar" })
-  marca_alarma: string;
+  condiciones_alarmas: condicionalarmaEnum;
 
   @Column({ type: "varchar" })
-  condiciones: condicionalarmaEnum;
-
-  @Column({ type: "varchar" })
-  tipo: tipoalarmaEnum;
+  tipo_deteccion: tipoalarmaEnum;
 
   @Column({ type: "numeric" })
-  numero_zona: number;
+  nro_zonaAlarma: number;
 
   @Column({ type: "boolean" })
-  area_proteger: boolean;
+  area_protegerDeteccion: boolean;
 
   @Column({ type: "numeric" })
   calor: number;
@@ -45,8 +43,11 @@ export class Alarmas extends BaseEntity {
   combinado: number;
 
   @Column({ type: "boolean" })
-  detectores_a: boolean;
+  detectores_area: boolean;
 
   @OneToMany(() => Alarmas_local, (alarmas_local) => alarmas_local.alarmas)
   alarmas_local:Alarmas_local[];
+
+  @ManyToOne(() => Brand, (brand) =>  brand.alarmas,{eager:true})
+  brand:Brand;
 }

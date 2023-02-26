@@ -7,7 +7,7 @@ import { Medios_local } from "../entities/medios_local";
 
 export const createMedios_local = async (req: Request, res: Response) => {
   try {
-    const {  escalera_vias,ancho_escalera,altura_pasamano,altura_contrahuella,ancho_huella,tipo_puerta,sentido_salida,observacion,local,medios_escape} = req.body;
+    const {  escalera_vias,ancho_escalera,altura_pasamano,altura_contrahuella,ancho_huella,tipo_puertaviasEscape,sentido_salida,observacion_viasEscape,local,medios_escape} = req.body;
 
     const medios_local= new Medios_local();
     medios_local.escalera_vias=escalera_vias;
@@ -15,9 +15,9 @@ export const createMedios_local = async (req: Request, res: Response) => {
     medios_local.altura_pasamano=altura_pasamano;
     medios_local.ancho_huella=ancho_huella;
     medios_local.altura_contrahuella=altura_contrahuella;
-    medios_local.tipo_puerta=tipo_puerta;
+    medios_local.tipo_puertaviasEscape=tipo_puertaviasEscape;
     medios_local.sentido_salida=sentido_salida;
-    medios_local.observacion=observacion;
+    medios_local.observacion_viasEscape=observacion_viasEscape;
     medios_local.local=local;
     medios_local.medios_escape=medios_escape;
 

@@ -23,7 +23,7 @@ export class Caracteristica_local extends BaseEntity {
   nivel_inmueble: number;
 
   @Column({ type: "numeric" })
-  area: number;
+  area_util: number;
 
   @ManyToOne(() => Puertas, (puertas) => puertas.carasteristica_local,{eager:true})
   puertas:Puertas;
