@@ -48,14 +48,18 @@ export const getInspeccion = async (req: Request, res: Response) => {
   try {
     const querybuilder = await Inspeccion.createQueryBuilder('i')
     .leftJoinAndSelect('i.local', 'local')
+    .leftJoinAndSelect('i.bombero', 'bombero')
     .leftJoinAndSelect('local.instalacion_gas', 'localIL')
     .leftJoinAndSelect('local.alm_seguro', 'localAS')
     .leftJoinAndSelect('local.electricidad', 'localE')
     .leftJoinAndSelect('local.alm_riesgoso', 'localAR')
     .leftJoinAndSelect('local.interviewer', 'localIn')
     .leftJoinAndSelect('local.solitude', 'localSo')
+    .leftJoinAndSelect('local.localOwner', 'locallo')
     .leftJoinAndSelect('local.caracteristica_local', 'localcl')
-    .leftJoinAndSelect('caracteristica_local.puertas', 'localcp')
+    .leftJoinAndSelect('local.extintor_local', 'localex')
+    .leftJoinAndSelect('local.medios_local', 'localml')
+   /* .leftJoinAndSelect('caracteristica_local.puertas', 'localcp')
     .leftJoinAndSelect('caracteristica_local.escaleras', 'locales')
     .leftJoinAndSelect('caracteristica_local.ventanas', 'localve')
     .leftJoinAndSelect('caracteristica_local.huella', 'localhu')
@@ -64,7 +68,7 @@ export const getInspeccion = async (req: Request, res: Response) => {
     .leftJoinAndSelect('caracteristica_local.pasamanos', 'localpa')
     .leftJoinAndSelect('caracteristica_local.pisos', 'localpi')
     .leftJoinAndSelect('caracteristica_local.plafones', 'localpl')
-    .leftJoinAndSelect('caracteristica_local.techos', 'localte')
+    .leftJoinAndSelect('caracteristica_local.techos', 'localte')*/
     .getMany();
 
     return res.json(querybuilder)
