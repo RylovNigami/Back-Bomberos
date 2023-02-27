@@ -13,7 +13,7 @@ export const create = async (req: Request, res: Response) => {
       sitio_cintaAntirresbalante,iluminacion_emergencia,tipo_lamparaEmergencia,cantidad_lamparaEmergencia,señalizacion_viasEscape,tipo_señalviasEscape,
       pasillo_viasEscape,nro_pasilloviasEscape,ancho_pasilloviasEscape,
       rampa_viasEscape,angulo_rampaEscape,escalera_vias,ancho_escalera,altura_pasamano,
-    altura_contrahuella,ancho_huella,tipo_puertaviasEscape,sentido_salida,observacion_viasEscape } = req.body;
+    altura_contrahuella,ancho_huella,tipo_puertaviasEscape,sentido_salida,observacion_viasEscape,condicion_escaleras,tipo_escaleras } = req.body;
 
     const queryRunner = AppDataSource.createQueryRunner();
     queryRunner.connect();
@@ -52,6 +52,8 @@ export const create = async (req: Request, res: Response) => {
     medios_local.altura_contrahuella=altura_contrahuella;
     medios_local.tipo_puertaviasEscape=tipo_puertaviasEscape;
     medios_local.sentido_salida=sentido_salida;
+    medios_local.condicion_escaleras=condicion_escaleras;
+    medios_local.tipo_escaleras=tipo_escaleras;
     medios_local.observacion_viasEscape=observacion_viasEscape;
     medios_local.local=local;
     medios_local.medios_escape=medios_escape;

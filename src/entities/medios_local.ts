@@ -5,6 +5,8 @@ import {
     ManyToOne,
     PrimaryGeneratedColumn,
   } from "typeorm";
+import { condicionvenEnum } from "../enum/condicionVen";
+import { tipoEscaleraEnum } from "../enum/tipoescalera";
 import { Extintor_p } from "./extintor_p";
   import { Local } from "./local";
 import { Medios_escape } from "./medios_escape";
@@ -13,10 +15,16 @@ import { Medios_escape } from "./medios_escape";
   export class Medios_local extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
-  
-   
+
+
   @Column({ type: "boolean" })
   escalera_vias: boolean;
+   
+  @Column({ type: "boolean" })
+  condicion_escaleras: condicionvenEnum;
+
+  @Column({ type: "boolean" })
+  tipo_escaleras: tipoEscaleraEnum;
 
   @Column({ type: "numeric" })
   ancho_escalera: number;
