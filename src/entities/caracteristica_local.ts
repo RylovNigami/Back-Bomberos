@@ -25,7 +25,7 @@ export class Caracteristica_local extends BaseEntity {
   @Column({ type: "numeric" })
   area_util: number;
 
-  @ManyToOne(() => Puertas, (puertas) => puertas.carasteristica_local,{eager:true})
+ /* @ManyToOne(() => Puertas, (puertas) => puertas.carasteristica_local,{eager:true})
   puertas:Puertas;
 
   @ManyToOne(() => Ventanas, (ventanas) => ventanas.carasteristica_local,{eager:true})
@@ -42,21 +42,21 @@ export class Caracteristica_local extends BaseEntity {
   huella:Huella;
 
   
-  @ManyToOne(() => Contrahuella, (contrahuella) => contrahuella.carasteristica_local,{eager:true})
+ @ManyToOne(() => Contrahuella, (contrahuella) => contrahuella.carasteristica_local,{eager:true})
   contrahuella:Contrahuella;
 
-  @ManyToOne(() => Escaleras, (escaleras) => escaleras.carasteristica_local,{eager:true})
+ @ManyToOne(() => Escaleras, (escaleras) => escaleras.carasteristica_local,{eager:true})
   escaleras:Escaleras;
 
   
-  @ManyToOne(() => Paredes, (paredes) => paredes.carasteristica_local,{eager:true})
+ /* @ManyToOne(() => Paredes, (paredes) => paredes.carasteristica_local,{eager:true})
   paredes:Paredes;
   
   @ManyToOne(() => Pasamanos, (pasamanos) => pasamanos.carasteristica_local,{eager:true})
   pasamanos:Pasamanos;
   
   @ManyToOne(() => Pisos, (pisos) => pisos.carasteristica_local,{eager:true})
-  pisos:Pisos;
+  pisos:Pisos;*/
   
   @ManyToOne(() => Local, (local) => local.caracteristica_local,{eager:true})
   local: Local;

@@ -8,10 +8,11 @@ import { Pasamanos } from "../entities/pasamanos";
 
 export const createPasamanos = async (req: Request, res: Response) => {
   try {
-    const { nombre_pasamanos } = req.body;
+    const { nombre_pasamanos,local } = req.body;
 
     const pasamanos = new Pasamanos();
-    pasamanos.nombre_pasamanos=nombre_pasamanos;              
+    pasamanos.nombre_pasamanos=nombre_pasamanos;  
+    pasamanos.local=local;            
  
 
 

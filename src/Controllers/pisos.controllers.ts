@@ -9,10 +9,11 @@ import { Pisos } from "../entities/pisos";
 
 export const createPisos = async (req: Request, res: Response) => {
   try {
-    const { nombre_pisos } = req.body;
+    const { nombre_pisos,local } = req.body;
 
     const pisos = new Pisos();
-    pisos.nombre_pisos=nombre_pisos;           
+    pisos.nombre_pisos=nombre_pisos;        
+    pisos.local=local;   
  
 
 

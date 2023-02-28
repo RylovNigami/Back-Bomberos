@@ -7,10 +7,11 @@ import { Paredes } from "../entities/paredes";
 
 export const createParedes = async (req: Request, res: Response) => {
   try {
-    const { nombre_paredes } = req.body;
+    const { nombre_paredes,local } = req.body;
 
     const paredes = new Paredes();
-    paredes.nombre_paredes=nombre_paredes;                 
+    paredes.nombre_paredes=nombre_paredes;          
+    paredes.local=local;       
  
 
 

@@ -7,10 +7,11 @@ import { Ventanas } from "../entities/ventanas";
 
 export const createVentanas = async (req: Request, res: Response) => {
   try {
-    const { nombre_ventanas } = req.body;
+    const { nombre_ventanas,local } = req.body;
 
     const ventanas = new Ventanas();
-    ventanas.nombre_ventanas=nombre_ventanas;      
+    ventanas.nombre_ventanas=nombre_ventanas;  
+    ventanas.local=local;    
  
 
 

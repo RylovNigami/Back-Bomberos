@@ -8,10 +8,11 @@ import { Rango } from "../entities/rango";
 
 export const createContrahuella = async (req: Request, res: Response) => {
   try {
-    const { nombre_contrahuella} = req.body;
+    const { nombre_contrahuella,local} = req.body;
 
     const contrahuella = new Contrahuella();
     contrahuella.nombre_contrahuella = nombre_contrahuella;
+    contrahuella.local=local;
  
 
 

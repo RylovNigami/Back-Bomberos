@@ -6,10 +6,11 @@ import { Techos } from "../entities/techos";
 
 export const createTechos = async (req: Request, res: Response) => {
   try {
-    const { nombre_techos } = req.body;
+    const { nombre_techos,local } = req.body;
 
     const techos = new Techos();
-    techos.nombre_techos=nombre_techos;          
+    techos.nombre_techos=nombre_techos;   
+    techos.local=local;       
  
 
 

@@ -10,16 +10,9 @@ export const createCaracteristica_local = async (req: Request, res: Response) =>
        caracterisca_local.nro_niveles= nro_niveles;
        caracterisca_local.nivel_inmueble= nivel_inmueble;
        caracterisca_local.area_util=area_util;
-       caracterisca_local.escaleras=escaleras,
-       caracterisca_local.contrahuella=contrahuella,
-       caracterisca_local.huella=huella,
-       caracterisca_local.paredes=paredes,
-       caracterisca_local.pasamanos=pasamanos,
-       caracterisca_local.pisos=pisos,
-       caracterisca_local.plafones=plafones,
-       caracterisca_local.puertas=puertas,
-       caracterisca_local.techos=techos,
-       caracterisca_local.ventanas=ventanas,
+
+    
+   
        caracterisca_local.local=local;
   
   

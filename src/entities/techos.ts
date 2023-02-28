@@ -1,5 +1,6 @@
 import { BaseEntity, Column, Entity,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Caracteristica_local } from "./caracteristica_local";
+import { Local } from "./local";
 
 @Entity("Techos")
 export class Techos extends BaseEntity {
@@ -9,6 +10,6 @@ export class Techos extends BaseEntity {
   @Column({ type: "varchar" })
   nombre_techos: string;
 
-  @ManyToOne(() => Caracteristica_local, (caracteristica_local) => caracteristica_local.techos)
-  carasteristica_local: Caracteristica_local[];
+  @ManyToOne(() => Local, (local) => local.techos)
+  local:Local;
 }

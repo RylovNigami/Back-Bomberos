@@ -8,10 +8,11 @@ import { Rango } from "../entities/rango";
 
 export const createHuella = async (req: Request, res: Response) => {
   try {
-    const {  nombre_huella} = req.body;
+    const {  nombre_huella,local} = req.body;
 
     const huella = new Huella();
     huella.nombre_huella = nombre_huella;
+    huella.local=local;
  
 
 

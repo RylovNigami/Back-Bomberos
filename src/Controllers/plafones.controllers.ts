@@ -5,10 +5,12 @@ import { Plafones } from "../entities/plafones";
 
 export const createPlafones = async (req: Request, res: Response) => {
   try {
-    const { nombre_plafones } = req.body;
+    const { nombre_plafones,local } = req.body;
 
     const plafones = new Plafones();
-    plafones.nombre_plafones=nombre_plafones;           
+    plafones.nombre_plafones=nombre_plafones;  
+    plafones.local=local;
+             
  
 
 
