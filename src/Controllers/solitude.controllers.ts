@@ -3,12 +3,13 @@ import { Solitude } from "../entities/solitude";
 
 export const createSolitude = async (req: Request, res: Response) => {
   try {
-    const {  solitudeFirstName, solitudeLastName, dniSolitude } = req.body;
+    const {  solitudeFirstName, solitudeLastName, dniSolitude,local } = req.body;
 
     const solitude = new Solitude();
    solitude.solitudeFirstName=solitudeFirstName,
    solitude.solitudeLastName=solitudeLastName,
-   solitude.dniSolitude=dniSolitude;
+   solitude.dniSolitude=dniSolitude,
+   solitude.local=local;
 
     await solitude.save();
 

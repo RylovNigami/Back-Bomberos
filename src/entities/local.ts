@@ -67,14 +67,15 @@ export class Local extends BaseEntity {
   @ManyToOne(() => Parroquia, (parroquia) =>  parroquia.local)
   parroquia:Parroquia;
 
-  @ManyToOne(() => Interviewer, (interviewer) =>  interviewer.local,{eager:true})
-  interviewer:Interviewer;
+  @OneToMany(() => Interviewer, (interviewer) => interviewer.local)
+  interviewer:Interviewer[];
 
-  @ManyToOne(() => LocalOwner, (localOwner) =>  localOwner.local,{eager:true})
-  localOwner:LocalOwner;
+  @OneToMany(() => LocalOwner, (localOwner) => localOwner.local)
+  localOwner:LocalOwner[];
 
-  @ManyToOne(() => Solitude, (solitude) =>  solitude.local,{eager:true})
-  solitude:Solitude;
+  @OneToMany(() => Solitude, (solitude) => solitude.local)
+  solitude:Solitude[];
+
   @OneToMany(() => Extincion_local, (extincion_local) => extincion_local.local)
   extincion_local:Extincion_local[];
 }

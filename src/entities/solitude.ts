@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, OneToMany, OneToOne,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Bombero } from "./bombero";
 import { User } from "./user";
 import { Inspeccion } from "./inspeccion";
@@ -19,7 +19,9 @@ export class Solitude extends BaseEntity {
   dniSolitude: number;
 
     
-  @OneToMany(() => Local, (local) => local.solitude)
-  local:Local[];
+  @ManyToOne(() => Local, (local) =>  local.solitude,{eager:true})
+  local:Local;
+
+
 
 }

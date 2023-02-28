@@ -5,13 +5,14 @@ import { Person } from "../entities/person";
 
 export const createLocalOwner = async (req: Request, res: Response) => {
   try {
-    const {  localOwnerFirstName,localOwnerLastName,localOwnerDni,localOwnerMail } = req.body;
+    const {  localOwnerFirstName,localOwnerLastName,localOwnerDni,localOwnerMail,local } = req.body;
 
     const localOwner = new LocalOwner();
     localOwner.localOwnerFirstName=localOwnerFirstName,
     localOwner.localOwnerLastName=localOwnerLastName,
     localOwner.localOwnerDni=localOwnerDni,
-    localOwner.localOwnerMail=localOwnerMail;
+    localOwner.localOwnerMail=localOwnerMail,
+    localOwner.local=local;
 
     await localOwner.save();
 

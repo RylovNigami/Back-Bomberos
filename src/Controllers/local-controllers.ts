@@ -15,9 +15,7 @@ export const createLocal = async (req: Request, res: Response) => {
      local.ubicacion=ubicacion,
      local.ocupacion=ocupacion,
      local.parroquia=parroquia,
-     local.interviewer=interviewer,
-     local.localOwner=localOwner,
-     local.solitude=solitude;
+
 
     await local.save();
 

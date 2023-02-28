@@ -4,13 +4,14 @@ import { Interviewer } from "../entities/interviewer";
 
 export const createInterviewer = async (req: Request, res: Response) => {
   try {
-    const { interviewerFirstName,interviewerLastName,interviewerDni,interviewerNumber } = req.body;
+    const { interviewerFirstName,interviewerLastName,interviewerDni,interviewerNumber,local } = req.body;
 
     const interviewer = new Interviewer();
     interviewer.interviewerFirstName=interviewerFirstName,
     interviewer.interviewerLastName=interviewerLastName,
     interviewer.interviewerDni=interviewerDni,
-    interviewer.interviewerNumber=interviewerNumber;
+    interviewer.interviewerNumber=interviewerNumber,
+    interviewer.local=local;
 
     await interviewer.save();
 

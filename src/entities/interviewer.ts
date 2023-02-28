@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, OneToMany, OneToOne, ManyToOne,PrimaryGeneratedColumn } from "typeorm";
 import { Bombero } from "./bombero";
 import { User } from "./user";
 import { Inspeccion } from "./inspeccion";
@@ -21,7 +21,6 @@ export class Interviewer extends BaseEntity {
   @Column({ type: "numeric"})
   interviewerNumber:number;
 
-  
-  @OneToMany(() => Local, (local) => local.interviewer)
-  local:Local[];
+  @ManyToOne(() => Local, (local) =>  local.interviewer,{eager:true})
+  local:Local;
 }

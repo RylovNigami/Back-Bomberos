@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, OneToMany, OneToOne, ManyToOne,PrimaryGeneratedColumn } from "typeorm";
 import { Bombero } from "./bombero";
 import { User } from "./user";
 import { Inspeccion } from "./inspeccion";
@@ -21,7 +21,7 @@ export class LocalOwner extends BaseEntity {
   @Column({ type: "varchar", nullable: true })
   localOwnerMail: string;
   
-    
-  @OneToMany(() => Local, (local) => local.localOwner)
-  local:Local[];
+  @ManyToOne(() => Local, (local) =>  local.localOwner,{eager:true})
+  local:Local;
+
 }
