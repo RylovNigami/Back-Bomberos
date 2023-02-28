@@ -5,6 +5,8 @@ import { tipoalarmaEnum } from "../enum/tipoalarma";
 import { tipodeteccionEnum } from "../enum/tipodeteccion";
 import { Alarmas_local } from "./alarmas_local";
 import { Brand } from "./brand";
+import { Difusores } from "./difusores";
+import { Estacion_manual } from "./estacion_manual";
 import { Local } from "./local";
 
 @Entity("Alarmas")
@@ -45,9 +47,22 @@ export class Alarmas extends BaseEntity {
   @Column({ type: "boolean" })
   detectores_area: boolean;
 
-  @OneToMany(() => Alarmas_local, (alarmas_local) => alarmas_local.alarmas)
-  alarmas_local:Alarmas_local[];
+  @Column({ type: "boolean" })
+  difusores_sonido: boolean;
+
+  @Column({ type: "boolean" })
+  estacion_manual: boolean;
+
+
+  @ManyToOne(() => Local, (local) => local.alarmas,{eager:true})
+  local:Local;
 
   @ManyToOne(() => Brand, (brand) =>  brand.alarmas,{eager:true})
   brand:Brand;
+
+  @ManyToOne(() => Estacion_manual, (estacion_manual) =>  estacion_manual.alarmas,{eager:true})
+  estacion:Estacion_manual;
+
+  @ManyToOne(() => Difusores, (difusores) =>  difusores.alarmas,{eager:true})
+  difusores:Difusores;
 }

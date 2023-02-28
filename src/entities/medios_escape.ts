@@ -1,5 +1,6 @@
 import { BaseEntity, Column, Entity,ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { condicionvenEnum } from "../enum/condicionVen";
+import { tipoEscaleraEnum } from "../enum/tipoescalera";
 import { tipovenEnum } from "../enum/tipoven";
 import { Local } from "./local";
 import { Medios_local } from "./medios_local";
@@ -11,6 +12,37 @@ export class Medios_escape extends BaseEntity {
 
   @Column({ type: "boolean" })
   vias_escape: boolean;
+
+  
+  @Column({ type: "boolean" })
+  escalera_vias: boolean;
+   
+  @Column({ type: "varchar" })
+  condicion_escaleras: condicionvenEnum;
+
+  @Column({ type: "varchar" })
+  tipo_escaleras: tipoEscaleraEnum;
+
+  @Column({ type: "numeric" })
+  ancho_escalera: number;
+
+  @Column({ type: "numeric" })
+  altura_pasamano: number;
+
+  @Column({ type: "numeric" })
+  ancho_huella: number;
+
+  @Column({ type: "numeric" })
+  altura_contrahuella: number;
+
+  @Column({ type: "varchar" })
+  tipo_puertaviasEscape: string;
+
+  @Column({ type: "boolean" })
+  sentido_salida: boolean;
+
+  @Column({ type: "varchar" })
+  observacion_viasEscape: string;
 
   @Column({ type: "boolean" })
   ventilacion_viasEscape: boolean;
@@ -57,6 +89,6 @@ export class Medios_escape extends BaseEntity {
   @Column({ type: "numeric" })
   angulo_rampaEscape: number;
 
-  @OneToMany(() => Medios_local, (medios_local) => medios_local.medios_escape)
-  medios_local:Medios_escape[];
+  @ManyToOne(() => Local, (local) => local.medios_escape,{eager:true})
+  local:Local;
 }

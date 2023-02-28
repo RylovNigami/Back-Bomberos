@@ -14,9 +14,6 @@ export class Extincion_local extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "boolean" })
-  mangueras: boolean;
-
   @Column({ type: "varchar" })
   condicion_manguera: condicionvenEnum;
 
@@ -29,11 +26,6 @@ export class Extincion_local extends BaseEntity {
   @Column({ type: "boolean" })
   area_protegerMangueras: boolean;
 
-  @Column({ type: "boolean" })
-  rociadores: boolean;
-
-  @Column({ type: "boolean" })
-  cubre_areaRociadores: boolean;
 
   @ManyToOne(() => Local, (local) => local.extincion_local,{eager:true})
   local:Local;

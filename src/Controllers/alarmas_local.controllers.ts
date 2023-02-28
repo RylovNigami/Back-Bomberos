@@ -12,14 +12,6 @@ export const createAlarmas_local = async (req: Request, res: Response) => {
     const { estacion_manual,estacion_condicion,estacion_clase,difusores_condicion,difusores_sonido,cubren_areaDifusor,local,alarmas} = req.body;
 
     const alarmas_local = new Alarmas_local();
-   alarmas_local.estacion_manual=estacion_manual,
-   alarmas_local.estacion_condicion=estacion_condicion,
-   alarmas_local.estacion_clase=estacion_clase,
-   alarmas_local.difusores_condicion=difusores_condicion,
-   alarmas_local.difusores_sonido=difusores_sonido,
-   alarmas_local.cubren_areaDifusor=cubren_areaDifusor,
-   alarmas_local.alarmas=alarmas,
-   alarmas_local.local=local;
 
  
 

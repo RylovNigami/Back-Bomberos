@@ -44,19 +44,8 @@ export const create = async (req: Request, res: Response) => {
     medios_escape.angulo_rampaEscape=angulo_rampaEscape;
     
 
-    const medios_local = new Medios_local ();
-    medios_local.escalera_vias=escalera_vias;
-    medios_local.ancho_escalera=ancho_escalera;
-    medios_local.altura_pasamano=altura_pasamano;
-    medios_local.ancho_huella=ancho_huella;
-    medios_local.altura_contrahuella=altura_contrahuella;
-    medios_local.tipo_puertaviasEscape=tipo_puertaviasEscape;
-    medios_local.sentido_salida=sentido_salida;
-    medios_local.condicion_escaleras=condicion_escaleras;
-    medios_local.tipo_escaleras=tipo_escaleras;
-    medios_local.observacion_viasEscape=observacion_viasEscape;
-    medios_local.local=local;
-    medios_local.medios_escape=medios_escape;
+    
+ 
 
  
 
@@ -65,7 +54,6 @@ export const create = async (req: Request, res: Response) => {
 
         //throw new Error("eokfzdmomsz");
         await queryRunner.manager.save(medios_escape);
-        await queryRunner.manager.save(medios_local);
     
 
         await queryRunner.commitTransaction();
@@ -79,7 +67,7 @@ export const create = async (req: Request, res: Response) => {
     // await rango.save();
     // await bombero.save();
 
-    return res.json([local,medios_escape,medios_local]);
+    return res.json([local,medios_escape]);
   } catch (error) {
     if (error instanceof Error) {
       return res.status(500).json({ message: error.message });

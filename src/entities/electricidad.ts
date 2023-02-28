@@ -6,7 +6,7 @@ export class Electricidad extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "numeric" })
+  @Column({ type: "numeric",nullable:true })
   tension_tablero: number;
 
   @Column({ type: "varchar" })

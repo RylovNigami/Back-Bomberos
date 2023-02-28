@@ -26,6 +26,15 @@ export class Extincion_f extends BaseEntity {
   @Column({ type: "numeric" })
   cantidad_cajetinesManguera: number;
 
+  @Column({ type: "boolean" })
+  mangueras: boolean;
+
+  @Column({ type: "boolean" })
+  rociadores: boolean;
+
+  @Column({ type: "boolean" })
+  cubre_areaRociadores: boolean;
+
   
   @OneToMany(() => Extincion_local, (extincion_local) => extincion_local.extincion_f)
   extincion_local:Extincion_local[];

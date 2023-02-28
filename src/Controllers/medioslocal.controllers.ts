@@ -10,18 +10,8 @@ export const createMedios_local = async (req: Request, res: Response) => {
     const {  escalera_vias,ancho_escalera,altura_pasamano,altura_contrahuella,ancho_huella,tipo_puertaviasEscape,condicion_escaleras,tipo_escaleras,sentido_salida,observacion_viasEscape,local,medios_escape} = req.body;
 
     const medios_local= new Medios_local();
-    medios_local.escalera_vias=escalera_vias;
-    medios_local.ancho_escalera=ancho_escalera;
-    medios_local.altura_pasamano=altura_pasamano;
-    medios_local.ancho_huella=ancho_huella;
-    medios_local.altura_contrahuella=altura_contrahuella;
-    medios_local.tipo_puertaviasEscape=tipo_puertaviasEscape;
-    medios_local.condicion_escaleras=condicion_escaleras;
-    medios_local.tipo_escaleras=tipo_escaleras;
-    medios_local.sentido_salida=sentido_salida;
-    medios_local.observacion_viasEscape=observacion_viasEscape;
-    medios_local.local=local;
-    medios_local.medios_escape=medios_escape;
+   
+    
 
     
 

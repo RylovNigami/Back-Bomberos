@@ -52,14 +52,14 @@ export class Local extends BaseEntity {
   @OneToMany(() => Electricidad, (electricidad) => electricidad.local)
   electricidad:Electricidad[];
 
-  @OneToMany(() => Medios_local, (medios_local) => medios_local.local)
-  medios_local:Medios_local[];
+  @OneToMany(() => Medios_escape, (medios_escape) => medios_escape.local)
+  medios_escape:Medios_escape[];
 
   @OneToMany(() => Alm_riesgoso, (alm_riesgoso) => alm_riesgoso.local)
   alm_riesgoso:Alm_seguro[];
   
-  @OneToMany(() => Alarmas_local, (alarmas_local) => alarmas_local.local)
-  alarmas_local:Alarmas_local[];
+  @OneToMany(() => Alarmas, (alarmas) => alarmas.local)
+  alarmas:Alarmas[];
 
   @OneToMany(() => Extintor_local, (Extintor_local) => Extintor_local.local)
   extintor_local:Extintor_local[];

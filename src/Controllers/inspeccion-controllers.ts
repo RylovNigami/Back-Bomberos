@@ -58,7 +58,7 @@ export const getInspeccion = async (req: Request, res: Response) => {
     .leftJoinAndSelect('local.localOwner', 'locallo')
     .leftJoinAndSelect('local.caracteristica_local', 'localcl')
     .leftJoinAndSelect('local.extintor_local', 'localex')
-    .leftJoinAndSelect('local.medios_local', 'localml')
+    .leftJoinAndSelect('local.medios_escape', 'localml')
    /* .leftJoinAndSelect('caracteristica_local.puertas', 'localcp')
     .leftJoinAndSelect('caracteristica_local.escaleras', 'locales')
     .leftJoinAndSelect('caracteristica_local.ventanas', 'localve')

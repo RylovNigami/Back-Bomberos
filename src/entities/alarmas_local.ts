@@ -11,28 +11,6 @@ export class Alarmas_local extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "boolean" })
-  estacion_manual: boolean;
+ 
 
-  @Column({ type: "varchar" })
-  estacion_clase: string;
-
-  @Column({ type: "varchar" })
-  estacion_condicion: condicionvenEnum;
-
-  @Column({ type: "boolean" })
-  difusores_sonido: boolean;
-
-  @Column({ type: "varchar" })
-  difusores_condicion: condicionvenEnum;
-
-  @Column({ type: "boolean" })
-  cubren_areaDifusor: boolean;
-
-
-  @ManyToOne(() => Local, (local) => local.alarmas_local,{eager:true})
-  local:Local;
-
-  @ManyToOne(() => Alarmas, (alarmas) => alarmas.alarmas_local,{eager:true})
-  alarmas:Alarmas;
 }
