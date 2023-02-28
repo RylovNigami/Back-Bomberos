@@ -1,5 +1,6 @@
 import { Response, Request } from "express";
 import { Caracteristica_local } from "../entities/caracteristica_local";
+import { Local } from "../entities/local";
 
 export const createCaracteristica_local = async (req: Request, res: Response) => {
     try {
@@ -34,6 +35,7 @@ export const createCaracteristica_local = async (req: Request, res: Response) =>
   
   export const getCaracteristica_local = async (req: Request, res: Response) => {
     try {
+
       const caracterisca_local = await Caracteristica_local.find();
   
       return res.json(caracterisca_local);

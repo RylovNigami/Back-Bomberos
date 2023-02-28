@@ -7,10 +7,11 @@ import { Rango } from "../entities/rango";
 
 export const createBombero = async (req: Request, res: Response) => {
   try {
-    const {  ordenGeneral, status,genero, person, rango, cargo,departamento } = req.body;
+    const {  ordenGeneral, ordenGeneralfecha,status,genero, person, rango, cargo,departamento } = req.body;
 
     const bombero = new Bombero();
     bombero.ordenGeneral = ordenGeneral;
+    bombero.ordenGeneralfecha=ordenGeneralfecha;
     bombero.status = status;
     bombero.genero=genero;
     bombero.person=person;

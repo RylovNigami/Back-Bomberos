@@ -9,9 +9,9 @@ export class Puertas extends BaseEntity {
   @Column({ type: "varchar" })
   nombre_puertas: string;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   resistencia: boolean;
 
   @ManyToOne(() => Caracteristica_local, (caracteristica_local) => caracteristica_local.puertas)
-  carasteristica_local:Caracteristica_local[];
+  carasteristica_local:Caracteristica_local;
 }

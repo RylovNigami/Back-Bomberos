@@ -16,6 +16,9 @@ export class Bombero extends BaseEntity {
   @Column({ type: "varchar" })
   ordenGeneral: number;
 
+  @Column({ type: "date",nullable:true})
+  ordenGeneralfecha: Date;
+
   @Column({  type:"varchar",nullable:true})
   genero:GeneroEnum;
   

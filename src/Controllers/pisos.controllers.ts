@@ -28,7 +28,7 @@ export const createPisos = async (req: Request, res: Response) => {
 
 export const getPisos = async (req: Request, res: Response) => {
   try {
-    const pisos = await Pasamanos.find();
+    const pisos = await Pisos.find();
 
     return res.json(pisos);
   } catch (error) {

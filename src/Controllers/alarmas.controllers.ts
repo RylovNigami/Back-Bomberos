@@ -23,10 +23,10 @@ export const createAlarmas = async (req: Request, res: Response) => {
    alarmas.humo_f=humo_f,
    alarmas.combinado=combinado,
    alarmas.detectores_area=detectores_area,
-    alarmas.brand=brand;
-    alarmas.local=local;
-    alarmas.estacion_manual=estacion_manual;
-    alarmas.difusores=difusores;
+   alarmas.brand=brand;
+   alarmas.local=local;
+   alarmas.estacion_manual=estacion_manual;
+  alarmas.difusores=difusores;
 
 
  
