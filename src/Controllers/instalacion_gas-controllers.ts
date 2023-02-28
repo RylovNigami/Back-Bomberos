@@ -4,20 +4,14 @@ import { Instalacion_gas } from "../entities/instalacion_gas";
 
 export const createInstalacion_gas= async (req: Request, res: Response) => {
     try {
-      const { suministro,tipo,cap_bombona,ubic_bombona,condicion_v,ventilada,cap_tanque,ubic_tanque, aterramiento,ubic_valvula,local } = req.body;
+      const { suministro_bombona,ubic_valvulaBombona,local,bombona_gas,tanque_gas } = req.body;
   
       const instalacion_gas = new Instalacion_gas();
 
-      instalacion_gas.suministro=suministro,
-      instalacion_gas.tipo=tipo,
-      instalacion_gas.cap_bombona=cap_bombona,
-      instalacion_gas.ubic_bombona=ubic_bombona,
-      instalacion_gas.condicion_v=condicion_v,
-      instalacion_gas.ventilada=ventilada,
-      instalacion_gas.cap_tanque=cap_tanque,
-      instalacion_gas.ubic_tanque=ubic_tanque,
-      instalacion_gas.aterramiento=aterramiento,
-      instalacion_gas.ubic_valvula=ubic_valvula,
+      instalacion_gas.suministro_bombona=suministro_bombona,
+      instalacion_gas.ubic_valvulaBombona=ubic_valvulaBombona,
+      instalacion_gas.bombona_gas=bombona_gas,
+      instalacion_gas.tanque_gas=tanque_gas,
       instalacion_gas.local=local;
    
   

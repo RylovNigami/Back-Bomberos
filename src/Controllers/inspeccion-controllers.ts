@@ -54,6 +54,8 @@ export const getInspeccion = async (req: Request, res: Response) => {
     .leftJoinAndSelect('bombero.rango', 'rango')
     .leftJoinAndSelect('bombero.departamento', 'departamento')
     .leftJoinAndSelect('local.instalacion_gas', 'localIL')
+    .leftJoinAndSelect('localIL.bombona_gas', 'bombona')
+    .leftJoinAndSelect('localIL.tanque_gas', 'tanque')
     .leftJoinAndSelect('local.alm_seguro', 'localAS')
     .leftJoinAndSelect('local.electricidad', 'localE')
     .leftJoinAndSelect('local.alm_riesgoso', 'localAR')
