@@ -2,8 +2,11 @@ import { BaseEntity, Column, Entity,ManyToOne, OneToMany, PrimaryGeneratedColumn
 import { condicionvenEnum } from "../enum/condicionVen";
 import { tipoEscaleraEnum } from "../enum/tipoescalera";
 import { tipovenEnum } from "../enum/tipoven";
+import { Escaleras_vias } from "./escaleras_vias";
 import { Local } from "./local";
 import { Medios_local } from "./medios_local";
+import { Puertas } from "./puertas";
+import { Puertas_vias } from "./puertas_vias";
 
 @Entity("Medios_escape")
 export class Medios_escape extends BaseEntity {
@@ -12,38 +15,10 @@ export class Medios_escape extends BaseEntity {
 
   @Column({ type: "boolean",nullable:true })
   vias_escape: boolean;
-
   
   @Column({ type: "boolean",nullable:true })
   escalera_vias: boolean;
    
-  @Column({ type: "varchar",nullable:true })
-  condicion_escaleras: condicionvenEnum;
-
-  @Column({ type: "varchar",nullable:true })
-  tipo_escaleras: tipoEscaleraEnum;
-
-  @Column({ type: "numeric",nullable:true })
-  ancho_escalera: number;
-
-  @Column({ type: "numeric",nullable:true })
-  altura_pasamano: number;
-
-  @Column({ type: "numeric",nullable:true })
-  ancho_huella: number;
-
-  @Column({ type: "numeric",nullable:true })
-  altura_contrahuella: number;
-
-  @Column({ type: "varchar",nullable:true })
-  tipo_puertaviasEscape: string;
-
-  @Column({ type: "boolean",nullable:true })
-  sentido_salida: boolean;
-
-  @Column({ type: "varchar",nullable:true })
-  observacion_viasEscape: string;
-
   @Column({ type: "boolean",nullable:true })
   ventilacion_viasEscape: boolean;
 
@@ -77,7 +52,6 @@ export class Medios_escape extends BaseEntity {
   @Column({ type: "boolean",nullable:true })
   señalizacion_viasEscape: boolean;
 
-
   @Column({ type: "boolean",nullable:true })
   foto_iluminiscentes: boolean;
 
@@ -104,4 +78,10 @@ export class Medios_escape extends BaseEntity {
 
   @ManyToOne(() => Local, (local) => local.medios_escape,{eager:true})
   local:Local;
+
+  @ManyToOne(() => Escaleras_vias, (escalera_vias) => escalera_vias.medios_escape,{eager:true})
+  escaleras_vias:Escaleras_vias;
+
+  @ManyToOne(() => Puertas_vias, (puertas_vias) => puertas_vias.medios_escape,{eager:true})
+  puertas_vias:Puertas_vias;
 }

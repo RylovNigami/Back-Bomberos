@@ -45,6 +45,8 @@ import { Difusores } from "./entities/difusores";
 import { Estacion_manual } from "./entities/estacion_manual";
 import { Bombona_gas } from "./entities/bombona_gas";
 import { Tanque_gas } from "./entities/tanque_gas";
+import { Puertas_vias } from "./entities/puertas_vias";
+import { Escaleras_vias } from "./entities/escaleras_vias";
 
 
 export const AppDataSource = new DataSource({
@@ -55,7 +57,7 @@ export const AppDataSource = new DataSource({
   port: Number(process.env.DB_PORT),
   database: process.env.DB_NAME,
   entities: [User,Person,Agente_extinguidor,Alarmas,Alarmas_local,Alm_riesgoso,Alm_seguro,Bombero,Bombona_gas,Caracteristica_local,Cargo,Company,Brand,Contrahuella,Interviewer,LocalOwner,Solitude,
-  Departamento,Difusores,Estacion_manual,Electricidad,Escaleras,Estado,Extincion_f,Extincion_local,Extintor_p,Extintor_local,Huella,Inspeccion,Instalacion_gas,Local,Medios_escape,
+  Departamento,Difusores,Estacion_manual,Puertas_vias,Escaleras_vias,Electricidad,Escaleras,Estado,Extincion_f,Extincion_local,Extintor_p,Extintor_local,Huella,Inspeccion,Instalacion_gas,Local,Medios_escape,
   Medios_local,Municipio,Paredes,Parroquia,Pasamanos,Pisos,Plafones,Puertas,Rango,Techos,Tanque_gas,Ventanas],
   synchronize: true,
 });

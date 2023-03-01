@@ -9,21 +9,11 @@ export const createMedios_escape = async (req: Request, res: Response) => {
     const {  vias_escape,condicion_escaleras, tipo_escaleras,escalera_vias,ancho_escalera,altura_pasamano,altura_contrahuella,ancho_huella,tipo_puertaviasEscape,sentido_salida,observacion_viasEscape,local,
       ventilacion_viasEscape,condicion_venviasEscape,tipo_venviasEscape,cinta_antirresbalante,pasillos_circulacion,rampas_acceso,escaleras_cintaAntirresbalante,sitio_cintaAntirresbalante,iluminacion_emergencia,tipo_lamparaEmergencia,cantidad_lamparaEmergencia,señalizacion_viasEscape,tipo_señalviasEscape,
         pasillo_viasEscape,nro_pasilloviasEscape,ancho_pasilloviasEscape,
-        foto_iluminiscentes,reflectante_señalvias,convencionales_señalvias,rampa_viasEscape,angulo_rampaEscape} = req.body;
+        foto_iluminiscentes,reflectante_señalvias,convencionales_señalvias,rampa_viasEscape,angulo_rampaEscape,puertas_vias} = req.body;
 
     const medios_escape= new Medios_escape();
     medios_escape.vias_escape=vias_escape,
-    medios_escape.condicion_escaleras=condicion_escaleras,
     medios_escape.escalera_vias=escalera_vias;
-    medios_escape.ancho_escalera=ancho_escalera;
-    medios_escape.altura_pasamano=altura_pasamano;
-    medios_escape.ancho_huella=ancho_huella;
-    medios_escape.altura_contrahuella=altura_contrahuella;
-    medios_escape.tipo_puertaviasEscape=tipo_puertaviasEscape;
-    medios_escape.sentido_salida=sentido_salida;
-    medios_escape.condicion_escaleras=condicion_escaleras;
-    medios_escape.tipo_escaleras=tipo_escaleras;
-    medios_escape.observacion_viasEscape=observacion_viasEscape;
     medios_escape.local=local;
     medios_escape.ventilacion_viasEscape=ventilacion_viasEscape,
     medios_escape.condicion_venviasEscape=condicion_venviasEscape,
@@ -44,6 +34,8 @@ export const createMedios_escape = async (req: Request, res: Response) => {
     medios_escape.ancho_pasilloviasEscape=ancho_pasilloviasEscape,
     medios_escape.rampa_viasEscape=rampa_viasEscape,
     medios_escape.angulo_rampaEscape=angulo_rampaEscape,
+    medios_escape.escalera_vias=escalera_vias,
+    medios_escape.puertas_vias=puertas_vias;
     
 
 
