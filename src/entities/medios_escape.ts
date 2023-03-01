@@ -56,8 +56,14 @@ export class Medios_escape extends BaseEntity {
   @Column({ type: "boolean" })
   cinta_antirresbalante: boolean;
 
-  @Column({ type: "varchar" })
-  sitio_cintaAntirresbalante: string;
+  @Column({ type: "boolean",nullable:true })
+  pasillos_circulacion: boolean;
+
+  @Column({ type: "boolean",nullable:true })
+  rampas_acceso: boolean;
+
+  @Column({ type: "boolean",nullable:true })
+  escaleras_cintaAntirresbalante: boolean;
 
   @Column({ type: "boolean" })
   iluminacion_emergencia: boolean;
@@ -71,8 +77,15 @@ export class Medios_escape extends BaseEntity {
   @Column({ type: "boolean" })
   señalizacion_viasEscape: boolean;
 
-  @Column({ type: "varchar" })
-  tipo_señalviasEscape: string;
+
+  @Column({ type: "boolean",nullable:true })
+  foto_iluminiscentes: boolean;
+
+  @Column({ type: "boolean",nullable:true })
+  reflectante_señalvias: boolean;
+
+  @Column({ type: "boolean",nullable:true })
+  convencionales_señalvias: boolean;
 
   @Column({ type: "varchar" })
   pasillo_viasEscape: boolean;

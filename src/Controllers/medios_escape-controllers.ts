@@ -7,9 +7,9 @@ import { Medios_escape } from "../entities/medios_escape";
 export const createMedios_escape = async (req: Request, res: Response) => {
   try {
     const {  vias_escape,condicion_escaleras, tipo_escaleras,escalera_vias,ancho_escalera,altura_pasamano,altura_contrahuella,ancho_huella,tipo_puertaviasEscape,sentido_salida,observacion_viasEscape,local,
-      ventilacion_viasEscape,condicion_venviasEscape,tipo_venviasEscape,cinta_antirresbalante,sitio_cintaAntirresbalante,iluminacion_emergencia,tipo_lamparaEmergencia,cantidad_lamparaEmergencia,señalizacion_viasEscape,tipo_señalviasEscape,
+      ventilacion_viasEscape,condicion_venviasEscape,tipo_venviasEscape,cinta_antirresbalante,pasillos_circulacion,rampas_acceso,escaleras_cintaAntirresbalante,sitio_cintaAntirresbalante,iluminacion_emergencia,tipo_lamparaEmergencia,cantidad_lamparaEmergencia,señalizacion_viasEscape,tipo_señalviasEscape,
         pasillo_viasEscape,nro_pasilloviasEscape,ancho_pasilloviasEscape,
-        rampa_viasEscape,angulo_rampaEscape} = req.body;
+        foto_iluminiscentes,reflectante_señalvias,convencionales_señalvias,rampa_viasEscape,angulo_rampaEscape} = req.body;
 
     const medios_escape= new Medios_escape();
     medios_escape.vias_escape=vias_escape,
@@ -29,12 +29,16 @@ export const createMedios_escape = async (req: Request, res: Response) => {
     medios_escape.condicion_venviasEscape=condicion_venviasEscape,
     medios_escape.tipo_venviasEscape=tipo_venviasEscape
     medios_escape.cinta_antirresbalante=cinta_antirresbalante,
-    medios_escape.sitio_cintaAntirresbalante=sitio_cintaAntirresbalante,
+    medios_escape.pasillos_circulacion=pasillos_circulacion,
+    medios_escape.rampas_acceso=rampas_acceso,
+    medios_escape.escaleras_cintaAntirresbalante,
     medios_escape.iluminacion_emergencia=iluminacion_emergencia,
     medios_escape.tipo_lamparaEmergencia=tipo_lamparaEmergencia,
+    medios_escape.foto_iluminiscentes=foto_iluminiscentes,
+    medios_escape.reflectante_señalvias=reflectante_señalvias,
+    medios_escape.convencionales_señalvias=convencionales_señalvias,
     medios_escape.cantidad_lamparaEmergencia=cantidad_lamparaEmergencia,
     medios_escape.señalizacion_viasEscape=señalizacion_viasEscape,
-    medios_escape.tipo_señalviasEscape=tipo_señalviasEscape,
     medios_escape.pasillo_viasEscape=pasillo_viasEscape,
     medios_escape.nro_pasilloviasEscape=nro_pasilloviasEscape,
     medios_escape.ancho_pasilloviasEscape=ancho_pasilloviasEscape,
