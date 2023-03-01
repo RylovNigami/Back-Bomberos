@@ -21,13 +21,13 @@ export class Electricidad extends BaseEntity {
   @Column({ type: "varchar" })
   ubic_tablero: string;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true})
   ventilacion_tablero: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   tipo_venTablero: tipovenEnum;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   tipo_interruptorTablero: string;
 
   @Column({ type: "boolean",nullable:true })
