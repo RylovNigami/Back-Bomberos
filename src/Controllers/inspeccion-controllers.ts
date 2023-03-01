@@ -3,17 +3,21 @@ import { Bombero } from "../entities/bombero";
 import { Inspeccion } from "../entities/inspeccion";
 import { Local } from "../entities/local";
 import { Person } from "../entities/person";  
+import { tipoRespuestaEnum } from "../enum/tiporespuesta";
 
 
 export const createInspeccion = async (req: Request, res: Response) => {
   try {
-    const { existe_guia,nro_inspeccion,hora,fecha, local, bombero } = req.body;
+    const { existe_guia,nro_inspeccion,hora,fecha,observaciones_inspeccion,cumple_ordenamiento, tipo_respuestaInspeccion,local, bombero } = req.body;
 
     const inspeccion = new Inspeccion();
     inspeccion.existe_guia=existe_guia,
     inspeccion.nro_inspeccion=nro_inspeccion,
     inspeccion.hora=hora;
     inspeccion.fecha=fecha;
+    inspeccion.observaciones_inspeccion=observaciones_inspeccion,
+    inspeccion.cumple_ordenamiento=cumple_ordenamiento,
+    inspeccion.tipo_respuestaInspeccion=tipo_respuestaInspeccion,
     inspeccion.local=local;
     inspeccion.bombero=bombero;
 

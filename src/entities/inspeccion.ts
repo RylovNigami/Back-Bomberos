@@ -1,5 +1,6 @@
 import { BaseEntity, Column, Entity,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { StatusEnum } from "../enum/status";
+import { tipoRespuestaEnum } from "../enum/tiporespuesta";
 import { Bombero } from "./bombero";
 
 import { Local } from "./local";
@@ -11,7 +12,7 @@ export class Inspeccion extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   existe_guia: boolean;
 
   @Column({ type: "varchar",unique:true })
@@ -30,6 +31,8 @@ export class Inspeccion extends BaseEntity {
   observaciones_inspeccion: string;
 
   
+  @Column({ type: "varchar",nullable:true})
+  tipo_respuestaInspeccion: tipoRespuestaEnum;
 
   @ManyToOne(() => Bombero, (bombero) => bombero.inspeccion,{ eager:true})
   bombero:Bombero;
