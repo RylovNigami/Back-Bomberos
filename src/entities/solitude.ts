@@ -9,13 +9,13 @@ export class Solitude extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   solitudeFirstName: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   solitudeLastName: string;
 
-  @Column({ type: "numeric", unique: true })
+  @Column({ type: "numeric", unique: true,nullable:true })
   dniSolitude: number;
 
     

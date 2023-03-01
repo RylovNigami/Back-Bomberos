@@ -14,43 +14,43 @@ export class Alarmas extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   sistema_alarma: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   sistema_deteccion: tipodeteccionEnum;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   condiciones_alarmas: condicionalarmaEnum;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   tipo_deteccion: tipoalarmaEnum;
 
-  @Column({ type: "numeric" })
+  @Column({ type: "numeric",nullable:true })
   nro_zonaAlarma: number;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   area_protegerDeteccion: boolean;
 
-  @Column({ type: "numeric" })
+  @Column({ type: "numeric",nullable:true })
   calor: number;
 
-  @Column({ type: "numeric" })
+  @Column({ type: "numeric",nullable:true })
   humo_f: number;
 
-  @Column({ type: "numeric" })
+  @Column({ type: "numeric",nullable:true })
   humo_i: number;
 
-  @Column({ type: "numeric" })
+  @Column({ type: "numeric",nullable:true })
   combinado: number;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   detectores_area: boolean;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   difusores_sonido: boolean;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   estacion_manual: boolean;
 
 

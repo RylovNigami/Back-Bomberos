@@ -9,19 +9,19 @@ export class Bombona_gas extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   cap_bombona: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   ubic_bombona: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   condicion_visualBombona: string;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   ventiladaBombona: boolean;  
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   protegidaBombona: boolean;  
 
 

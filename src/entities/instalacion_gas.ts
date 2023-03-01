@@ -11,7 +11,7 @@ export class Instalacion_gas extends BaseEntity {
   @Column({ type: "varchar",nullable:true })
   suministro_bombona: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   ubic_valvulaBombona: string;
 
 

@@ -7,7 +7,7 @@ export class Plafones extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   nombre_plafones: string;
 
   @ManyToOne(() => Local, (local) => local.plafones)

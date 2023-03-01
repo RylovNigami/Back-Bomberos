@@ -6,7 +6,7 @@ export class Pasamanos extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   nombre_pasamanos: string;
 
   @ManyToOne(() => Local, (local) => local.pasamanos)

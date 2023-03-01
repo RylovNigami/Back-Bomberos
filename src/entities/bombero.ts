@@ -13,7 +13,7 @@ export class Bombero extends BaseEntity {
   id: number;
 
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   ordenGeneral: number;
 
   @Column({ type: "date",nullable:true})
@@ -22,7 +22,7 @@ export class Bombero extends BaseEntity {
   @Column({  type:"varchar",nullable:true})
   genero:GeneroEnum;
   
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   status: StatusEnum;
 
   

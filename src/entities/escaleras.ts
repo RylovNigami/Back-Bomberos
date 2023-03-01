@@ -7,7 +7,7 @@ export class Escaleras extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   nombre_escaleras: string;
 
   @ManyToOne(() => Local, (local) => local.escaleras)

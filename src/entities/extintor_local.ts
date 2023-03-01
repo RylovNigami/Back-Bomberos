@@ -15,13 +15,13 @@ import { Extintor_p } from "./extintor_p";
     @PrimaryGeneratedColumn()
     id: number;
   
-    @Column({ type: "varchar" })
+    @Column({ type: "varchar",nullable:true })
     operativo_extintorPortatil: boolean;
   
-    @Column({ type: "varchar" })
+    @Column({ type: "varchar",nullable:true })
     capacidad_extintorPortatil: string;
 
-    @Column({ type: "varchar" })
+    @Column({ type: "varchar",nullable:true })
     reubicacion_extintorPortatil: boolean;
 
     @ManyToOne(() => Local, (local) => local.extintor_local,{eager:true})

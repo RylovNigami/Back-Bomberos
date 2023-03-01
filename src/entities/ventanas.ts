@@ -7,7 +7,7 @@ export class Ventanas extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   nombre_ventanas: string;
 
 

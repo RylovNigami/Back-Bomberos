@@ -9,10 +9,10 @@ export class Difusores extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   difusores_condicion: condicionvenEnum;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   cubren_areaDifusor: boolean;
 
   @OneToMany(() => Alarmas, (alarmas) =>  alarmas.brand)

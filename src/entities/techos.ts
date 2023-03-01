@@ -7,7 +7,7 @@ export class Techos extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   nombre_techos: string;
 
   @ManyToOne(() => Local, (local) => local.techos)

@@ -8,31 +8,31 @@ export class Extincion_f extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   extincion_fija: boolean;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   operativo_extincionFija: boolean;
 
-  @Column({ type: "numeric" })
+  @Column({ type: "numeric",nullable:true })
   capacidad_tanqueExtincion: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   ubic_tanqueExtincion: string;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   cajetines_mangueras: boolean;
 
-  @Column({ type: "numeric" })
+  @Column({ type: "numeric",nullable:true })
   cantidad_cajetinesManguera: number;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   mangueras: boolean;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   rociadores: boolean;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   cubre_areaRociadores: boolean;
 
   

@@ -8,7 +8,7 @@ export class Agente_extinguidor extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   nombre_agenteExtinguidor: string;
 
   @OneToMany(() => Extintor_local, (extintor_local) =>  extintor_local.agente_extinguidor)

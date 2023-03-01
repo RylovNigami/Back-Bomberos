@@ -7,7 +7,7 @@ export class Municipio extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   nombre_municipio: string;
 
     

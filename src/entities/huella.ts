@@ -7,7 +7,7 @@ export class Huella extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   nombre_huella: string;
 
   @ManyToOne(() => Local, (local) => local.huella)

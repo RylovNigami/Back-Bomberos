@@ -14,16 +14,16 @@ export class Extincion_local extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   condicion_manguera: condicionvenEnum;
 
-  @Column({ type: "numeric" })
+  @Column({ type: "numeric",nullable:true })
   longitud_manguera: number;
 
-  @Column({ type: "numeric" })
+  @Column({ type: "numeric",nullable:true })
   diametro_manguera: number;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   area_protegerMangueras: boolean;
 
 

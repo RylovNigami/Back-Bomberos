@@ -9,13 +9,13 @@ export class LocalOwner extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   localOwnerFirstName: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   localOwnerLastName: string;
 
-  @Column({ type: "numeric", unique: true })
+  @Column({ type: "numeric", unique: true,nullable:true })
   localOwnerDni: number;
 
   @Column({ type: "varchar", nullable: true })

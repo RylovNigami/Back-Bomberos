@@ -18,10 +18,10 @@ export class Inspeccion extends BaseEntity {
   @Column({ type: "varchar",unique:true })
   nro_inspeccion: number;
 
-  @Column({ type: 'time'})
+  @Column({ type: 'time',nullable:true})
   hora: string;
 
-  @Column({ type: 'date' })
+  @Column({ type: 'date',nullable:true })
   fecha: string;
 
   @Column({ type: "varchar",nullable:true})

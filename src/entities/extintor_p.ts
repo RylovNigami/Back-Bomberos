@@ -8,16 +8,16 @@ export class Extintor_p extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   posee_extintoresPortatil: boolean;
   
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   requiere_extintorPortatil: boolean;
 
-  @Column({ type: "numeric" })
+  @Column({ type: "numeric",nullable:true })
   nro_requiereExtintor: number;  
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   tipo_agenteExtintor: string;
 
 

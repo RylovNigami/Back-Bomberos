@@ -36,10 +36,10 @@ export class Local extends BaseEntity {
   @Column({ type: "numeric",unique:true })
   rif: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   ubicacion: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   ocupacion: string;
 
   @Column({ type: "varchar",unique:true})

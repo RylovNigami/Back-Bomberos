@@ -9,13 +9,13 @@ export class Tanque_gas extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   cap_tanque: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   ubic_tanque: string;
 
-  @Column({ type: "boolean" })
+  @Column({ type: "boolean",nullable:true })
   aterramiento_tanqueGas: boolean;  
 
   @OneToMany(() => Instalacion_gas, (instalacion_gas) =>  instalacion_gas.tanque_gas)

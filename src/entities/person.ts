@@ -8,13 +8,13 @@ export class Person extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   firstName: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   lastName: string;
 
-  @Column({ type: "numeric", unique: true })
+  @Column({ type: "numeric", unique: true,nullable:true })
   cedula: number;
 
   @Column({ type: "numeric", nullable: true })

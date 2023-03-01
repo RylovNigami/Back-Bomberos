@@ -9,16 +9,16 @@ export class Interviewer extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   interviewerFirstName: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   interviewerLastName: string;
 
-  @Column({ type: "numeric"})
+  @Column({ type: "numeric",nullable:true})
   interviewerDni: number;
 
-  @Column({ type: "numeric"})
+  @Column({ type: "numeric",nullable:true})
   interviewerNumber:number;
 
   @ManyToOne(() => Local, (local) =>  local.interviewer,{eager:true})

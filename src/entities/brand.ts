@@ -8,7 +8,7 @@ export class Brand extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   brandname: string;
 
   @OneToMany(() => Alarmas, (alarmas) =>  alarmas.brand)
