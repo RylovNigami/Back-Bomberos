@@ -81,6 +81,8 @@ export const getInspeccion = async (req: Request, res: Response) => {
     .leftJoinAndSelect('localex.company', 'extintorcp')
     .leftJoinAndSelect('localex.agente_extinguidor', 'extintorag')
     .leftJoinAndSelect('local.medios_escape', 'localml')
+    .leftJoinAndSelect('local.extincion_local', 'localetl')
+    .leftJoinAndSelect('localetl.extincion_f', 'extincionf')
     .leftJoinAndSelect('local.alarmas', 'localal')
     .leftJoinAndSelect('localal.brand', 'brand')
     .leftJoinAndSelect('localal.difusores', 'difusores')
