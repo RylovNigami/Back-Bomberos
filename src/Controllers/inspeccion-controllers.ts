@@ -89,7 +89,9 @@ export const getInspeccion = async (req: Request, res: Response) => {
     .leftJoinAndSelect('localal.brand', 'brand')
     .leftJoinAndSelect('localal.difusores', 'difusores')
     .leftJoinAndSelect('local.caracteristica_local', 'localcl')
-
+    .leftJoinAndSelect('local.parroquia', 'localpar')
+    .leftJoinAndSelect('localpar.municipio', 'localmun')
+    .leftJoinAndSelect('localmun.estado', 'localest')
     .getMany();
 
     return res.json(querybuilder)
