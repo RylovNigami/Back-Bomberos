@@ -8,19 +8,19 @@ export class Person extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   firstName: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   lastName: string;
 
-  @Column({ type: "varchar", unique: true })
+  @Column({ type: "numeric", unique: true,nullable:true })
   cedula: number;
 
-  @Column({ type: "varchar" })
-  telefono: string;
+  @Column({ type: "numeric", nullable: true })
+  telefono: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar", nullable: true })
   correo: string;
 
   @OneToOne(() => User, (user) => user.person)
@@ -29,6 +29,4 @@ export class Person extends BaseEntity {
   @OneToMany(() => Bombero, (bombero) =>  bombero.person)
   bombero:Bombero[];
 
-  @OneToMany(() => Inspeccion, (inspeccion) => inspeccion.person)
-  inspeccion:Inspeccion[];
 }

@@ -7,7 +7,7 @@ export class Estado extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   nombre_estado: string;
 
   @OneToMany(() => Municipio, (municipio) =>  municipio.estado)

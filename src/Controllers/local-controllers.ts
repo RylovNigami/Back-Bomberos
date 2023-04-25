@@ -1,19 +1,20 @@
 import { Response, Request } from "express";
+import { Interviewer } from "../entities/interviewer";
 import { Local } from "../entities/local";
+import { Parroquia } from "../entities/parroquia";
 import { Person } from "../entities/person";
 
 
 export const createLocal = async (req: Request, res: Response) => {
   try {
-    const { rif,firma_mercantil,ubicacion } = req.body;
+    const { rif,firma_mercantil,ubicacion,ocupacion,interviewer,localOwner,solitude,parroquia } = req.body;
 
     const local = new Local();
      local.rif=rif,
      local.firma_mercantil=firma_mercantil,
      local.ubicacion=ubicacion,
-
- 
-
+     local.ocupacion=ocupacion,
+     local.parroquia=parroquia,
 
     await local.save();
 

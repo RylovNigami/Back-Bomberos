@@ -23,7 +23,7 @@ export class User extends BaseEntity {
 
   @Column({ type: 'varchar'})
   password: string;
-
+  
   @Column({
     default: true,
   })
@@ -35,7 +35,7 @@ export class User extends BaseEntity {
   @UpdateDateColumn({ type: `date` })
   updatedAd!: Date;
 
-  @OneToOne(() => Person, (person) => person.user)
+  @OneToOne(() => Person, (person) => person.user,{nullable:true})
   @JoinColumn()
   person: Person;
 

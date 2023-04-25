@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, ManyToOne,OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Local } from "./local";
 import { Municipio } from "./municipio";
 
 
@@ -8,11 +9,13 @@ export class Parroquia extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   nombre_parroquia: string;
 
       
-  @ManyToOne(() => Municipio, (municipio) =>  municipio.parroquia)
+  @ManyToOne(() => Municipio, (municipio) =>  municipio.parroquia, { eager:true})
   municipio:Municipio;
 
+  @OneToMany(() => Local, (local) => local.parroquia)
+  local:Local[];
 }

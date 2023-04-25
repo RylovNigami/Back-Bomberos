@@ -6,32 +6,35 @@ import { Medios_escape } from "../entities/medios_escape";
 
 export const createMedios_escape = async (req: Request, res: Response) => {
   try {
-    const {  vias_escape,escalera_vias,ancho_escalera,altura_pasamano,ancho_huella,altura_contrahuella,tipo_puerta,sentido_salida,observacion,
-        ventilacion,cinta_anti,sitio_cinta,iluminacion,tipo_lampara,cantidad_lampara,señalizacion,tipo_señal,pasillo,nro_pasillo,ancho_pasillo,rampa,angulo_rampa} = req.body;
+    const {  vias_escape,condicion_escaleras, tipo_escaleras,escalera_vias,ancho_escalera,altura_pasamano,altura_contrahuella,ancho_huella,tipo_puertaviasEscape,sentido_salida,observacion_viasEscape,local,
+      ventilacion_viasEscape,condicion_venviasEscape,tipo_venviasEscape,cinta_antirresbalante,pasillos_circulacion,rampas_acceso,escaleras_cintaAntirresbalante,sitio_cintaAntirresbalante,iluminacion_emergencia,tipo_lamparaEmergencia,cantidad_lamparaEmergencia,señalizacion_viasEscape,tipo_señalviasEscape,
+        pasillo_viasEscape,nro_pasilloviasEscape,ancho_pasilloviasEscape,
+        foto_iluminiscentes,reflectante_señalvias,convencionales_señalvias,rampa_viasEscape,angulo_rampaEscape,puertas_vias} = req.body;
 
     const medios_escape= new Medios_escape();
     medios_escape.vias_escape=vias_escape,
-    medios_escape.escalera_vias=escalera_vias,
-    medios_escape.ancho_escalera=ancho_escalera,
-    medios_escape.altura_pasamano=altura_pasamano,
-    medios_escape.ancho_huella=ancho_huella,
-    medios_escape.altura_contrahuella=altura_contrahuella,
-    medios_escape.tipo_puerta=tipo_puerta,
-    medios_escape.sentido_salida=sentido_salida,
-    medios_escape.observacion=observacion,
-    medios_escape.ventilacion=ventilacion,
-    medios_escape.cinta_anti=cinta_anti,
-    medios_escape.sitio_cinta=sitio_cinta,
-    medios_escape.iluminacion=iluminacion,
-    medios_escape.tipo_lampara=tipo_lampara,
-    medios_escape.cantidad_lampara=cantidad_lampara,
-    medios_escape.señalizacion=señalizacion,
-    medios_escape.tipo_señal=tipo_señal,
-    medios_escape.pasillo=pasillo,
-    medios_escape.nro_pasillo=nro_pasillo,
-    medios_escape.ancho_pasillo=ancho_pasillo,
-    medios_escape.rampa=rampa,
-    medios_escape.angulo_rampa=angulo_rampa,
+    medios_escape.escalera_vias=escalera_vias;
+    medios_escape.local=local;
+    medios_escape.ventilacion_viasEscape=ventilacion_viasEscape,
+    medios_escape.condicion_venviasEscape=condicion_venviasEscape,
+    medios_escape.tipo_venviasEscape=tipo_venviasEscape
+    medios_escape.cinta_antirresbalante=cinta_antirresbalante,
+    medios_escape.pasillos_circulacion=pasillos_circulacion,
+    medios_escape.rampas_acceso=rampas_acceso,
+    medios_escape.escaleras_cintaAntirresbalante,
+    medios_escape.iluminacion_emergencia=iluminacion_emergencia,
+    medios_escape.tipo_lamparaEmergencia=tipo_lamparaEmergencia,
+    medios_escape.foto_iluminiscentes=foto_iluminiscentes,
+    medios_escape.reflectante_señalvias=reflectante_señalvias,
+    medios_escape.convencionales_señalvias=convencionales_señalvias,
+    medios_escape.cantidad_lamparaEmergencia=cantidad_lamparaEmergencia,
+    medios_escape.señalizacion_viasEscape=señalizacion_viasEscape,
+    medios_escape.pasillo_viasEscape=pasillo_viasEscape,
+    medios_escape.nro_pasilloviasEscape=nro_pasilloviasEscape,
+    medios_escape.ancho_pasilloviasEscape=ancho_pasilloviasEscape,
+    medios_escape.rampa_viasEscape=rampa_viasEscape,
+    medios_escape.angulo_rampaEscape=angulo_rampaEscape,
+    
 
 
 

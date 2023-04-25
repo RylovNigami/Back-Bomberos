@@ -5,20 +5,21 @@ import { Alm_seguro } from "../entities/alm_seguro";
 
 export const createAlm_riesgoso = async (req: Request, res: Response) => {
     try {
-      const { ident_material, material_p, tipo_contenedor, cant_contenedor, cap_contenedor,ubic_contenedor,ventilacion,tipo_ven, 
-        condicion_ven, dique,condicion_dique,drenaje, condicion_drenaje,ident_riesgo, seguridad_material,kit_control,
-        condiciones_kit, proteccion_personal, condicion_proteccion,racda,nro_racda,resquimic,nro_resquimic,daex,nro_daex,mppmp,nro_mppmp,ducha, condicion_ducha } = req.body;
+      const { mapel,ident_material, material_predominante, tipo_contenedor, cant_contenedor, cap_contenedor,ubic_contenedor,ventilacion_almRiesgosa,tipo_venRiesgosa, 
+        condicion_venRiegosa, dique,condicion_dique,drenaje, condicion_drenaje,ident_riesgo, seguridad_material,kit_control,
+        condiciones_kit, proteccion_personal, condicion_proteccion,racda,nro_racda,resquimic,nro_resquimic,daex,nro_daex,mppmp,nro_mppmp,ducha, condicion_ducha,local } = req.body;
   
       const alm_riesgoso = new Alm_riesgoso();
+        alm_riesgoso.mapel=mapel,
         alm_riesgoso.ident_material=ident_material,
-        alm_riesgoso.material_p=material_p,
+        alm_riesgoso.material_predominante=material_predominante,
         alm_riesgoso.tipo_contenedor=tipo_contenedor,
         alm_riesgoso.cant_contenedor=cant_contenedor,
         alm_riesgoso.cap_contenedor=cap_contenedor,
         alm_riesgoso.ubic_contenedor=ubic_contenedor,
-        alm_riesgoso.ventilacion=ventilacion,
-        alm_riesgoso.tipo_ven=tipo_ven,
-        alm_riesgoso.condicion_ven=condicion_ven,
+        alm_riesgoso.ventilacion_almRiesgosa=ventilacion_almRiesgosa,
+        alm_riesgoso.tipo_venRiesgosa=tipo_venRiesgosa,
+        alm_riesgoso.condicion_venRiegosa=condicion_venRiegosa,
         alm_riesgoso.dique=dique,
         alm_riesgoso.condicion_dique=condicion_dique,
         alm_riesgoso.drenaje=drenaje,
@@ -39,7 +40,8 @@ export const createAlm_riesgoso = async (req: Request, res: Response) => {
         alm_riesgoso.mppmp=mppmp,
         alm_riesgoso.nro_mppmp=nro_mppmp,
         alm_riesgoso.ducha=ducha,
-        alm_riesgoso.condicion_ducha=condicion_ducha;
+        alm_riesgoso.condicion_ducha=condicion_ducha,
+        alm_riesgoso.local=local;
 
 
   

@@ -7,7 +7,7 @@ export class Rango extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   nombre_rango: string;
 
   @OneToMany(() => Bombero, (bombero) =>  bombero.rango)

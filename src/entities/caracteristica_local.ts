@@ -16,49 +16,17 @@ export class Caracteristica_local extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
-  nro_niveles: string;
+  @Column({ type: "numeric",nullable:true })
+  nro_niveles: number;
 
-  @Column({ type: "varchar" })
-  nivel_inmueble: string;
+  @Column({ type: "numeric",nullable:true })
+  nivel_inmueble: number;
 
-  @Column({ type: "varchar" })
-  area: string;
-
-  @ManyToOne(() => Puertas, (puertas) => puertas.carasteristica_local)
-  puertas:Puertas;
-
-  @ManyToOne(() => Ventanas, (ventanas) => ventanas.carasteristica_local)
-  ventanas:Ventanas;
-
-  @ManyToOne(() => Techos, (techos) => techos.carasteristica_local)
-  techos:Techos;
-
-  @ManyToOne(() => Plafones, (plafones) => plafones.carasteristica_local)
-  plafones:Plafones;
+  @Column({ type: "numeric",nullable:true })
+  area_util: number;
 
   
-  @ManyToOne(() => Huella, (huella) => huella.carasteristica_local)
-  huella:Huella;
-
-  
-  @ManyToOne(() => Contrahuella, (contrahuella) => contrahuella.carasteristica_local)
-  contrahuella:Contrahuella;
-
-  @ManyToOne(() => Escaleras, (escaleras) => escaleras.carasteristica_local)
-  escaleras:Escaleras;
-
-  
-  @ManyToOne(() => Paredes, (paredes) => paredes.carasteristica_local)
-  paredes:Paredes;
-  
-  @ManyToOne(() => Pasamanos, (pasamanos) => pasamanos.carasteristica_local)
-  pasamanos:Pasamanos;
-  
-  @ManyToOne(() => Pisos, (pisos) => pisos.carasteristica_local)
-  pisos:Pisos;
-  
-  @ManyToOne(() => Local, (local) => local.caracteristica_local)
+  @ManyToOne(() => Local, (local) => local.caracteristica_local,{eager:true})
   local: Local;
 
   

@@ -1,4 +1,4 @@
-import { Router } from "express";
+/*import { Router } from "express";
 
 import {createCargo_bombero,getCargo_bombero,updateCargo_bombero,deleteCargo_bombero} from "../Controllers/cargo_bombero.controllers";
 
@@ -10,4 +10,4 @@ router.get("/", getCargo_bombero);
 
 router.put("/:id", updateCargo_bombero);
 
-router.delete("/:id", deleteCargo_bombero);
+router.delete("/:id", deleteCargo_bombero);*/

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { User } from "../entities/user";
-import { JwtPayload, sign } from 'jsonwebtoken';
+import { JwtPayload, sign } from "jsonwebtoken";
 
 interface RequestExt extends Request {
     user?: string | JwtPayload;
@@ -50,9 +50,3 @@ export const meCtrl = async (req: any, res: Response) => {
 export const logoutCtrl = async (req: Request, res: Response) => {
     return res.status(200).json( {logout:true} );
 }
-
- 
-      
-
-
-

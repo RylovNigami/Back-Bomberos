@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {createParroquia,getParroquia,updateParroquia,deleteParroquia} from "../Controllers/parroquia.controller";
+import {createParroquia,getParroquia,updateParroquia,deleteParroquia} from "../Controllers/parroquia.controllers";
 
 export const router = Router()
 
