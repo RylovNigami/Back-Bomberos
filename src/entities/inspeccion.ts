@@ -34,10 +34,10 @@ export class Inspeccion extends BaseEntity {
   @Column({ type: "varchar",nullable:true})
   tipo_respuestaInspeccion: tipoRespuestaEnum;
 
-  @ManyToOne(() => Bombero, (bombero) => bombero.inspeccion,{ eager:true})
+  @ManyToOne(() => Bombero, (bombero) => bombero.inspeccion,{eager:true})
   bombero:Bombero;
 
-  @ManyToOne(() => Local, (local) => local.inspeccion,{ eager:true})
+  @ManyToOne(() => Local, (local) => local.inspeccion,{eager:true})
   local:Local;
 
 }

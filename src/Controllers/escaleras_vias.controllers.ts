@@ -7,7 +7,7 @@ import { Escaleras_vias } from "../entities/escaleras_vias";
 
 export const createEscaleras_vias = async (req: Request, res: Response) => {
   try {
-    const { condicion_escaleras,tipo_escaleras,ancho_escalera,ancho_huella,altura_pasamano,altura_contrahuella} = req.body;
+    const { condicion_escaleras,tipo_escaleras,ancho_escalera,ancho_huella,altura_pasamano,altura_contrahuella,medios_escape} = req.body;
 
     const escaleras_vias = new Escaleras_vias();
     escaleras_vias.condicion_escaleras=condicion_escaleras,
@@ -16,6 +16,7 @@ export const createEscaleras_vias = async (req: Request, res: Response) => {
     escaleras_vias.altura_pasamano=altura_pasamano;
     escaleras_vias.ancho_huella=ancho_huella;
     escaleras_vias.altura_contrahuella=altura_contrahuella;
+    escaleras_vias.medios_escape=medios_escape;
     
     await escaleras_vias.save();
 

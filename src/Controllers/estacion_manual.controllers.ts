@@ -9,11 +9,12 @@ import { Rango } from "../entities/rango";
 
 export const createEstacion_manual = async (req: Request, res: Response) => {
   try {
-    const {  estacion_clase,estacion_condicion } = req.body;
+    const {  estacion_clase,estacion_condicion,alarmas } = req.body;
 
     const estacion_manual = new Estacion_manual();
     estacion_manual.estacion_clase=estacion_clase,
-    estacion_manual.estacion_condicion;
+    estacion_manual.estacion_condicion=estacion_condicion;
+    estacion_manual.alarmas=alarmas;
 
  
 

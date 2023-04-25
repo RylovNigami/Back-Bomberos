@@ -25,8 +25,6 @@ export const createAlarmas = async (req: Request, res: Response) => {
    alarmas.detectores_area=detectores_area,
    alarmas.brand=brand;
    alarmas.local=local;
-   alarmas.estacion_manual=estacion_manual;
-  alarmas.difusores=difusores;
 
 
  

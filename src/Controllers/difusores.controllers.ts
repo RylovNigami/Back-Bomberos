@@ -8,11 +8,12 @@ import { Rango } from "../entities/rango";
 
 export const createDifusores = async (req: Request, res: Response) => {
   try {
-    const {difusores_condicion, cubren_areaDifusor  } = req.body;
+    const {difusores_condicion, cubren_areaDifusor,alarmas  } = req.body;
 
     const difusores = new Difusores();
     difusores.difusores_condicion=difusores_condicion,
     difusores.cubren_areaDifusor=cubren_areaDifusor;
+    difusores.alarmas=alarmas;
  
 
 

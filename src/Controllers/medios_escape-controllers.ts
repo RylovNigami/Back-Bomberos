@@ -34,8 +34,6 @@ export const createMedios_escape = async (req: Request, res: Response) => {
     medios_escape.ancho_pasilloviasEscape=ancho_pasilloviasEscape,
     medios_escape.rampa_viasEscape=rampa_viasEscape,
     medios_escape.angulo_rampaEscape=angulo_rampaEscape,
-    medios_escape.escalera_vias=escalera_vias,
-    medios_escape.puertas_vias=puertas_vias;
     
 
 

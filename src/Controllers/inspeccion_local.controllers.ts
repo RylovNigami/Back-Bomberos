@@ -6,24 +6,26 @@ import { Inspeccion } from "../entities/inspeccion";
 import { Local } from "../entities/local";
 import { Person } from "../entities/person";
 import { Rango } from "../entities/rango";
+import { Parroquia } from "../entities/parroquia";
 
 
 export const create = async (req: Request, res: Response) => {
   try {
     const { nro_inspeccion,fecha,hora,rif,firma_mercantil,ocupacion,existe_guia,cumple_ordenamiento,
       observaciones_inspeccion,ubicacion,firstName,lastName,cedula,correo,telefono,ordenGeneral, status,genero,
-       rango, cargo,departamento  } = req.body;
+       rango, cargo,departamento, parroquia } = req.body;
 
     const queryRunner = AppDataSource.createQueryRunner();
     queryRunner.connect();
     queryRunner.startTransaction()
 
     const local = new Local ();
-
     local.rif=rif,
     local.firma_mercantil=firma_mercantil,
     local.ubicacion=ubicacion,
     local.ocupacion=ocupacion;
+    local.parroquia=parroquia;
+
 
     const person = new Person();
     person.firstName = firstName;

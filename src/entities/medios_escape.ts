@@ -79,9 +79,9 @@ export class Medios_escape extends BaseEntity {
   @ManyToOne(() => Local, (local) => local.medios_escape,{eager:true})
   local:Local;
 
-  @ManyToOne(() => Escaleras_vias, (escalera_vias) => escalera_vias.medios_escape,{eager:true})
+  @OneToMany(() => Escaleras_vias, (escalera_vias) => escalera_vias.medios_escape)
   escaleras_vias:Escaleras_vias;
 
-  @ManyToOne(() => Puertas_vias, (puertas_vias) => puertas_vias.medios_escape,{eager:true})
+  @OneToMany(() => Puertas_vias, (puertas_vias) => puertas_vias.medios_escape)
   puertas_vias:Puertas_vias;
 }

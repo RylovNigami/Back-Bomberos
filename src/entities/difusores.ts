@@ -1,4 +1,4 @@
-import { BaseEntity, Column,OneToMany, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column,OneToMany, Entity, PrimaryGeneratedColumn, ManyToOne } from "typeorm";
 import { condicionvenEnum } from "../enum/condicionVen";
 import { Alarmas } from "./alarmas";
 import { Bombero } from "./bombero";
@@ -15,8 +15,8 @@ export class Difusores extends BaseEntity {
   @Column({ type: "boolean",nullable:true })
   cubren_areaDifusor: boolean;
 
-  @OneToMany(() => Alarmas, (alarmas) =>  alarmas.brand)
-  alarmas:Alarmas[];
+  @ManyToOne(() => Alarmas, (alarmas) =>  alarmas.difusores,{eager:true})
+  alarmas:Alarmas;
 
   
 }

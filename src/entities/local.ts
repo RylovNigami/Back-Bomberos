@@ -33,7 +33,7 @@ export class Local extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "numeric",unique:true })
+  @Column({ type: "numeric"})
   rif: number;
 
   @Column({ type: "varchar",nullable:true })
@@ -42,7 +42,7 @@ export class Local extends BaseEntity {
   @Column({ type: "varchar",nullable:true })
   ocupacion: string;
 
-  @Column({ type: "varchar",unique:true})
+  @Column({ type: "varchar"})
   firma_mercantil: string;
 
 
@@ -104,7 +104,7 @@ export class Local extends BaseEntity {
   @OneToMany(() => Extintor_local, (Extintor_local) => Extintor_local.local)
   extintor_local:Extintor_local[];
   
-  @ManyToOne(() => Parroquia, (parroquia) =>  parroquia.local)
+  @ManyToOne(() => Parroquia, (parroquia) =>  parroquia.local, {eager:true})
   parroquia:Parroquia;
 
   @OneToMany(() => Interviewer, (interviewer) => interviewer.local)

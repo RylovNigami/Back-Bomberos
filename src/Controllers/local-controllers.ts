@@ -16,7 +16,6 @@ export const createLocal = async (req: Request, res: Response) => {
      local.ocupacion=ocupacion,
      local.parroquia=parroquia,
 
-
     await local.save();
 
     return res.json(local);

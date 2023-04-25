@@ -1,4 +1,4 @@
-import { BaseEntity, Column,OneToMany, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column,OneToMany, Entity, PrimaryGeneratedColumn, ManyToOne } from "typeorm";
 import { condicionvenEnum } from "../enum/condicionVen";
 import { tipoEscaleraEnum } from "../enum/tipoescalera";
 import { Bombero } from "./bombero";
@@ -19,7 +19,7 @@ export class Puertas_vias extends BaseEntity {
   @Column({ type: "varchar",nullable:true })
   observacion_viasEscape: string;
 
-  @OneToMany(() => Medios_escape, (medios_escape) =>  medios_escape.puertas_vias)
+  @ManyToOne(() => Medios_escape, (medios_escape) =>  medios_escape.puertas_vias,{eager:true})
   medios_escape:Medios_escape[];
 
   

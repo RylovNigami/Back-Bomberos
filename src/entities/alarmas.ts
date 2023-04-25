@@ -60,9 +60,9 @@ export class Alarmas extends BaseEntity {
   @ManyToOne(() => Brand, (brand) =>  brand.alarmas,{eager:true})
   brand:Brand;
 
-  @ManyToOne(() => Estacion_manual, (estacion_manual) =>  estacion_manual.alarmas,{eager:true})
-  estacion:Estacion_manual;
+  @OneToMany(() => Estacion_manual, (estacion_manual) =>  estacion_manual.alarmas)
+  estacion:Estacion_manual[];
 
-  @ManyToOne(() => Difusores, (difusores) =>  difusores.alarmas,{eager:true})
-  difusores:Difusores;
+  @OneToMany(() => Difusores, (difusores) =>  difusores.alarmas)
+  difusores:Difusores[];
 }

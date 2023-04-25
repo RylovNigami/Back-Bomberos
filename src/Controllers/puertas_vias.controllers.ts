@@ -11,12 +11,13 @@ import { Puertas_vias } from "../entities/puertas_vias";
 
 export const createPuertas_vias = async (req: Request, res: Response) => {
   try {
-    const { tipo_puertaviasEscape,sentido_salida,observacion_viasEscape } = req.body;
+    const { tipo_puertaviasEscape,sentido_salida,observacion_viasEscape,medios_escape } = req.body;
 
     const puertas_vias = new Puertas_vias();
     puertas_vias.tipo_puertaviasEscape=tipo_puertaviasEscape;
     puertas_vias.sentido_salida=sentido_salida;
     puertas_vias.observacion_viasEscape=observacion_viasEscape;
+    puertas_vias.medios_escape=medios_escape;
 
 
     await puertas_vias.save();
@@ -48,11 +49,11 @@ export const updatePuertas_vias = async (req: Request, res: Response) => {
   console.log(puertas_vias);
 
   if (!puertas_vias)
-    return res.status(404).json({ message: "cargo does not exists" });
+    return res.status(404).json({ message: " does not exists" });
 
- const update =  await puertas_vias.update({ id: parseInt(id) }, req.body);
+/* const update =  await puertas_vias.update({ id: parseInt(id) }, req.body);
 
-  return res.json(update);
+  return res.json(update);*/
 };
 
 export const deletePuertas_vias = async (req: Request, res: Response) => {
