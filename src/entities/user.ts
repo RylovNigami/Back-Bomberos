@@ -35,7 +35,7 @@ export class User extends BaseEntity {
   @UpdateDateColumn({ type: `date` })
   updatedAd!: Date;
 
-  @OneToOne(() => Person, (person) => person.user,{nullable:true})
+  @OneToOne(() => Person, (person) => person.user,{eager:true, nullable:true})
   @JoinColumn()
   person: Person;
 

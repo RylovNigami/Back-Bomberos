@@ -22,8 +22,8 @@ export class Bombero extends BaseEntity {
   @Column({  type:"varchar",nullable:true})
   genero:GeneroEnum;
   
-  @Column({ type: "varchar",nullable:true })
-  status: StatusEnum;
+  @Column({ type: "boolean",nullable:true })
+  status: boolean;
 
   
   @ManyToOne(() => Person, (person) =>  person.bombero,{eager:true})

@@ -1,15 +1,22 @@
 import { Response, Request } from "express";
 import { User } from "../entities/user";
+import { Person } from "../entities/person";
 
 export const createUser = async (req: Request, res: Response) => {
   try {
-    const { email, password, personId, active } = req.body;
+    const { email, password, person, active } = req.body;
 
     const user = new User();
     user.email = email;
     user.password = password;
-    user.person = personId;
+    user.person = person;
     user.active = active;
+
+    /*const validar_person = await Person.findOne({where:{id:person}});  
+
+    if(!validar_person){
+      return res.status(500).json({ message: "no se encontro la persona"});
+    }*/
 
     await user.save();  
 
