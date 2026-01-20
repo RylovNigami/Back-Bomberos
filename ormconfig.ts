@@ -1,5 +1,4 @@
-export ={
-
+export = {
       type: `postgres`,
       host: process.env.DB_HOST,
       username: process.env.DB_USER,
@@ -7,9 +6,6 @@ export ={
       port: Number(process.env.DB_PORT),
       database: process.env.DB_NAME,
       entities: ['src/entities/*{.ts,.js}'],
-      seeds: ['src/seeds/*{.ts,.js}'],
-      synchronize: true,
-    
-
-
+      seeds: ['src/seeds/**/*.ts'],
+      synchronize: true
 }

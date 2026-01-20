@@ -5,7 +5,7 @@ import { Parroquia } from "../entities/parroquia";
 
 export const createMunicipio = async (req: Request, res: Response) => {
   try {
-    const {  nombre_municipio, estado} = req.body;
+    const {nombre_municipio, estado} = req.body;
 
     const municipio = new Municipio();
     municipio.nombre_municipio = nombre_municipio;
@@ -29,8 +29,6 @@ export const createMunicipio = async (req: Request, res: Response) => {
 export const getMunicipio = async (req: Request, res: Response) => {
   try {
     const { estado_id } = req.query;
-    
-
     const municipio =  Municipio.createQueryBuilder("i").leftJoinAndSelect('i.estado', 'estado').where('1 = 1');
     if(estado_id) {
       municipio.andWhere('i.estadoId = :estado_id', {estado_id});

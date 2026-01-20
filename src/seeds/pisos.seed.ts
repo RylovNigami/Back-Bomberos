@@ -9,12 +9,16 @@ export default class CreatePisos implements Seeder {
   public async run(factory: Factory, connection: DataSource): Promise<any> {
     const { pisos } = JSON.parse(readFileSync("./src/seeds/json/pisos.json", "utf8"));
 
-    const pisosValues: IPisos[] = pisos;
+    const pisosValues: IPisos[] = pisos.map((nombre: string) => ({
+      nombre_pisos: nombre
+    }));
+
     await connection
       .createQueryBuilder()
       .insert()
       .into(Pisos)
       .values(pisosValues)
+      .orIgnore()
       .execute();
   }
 }

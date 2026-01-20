@@ -13,9 +13,6 @@ export const createAgente_extinguidor = async (req: Request, res: Response) => {
     const agente_extinguidor = new Agente_extinguidor();
     agente_extinguidor.nombre_agenteExtinguidor=nombre_agenteExtinguidor;
     
- 
-
-
     await agente_extinguidor.save();
 
     return res.json(agente_extinguidor);

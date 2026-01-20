@@ -1,0 +1,19 @@
+{
+  "municipio": [
+    {"nombre_municipio": "Andrés Eloy Blanco", "estado": 20},
+    {"nombre_municipio": "Andrés Mata", "estado": 20},
+    {"nombre_municipio": "Arismendi", "estado": 20},
+    {"nombre_municipio": "Benítez", "estado": 20},
+    {"nombre_municipio": "Bermúdez", "estado": 20},
+    {"nombre_municipio": "Bolívar", "estado": 20},
+    {"nombre_municipio": "Cajigal", "estado": 20},
+    {"nombre_municipio": "Cruz Salmerón Acosta", "estado": 20},
+    {"nombre_municipio": "Libertador", "estado": 20},
+    {"nombre_municipio": "Mariño", "estado": 20},
+    {"nombre_municipio": "Mejía", "estado": 20},
+    {"nombre_municipio": "Montes", "estado": 20},
+    {"nombre_municipio": "Ribero", "estado": 20},
+    {"nombre_municipio": "Sucre", "estado": 20},
+    {"nombre_municipio": "Valdez", "estado": 20}
+  ]
+}
