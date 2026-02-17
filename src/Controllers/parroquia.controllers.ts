@@ -16,7 +16,6 @@ export const createParroquia = async (req: Request, res: Response) => {
       return res.status(500).json({ message: "no se encontro"});
     }
 
-
     await parroquia.save();
 
     return res.json(parroquia);

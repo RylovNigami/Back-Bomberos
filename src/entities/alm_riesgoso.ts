@@ -1,4 +1,6 @@
 import { BaseEntity, Column, Entity, ManyToOne,PrimaryGeneratedColumn } from "typeorm";
+import { condicionvenEnum } from "../enum/condicionVen";
+import { tipovenEnum } from "../enum/tipoven";
 import { Local } from "./local";
 
 @Entity("Alm_riesgoso")
@@ -6,94 +8,97 @@ export class Alm_riesgoso extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean",nullable:true })
+  mapel: boolean;
+
+  @Column({ type: "boolean",nullable:true })
   ident_material: boolean;
 
-  @Column({ type: "varchar" })
-  material_p: string;
+  @Column({ type: "varchar",nullable:true })
+  material_predominante: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   tipo_contenedor: string;
 
-  @Column({ type: "varchar" })
-  cant_contenedor: string;
+  @Column({ type: "numeric",nullable:true })
+  cant_contenedor: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   cap_contenedor: string;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   ubic_contenedor: string;
 
-  @Column({ type: "varchar" })
-  ventilacion: boolean;
+  @Column({ type: "boolean",nullable:true })
+  ventilacion_almRiesgosa: boolean;
 
-  @Column({ type: "varchar" })
-  tipo_ven: string;
+  @Column({ type: "varchar",nullable:true })
+  tipo_venRiesgosa: tipovenEnum;
 
-  @Column({ type: "varchar" })
-  condicion_ven: boolean;
+  @Column({ type: "boolean",nullable:true })
+  condicion_venRiegosa: condicionvenEnum;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean",nullable:true })
   dique: boolean;
 
-  @Column({ type: "varchar" })
-  condicion_dique: boolean;
+  @Column({ type: "boolean",nullable:true })
+  condicion_dique: condicionvenEnum;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean",nullable:true })
   drenaje: boolean;
 
-  @Column({ type: "varchar" })
-  condicion_drenaje: boolean;
+  @Column({ type: "boolean",nullable:true })
+  condicion_drenaje: condicionvenEnum;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean",nullable:true })
   ident_riesgo: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean",nullable:true })
   seguridad_material: boolean;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   kit_control: boolean;
 
-  @Column({ type: "varchar" })
-  condiciones_kit: boolean;
+  @Column({ type: "boolean",nullable:true })
+  condiciones_kit: condicionvenEnum;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean",nullable:true })
   proteccion_personal: boolean;
 
-  @Column({ type: "varchar" })
-  condicion_proteccion: boolean;
+  @Column({ type: "boolean",nullable:true })
+  condicion_proteccion: condicionvenEnum;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean",nullable:true })
   racda: boolean;
 
-  @Column({ type: "varchar" })
-  nro_racda: string;
+  @Column({ type: "numeric",nullable:true })
+  nro_racda: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean",nullable:true })
   resquimic: boolean;
 
-  @Column({ type: "varchar" })
-  nro_resquimic: string;
+  @Column({ type: "numeric",nullable:true })
+  nro_resquimic: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean",nullable:true })
   daex: boolean;
 
-  @Column({ type: "varchar" })
-  nro_daex: string;
+  @Column({ type: "numeric",nullable:true })
+  nro_daex: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean",nullable:true })
   mppmp: boolean;
 
-  @Column({ type: "varchar" })
-  nro_mppmp: string;
+  @Column({ type: "numeric",nullable:true })
+  nro_mppmp: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean",nullable:true })
   ducha: boolean;
 
-  @Column({ type: "varchar" })
-  condicion_ducha: boolean;
+  @Column({ type: "boolean",nullable:true })
+  condicion_ducha: condicionvenEnum;
 
 
-  @ManyToOne(() => Local, (local) => local.alm_riesgoso)
+  @ManyToOne(() => Local, (local) => local.alm_riesgoso,{eager:true})
   local:Local;
 }

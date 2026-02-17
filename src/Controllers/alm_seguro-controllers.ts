@@ -5,14 +5,16 @@ import { Alm_seguro } from "../entities/alm_seguro";
 
 export const createAlm_seguro = async (req: Request, res: Response) => {
     try {
-      const {  tipo,norma_alm,orden_limpieza,proteccion,tipo_proteccion,} = req.body;
+      const {  poseeAlamacenamiento,tipo_mercanciaAlmacenada,norma_almacenamiento,orden_limpieza,proteccion_contraIncendios,tipo_proteccionIncendio,local} = req.body;
   
       const alm_seguro = new Alm_seguro();
-      alm_seguro.tipo=tipo;
-      alm_seguro.norma_alm=norma_alm;
+      alm_seguro.poseeAlamacenamiento=poseeAlamacenamiento,
+      alm_seguro.tipo_mercanciaAlmacenada=tipo_mercanciaAlmacenada;
+      alm_seguro.norma_almacenamiento=norma_almacenamiento;
       alm_seguro.orden_limpieza=orden_limpieza;
-      alm_seguro.proteccion=proteccion;
-      alm_seguro.tipo_proteccion=tipo_proteccion;
+      alm_seguro.proteccion_contraIncendios=proteccion_contraIncendios;
+      alm_seguro.tipo_proteccionIncendio=tipo_proteccionIncendio;
+      alm_seguro.local=local;
    
   
   

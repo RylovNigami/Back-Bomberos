@@ -1,5 +1,8 @@
 import { BaseEntity, Column, Entity,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Cargo_bombero } from "./cargo_bombero";
+import { StatusEnum } from "../enum/status";
+import { tipoRespuestaEnum } from "../enum/tiporespuesta";
+import { Bombero } from "./bombero";
+
 import { Local } from "./local";
 import { Person } from "./person";
 
@@ -9,23 +12,32 @@ export class Inspeccion extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Column({ type: "boolean",nullable:true })
+  existe_guia: boolean;
+
   @Column({ type: "varchar",unique:true })
   nro_inspeccion: number;
 
-  @Column({ type: "varchar" })
-  hora : string;
+  @Column({ type: 'time',nullable:true})
+  hora: string;
 
-  @Column({ type: "varchar" })
-  fecha: Date;
+  @Column({ type: 'date',nullable:true })
+  fecha: string;
 
-  @ManyToOne(() => Cargo_bombero, (cargo_bombero) => cargo_bombero.inspeccion,{ eager:true})
-  cargo_bombero:Cargo_bombero;
+  @Column({ type: "varchar",nullable:true})
+  cumple_ordenamiento: string;
 
-  @ManyToOne(() => Local, (local) => local.inspeccion,{ eager:true})
+  @Column({ type: "varchar",nullable:true})
+  observaciones_inspeccion: string;
+
+  
+  @Column({ type: "varchar",nullable:true})
+  tipo_respuestaInspeccion: tipoRespuestaEnum;
+
+  @ManyToOne(() => Bombero, (bombero) => bombero.inspeccion,{eager:true})
+  bombero:Bombero;
+
+  @ManyToOne(() => Local, (local) => local.inspeccion,{eager:true})
   local:Local;
-
-   
-  @ManyToOne(() => Person, (person) =>  person.inspeccion,{ eager:true})
-  person:Person;
 
 }

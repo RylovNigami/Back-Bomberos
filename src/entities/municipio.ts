@@ -7,11 +7,11 @@ export class Municipio extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "varchar",nullable:true })
   nombre_municipio: string;
 
     
-  @ManyToOne(() => Estado, (estado) =>  estado.municipio)
+  @ManyToOne(() => Estado, (estado) =>  estado.municipio, {eager:true})
   estado:Estado;
 
   @OneToMany(() => Parroquia, (parroquia) =>  parroquia.municipio)

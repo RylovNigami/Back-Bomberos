@@ -1,78 +1,87 @@
-import { BaseEntity, Column, Entity,ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity,ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { condicionvenEnum } from "../enum/condicionVen";
+import { tipoEscaleraEnum } from "../enum/tipoescalera";
+import { tipovenEnum } from "../enum/tipoven";
+import { Escaleras_vias } from "./escaleras_vias";
 import { Local } from "./local";
+import { Medios_local } from "./medios_local";
+import { Puertas } from "./puertas";
+import { Puertas_vias } from "./puertas_vias";
 
 @Entity("Medios_escape")
 export class Medios_escape extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean",nullable:true })
   vias_escape: boolean;
-
   
-  @Column({ type: "varchar" })
+  @Column({ type: "boolean",nullable:true })
   escalera_vias: boolean;
+   
+  @Column({ type: "boolean",nullable:true })
+  ventilacion_viasEscape: boolean;
 
-  @Column({ type: "varchar" })
-  ancho_escalera: string;
+  @Column({ type: "varchar",nullable:true })
+  condicion_venviasEscape: condicionvenEnum;
 
-  @Column({ type: "varchar" })
-  altura_pasamano: string;
+  @Column({ type: "varchar",nullable:true })
+  tipo_venviasEscape: tipovenEnum;
 
-  @Column({ type: "varchar" })
-  ancho_huella: string;
+  @Column({ type: "boolean",nullable:true })
+  cinta_antirresbalante: boolean;
 
-  @Column({ type: "varchar" })
-  altura_contrahuella: string;
+  @Column({ type: "boolean",nullable:true })
+  pasillos_circulacion: boolean;
 
-  @Column({ type: "varchar" })
-  tipo_puerta: string;
+  @Column({ type: "boolean",nullable:true })
+  rampas_acceso: boolean;
 
-  @Column({ type: "varchar" })
-  sentido_salida: boolean;
+  @Column({ type: "boolean",nullable:true })
+  escaleras_cintaAntirresbalante: boolean;
 
-  @Column({ type: "varchar" })
-  observacion: string;
+  @Column({ type: "boolean",nullable:true })
+  iluminacion_emergencia: boolean;
 
-  @Column({ type: "varchar" })
-  ventilacion: boolean;
+  @Column({ type: "varchar",nullable:true })
+  tipo_lamparaEmergencia: string;
 
-  @Column({ type: "varchar" })
-  cinta_anti: boolean;
+  @Column({ type: "numeric",nullable:true })
+  cantidad_lamparaEmergencia: number;
 
-  @Column({ type: "varchar" })
-  sitio_cinta: string;
+  @Column({ type: "boolean",nullable:true })
+  señalizacion_viasEscape: boolean;
 
-  @Column({ type: "varchar" })
-  iluminacion: boolean;
+  @Column({ type: "boolean",nullable:true })
+  foto_iluminiscentes: boolean;
 
-  @Column({ type: "varchar" })
-  tipo_lampara: string;
+  @Column({ type: "boolean",nullable:true })
+  reflectante_señalvias: boolean;
 
-  @Column({ type: "varchar" })
-  cantidad_lampara: string;
+  @Column({ type: "boolean",nullable:true })
+  convencionales_señalvias: boolean;
 
-  @Column({ type: "varchar" })
-  señalizacion: boolean;
+  @Column({ type: "varchar",nullable:true })
+  pasillo_viasEscape: boolean;
 
-  @Column({ type: "varchar" })
-  tipo_señal: string;
+  @Column({ type: "numeric",nullable:true })
+  nro_pasilloviasEscape: number;
 
-  @Column({ type: "varchar" })
-  pasillo: boolean;
+  @Column({ type: "varchar",nullable:true })
+  ancho_pasilloviasEscape: string;
 
-  @Column({ type: "varchar" })
-  nro_pasillo: string;
+  @Column({ type: "boolean",nullable:true })
+  rampa_viasEscape: boolean;
 
-  @Column({ type: "varchar" })
-  ancho_pasillo: string;
+  @Column({ type: "numeric",nullable:true })
+  angulo_rampaEscape: number;
 
-  @Column({ type: "varchar" })
-  rampa: boolean;
-
-  @Column({ type: "varchar" })
-  angulo_rampa: string;
-
-  @ManyToOne(() => Local, (local) => local.medios_escape)
+  @ManyToOne(() => Local, (local) => local.medios_escape,{eager:true})
   local:Local;
+
+  @OneToMany(() => Escaleras_vias, (escalera_vias) => escalera_vias.medios_escape)
+  escaleras_vias:Escaleras_vias;
+
+  @OneToMany(() => Puertas_vias, (puertas_vias) => puertas_vias.medios_escape)
+  puertas_vias:Puertas_vias;
 }
